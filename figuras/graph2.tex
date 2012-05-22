@@ -1,0 +1,36 @@
+\begin{tikzpicture}[node distance = 1.5cm, scale = 0.5]
+    % Place nodes
+   
+    \node at (0,0)  [funnode] (f1) {$\Psi^{MC}_{a}$};
+    \node at (6,6)  [funnode] (f2) {$\Psi^{MC}_{b}$};
+    
+    \node at (2.5,2.5)  [varnode] (x1) {$x_\mu$}; \node [funnode, below right of = x1] (f3) {$\Psi^{\text{util}}_\mu$};
+    \node at (-2.5,2.5) [varnode] (x2) {$x_\nu$}; \node [funnode, below left of = x2] (f4) {$\Psi^{\text{util}}_\nu$};
+    \node at (0,-2.5) [varnode] (x3) {$x_\omega$};\node [funnode, below of = x3] (f5) {$\Psi^{\text{util}}_\omega$}; 
+    \node [funnode, above left of = x1] (f6) {$\Psi^{\text{social}}_c$}; 
+    
+    \node [above right of = f2] (etc1) {};
+    \node [above left  of = f2] (etc5) {};
+    \node at (-4,4)[] (etc2) {};
+    \node [right of = x3] (etc3) {};
+    \node [left of = x3] (etc4) {};
+   % Draw edges
+
+    \path [draw,dashed] (f2) -- (etc1);
+    \path [draw,dashed] (f2) -- (etc5);
+    \path [draw,dashed] (x2) -- (etc2);
+    \path [draw,dashed] (x3) -- (etc3);	
+    \path [draw,dashed] (x3) -- (etc4);
+    \path [draw] (f2) -- (x1) -- (f1) -- (x2);
+    \path [draw] (f1) -- (x3);
+    \path [draw] (x1) -- (f3); \path [draw] (x3) -- (f5);\path [draw] (x2) -- (f4);
+    \path [draw] (x1) -- (f6) -- (x2);
+%       \path [draw](x2) -- (f2);
+%       \path [draw](x4) -- (f4);
+%       \path [draw](f1) -| (p);
+%       \path [draw](f2) -| (p);
+%       \path [draw](f4) -| (p);
+%       \path [draw](x1) -| (mc);
+%       \path [draw](x2) -| (mc);
+%       \path [draw](x4) -| (mc);
+\end{tikzpicture}

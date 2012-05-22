@@ -1,0 +1,20 @@
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \matrix[row sep = 0.2 cm, column sep = 0.8 cm] {
+    &\node [varnode] (x1) {$\vec{x}_1$};	& \node [funnode] (f1) {$\psi_1$}; & &\\
+    &\node [varnode] (x2) {$\vec{x}_2$};	& \node [funnode] (f2) {$\psi_2$}; & &\\
+    \node [funnode] (mc)        {$\psi_{mc}$};&\node [] (x3)        {$\vdots$};	& \node [] (f3)        {$\vdots$}; & \node [varnode] (p)        {$\vec{p}$}; &\\
+    &\node [varnode] (x4) {$\vec{x}_N$};	& \node [funnode] (f4) {$\psi_N$}; & &\\
+    };
+
+    % Draw edges
+      \path [draw](x1) -- (f1);
+      \path [draw](x2) -- (f2);
+      \path [draw](x4) -- (f4);
+      \path [draw](f1) -| (p);
+      \path [draw](f2) -| (p);
+      \path [draw](f4) -| (p);
+      \path [draw](x1) -| (mc);
+      \path [draw](x2) -| (mc);
+      \path [draw](x4) -| (mc);
+\end{tikzpicture}

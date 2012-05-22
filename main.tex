@@ -1,0 +1,28 @@
+ \documentclass[ twoside
+              , justified 
+              , symmetric ]{tufte-book}
+
+%% CONFIGURACOES
+\input{./confs/packs}
+\input{./confs/commands}
+\input{./confs/tikzconfig}
+
+%% Elementos de texto:
+\input{./tex/pretext/details}
+\makeindex
+\begin{document}
+%    \maketitle
+   \input{./tex/pretext/paginatitulo}
+   \input{./tex/pretext/folhaderosto}
+   \tableofcontents
+   \listoffigures '
+%   \listoftables
+   \include{./tex/pretext/resumo}
+   \include{./tex/introducao}
+   \include{./tex/copulas}
+   \include{./tex/autoridade}
+   \include{./tex/conclusoes}
+  \bibliographystyle{plainnat}
+  %\bibliographystyle{unsrtnat}
+  \bibliography{bibdatabase}
+\end{document}

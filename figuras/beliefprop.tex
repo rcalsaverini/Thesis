@@ -1,0 +1,45 @@
+\begin{figure}[H] 
+ \centering
+ \subfloat[Nós do tipo variável para nós do tipo função\label{fig:beliefprop1}]{
+    \begin{tikzpicture}[node distance = 2cm,->,>=stealth',shorten >=1pt]
+	\node at (0,0) [varnode] (x1) {$\vec{x}_j$};
+	\node [funnode, above right of = x1] (f1) {$\psi_c$};
+	\node [funnode, above left of = x1]  (f2) {$\psi_b$};
+	\node [funnode, below of = x1] (f0) {$\psi_a$};
+	
+	\path [draw, ->, thick, red] (f1) -> (x1);
+	\path [draw, ->, thick, red] (f2) -> (x1);
+	\path [draw, ->, thick, blue] (x1) -> (f0);
+    \end{tikzpicture}
+}\qquad
+ \subfloat[Nós do tipo função para nós do tipo variável\label{fig:beliefprop2}]{
+
+    \begin{tikzpicture}[node distance = 2cm,->,>=stealth',shorten >=1pt]
+	\node at (0,0) [funnode] (f1) {$\psi_a$};
+	\node [varnode, above right of = f1] (x1) {$x_k$};
+	\node [varnode, above left of = f1] (x2)  {$x_l$};
+	\node [varnode, below of = f1] (x0) {$x_j$};
+
+	\path [draw, ->, thick, blue]  (x1) -> (f1);
+	\path [draw, ->, thick, blue]  (x2) -> (f1);
+	\path [draw, ->, thick, red] (f1) -> (x0);
+
+    \end{tikzpicture}
+}
+\qquad
+ \subfloat[Estimativa para a marginal\label{fig:beliefprop3}]{
+
+    \begin{tikzpicture}[node distance = 2cm,->,>=stealth',shorten >=1pt]
+	\node at (0,0) [varnode] (x1) {$\vec{x}_j$};
+	\node [funnode, above right of = x1] (f1) {$\psi_c$};
+	\node [funnode, above left of = x1]  (f2) {$\psi_b$};
+	\node [funnode, below of = x1] (f0) {$\psi_a$};
+	
+	\path [draw, ->, thick, red] (f1) -> (x1);
+	\path [draw, ->, thick, red] (f2) -> (x1);
+	\path [draw, ->, thick, red] (f0) -> (x1);
+    \end{tikzpicture}
+}
+ \caption[Representação gráfica da passagem de mensagens]{Representação gráfica da passagem de mensagens para o método de belief propagation. Setas vermelhas representam mensagens na iteração $t$ que são compostas em seus nó de destino para dar origem às seta azuis, que representam mensagens na iteração $t+1$.}
+ \label{fig:beliefprop}
+\end{figure}
