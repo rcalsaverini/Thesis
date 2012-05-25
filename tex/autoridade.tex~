@@ -1,6 +1,12 @@
 \chapter{Um Modelo para emergência de autoridade em sociedades humanas.}
 \section{Introdução}
-\newthought{Primatas tem vidas sociais e políticas} muito intensas\cite{deWaal2007}. Enquanto em geral a maioria dos grandes primatas vivem em sociedades hierárquicas, os humanos se destacam pela variabilidade de suas experiências sociais nesse espectro - desde sociedades fortemente centralizadas e hierárquicas até sociedades basicamente equalitárias, em que não há autoridades centrais ou concentração de poder. Nossa intenção é desenvolver um modelo matemático para a formação de estruturas sociais baseado em recentes observações nos campos da arqueologia, primatologia e neurociências. 
+
+
+
+\newthought{Humanos, e hominóides em geral, apresentam vidas sociais intensas}\footnote{Para um curto glossário taxonômico dos primatas, incluindo o significado de termos como ``hominóide'', ``hominídeo'', ``grandes primatas'', ``símios'' e ``humanos'', ver apêndice \ref{ap:glossario}}.  Blablabla \cite{deWaal2007}.
+
+
+Enquanto em geral a maioria dos grandes primatas vivem em sociedades hierárquicas, os humanos se destacam pela variabilidade de suas experiências sociais nesse espectro - desde sociedades fortemente centralizadas e hierárquicas até sociedades basicamente equalitárias, em que não há autoridades centrais ou concentração de poder. Nossa intenção é desenvolver um modelo matemático para a formação de estruturas sociais baseado em recentes observações nos campos da arqueologia, primatologia e neurociências. 
 \section{Evidências empiricas}
 \subsection{``U-shaped evolution'' e dinâmica da organização social em primatas pré-humanos} 
 O registro arqueológico revela uma dinâmica temporal na organização social dos humanos através da pré-história. Os humanos, descendendo de primatas com provável organização social hierárquica, similar às dos grandes primatas mais próximos - chimpanzés, bonobos e gorilas - passaram por um período de grupos equalitários, sem autoridade central, com baixa densidade populacional. No neolítico houve uma transição para grupos fortemente hierárquicos, conforme a densidade populacional aumenta após a revolução agrícola. Esse quadro é ilustrado pela figura \ref{fig:ushaped}. Evidências etnográficas também apontam para uma relação entre o tamanho dos grupos de humanos caçadores-coletores e suas formas de organização social\cite{Currie2010}. Grupos pequenos de humanos tendem a apresentar organização equalitária, sem concentração de poder. Grupos maiores tendem a apresentar organizações hierárquicas, concentração de poder e hereditariedade de poder. 
@@ -114,7 +120,7 @@ onde $\beta$, uma espécie de inverso de temperatura, regula a importância rela
       0  & \text{outro caso}
            \end{cases}
 \end{equation}
-
+\subsection{Interpretação do parâmetro $\beta$}
 \subsection{Resultados numéricos para agentes isolados}
 \newthought{Simulações de Monte Carlo} desse modelo foram feitas usando o algoritmo de Metrópolis. Partindo de um grafo inicial aleatório (sorteado do ensemble de Erdos-Renyi, com fração de arestas $\frac{1}{2}$), a cada passo do algoritmo é proposta uma mudança em uma aresta do grafo - adicionando uma aresta faltante ou removendo uma aresta existente. Caso a mudança não quebre a conectividade do grafo, ela será aceita com probabilidade dada pelo fator de Gibbs: 
 \begin{equation}
