@@ -1,5 +1,18 @@
 %SIZE OF cation fonts and labels
-\setcounter{secnumdepth}{0}
 
 \renewcommand{\captionfont}{\footnotesize}
 \renewcommand{\captionlabelfont}{\footnotesize}
+
+
+%Show number in chapters
+\setcounter{secnumdepth}{0}
+
+
+% Adjust number position in chapters and a a \rceil symbol to separate the number from the title
+\titleformat{\chapter}%
+  [hang]% shape
+  {\relax\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\begin{fullwidth}}{}}% format applied to label+text
+  {\itshape\huge\thechapter$\rceil$}% label
+  {2pt}% horizontal separation between label and title body
+  {\huge\rmfamily\itshape}% before the title body
+  [\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\end{fullwidth}}{}]% after the title body

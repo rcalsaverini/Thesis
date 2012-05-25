@@ -1,12 +1,17 @@
 \chapter{Um Modelo para emergência de autoridade em sociedades humanas.}
+\label{ch:autoridade}
 \section{Introdução}
 
 
 
-\newthought{Humanos, e hominóides em geral, apresentam vidas sociais intensas}\footnote{Para um curto glossário taxonômico dos primatas, incluindo o significado de termos como ``hominóide'', ``hominídeo'', ``grandes primatas'', ``símios'' e ``humanos'', ver apêndice \ref{ap:glossario}}.  Blablabla \cite{deWaal2007}.
+\newthought{Os grandes primatas}, em particular os humanos, apresentam vidas sociais intensas\footnote{Para um curto glossário taxonômico dos primatas, incluindo o significado de termos como ``hominóide'', ``hominídeo'', ``grandes primatas'', ``símios'' e ``humanos'', ver apêndice \ref{ap:glossario}}. Atividades sociais, formação de coalizões, cooperação para realização de diversas tarefas, guerras, compartilhamento de alimentos, disputas por liderança \textit{et cetera}, situações ubíquas em agrupamentos humanos, não são entretanto limitadas a essa espécie mas são pervasivas em todas as espécies desse grupo\sourcesneeded. Estudos em chimpanzés e bonobos\cite{deWaal2007}\sourcesneeded, por exemplo, mostram que a variedade de suas experiências sociais são comparáveis apenas à da espécie humana.
+
+Entretanto a natureza dessa experiência social pode ser bem diferente entre humanos e outras espécies aparentadas. Enquanto a maioria dos grandes primatas vivem em sociedades hierárquicas, marcadas por uma grande concentração dos usos de recursos energéticos e sexuais por parte de poucos membros do grupo, os humanos se destacam pela variabilidade de suas experiências sociais nesse espectro. Certos grupos humanos\footnote{ Dizer aqui que nos preocupamos com a evolução dos humanos e portanto vamos nos fixar em hunter-gatherers e sociedades simples.\clarificationneeded} apresentam organização fortemente centralizada e hierárquica, com concentração de uso de recursos e riqueza. Outros grupos apresentam sociedades basicamente equalitárias, com compartilhamento de recursos e alimentos, ausência de distinções de status, autoridades ou concentração de riqueza. 
+
+Nossa intenção é desenvolver um modelo matemático para a formação de estruturas sociais baseado em recentes observações nos campos da arqueologia, primatologia e neurociências. 
 
 
-Enquanto em geral a maioria dos grandes primatas vivem em sociedades hierárquicas, os humanos se destacam pela variabilidade de suas experiências sociais nesse espectro - desde sociedades fortemente centralizadas e hierárquicas até sociedades basicamente equalitárias, em que não há autoridades centrais ou concentração de poder. Nossa intenção é desenvolver um modelo matemático para a formação de estruturas sociais baseado em recentes observações nos campos da arqueologia, primatologia e neurociências. 
+
 \section{Evidências empiricas}
 \subsection{``U-shaped evolution'' e dinâmica da organização social em primatas pré-humanos} 
 O registro arqueológico revela uma dinâmica temporal na organização social dos humanos através da pré-história. Os humanos, descendendo de primatas com provável organização social hierárquica, similar às dos grandes primatas mais próximos - chimpanzés, bonobos e gorilas - passaram por um período de grupos equalitários, sem autoridade central, com baixa densidade populacional. No neolítico houve uma transição para grupos fortemente hierárquicos, conforme a densidade populacional aumenta após a revolução agrícola. Esse quadro é ilustrado pela figura \ref{fig:ushaped}. Evidências etnográficas também apontam para uma relação entre o tamanho dos grupos de humanos caçadores-coletores e suas formas de organização social\cite{Currie2010}. Grupos pequenos de humanos tendem a apresentar organização equalitária, sem concentração de poder. Grupos maiores tendem a apresentar organizações hierárquicas, concentração de poder e hereditariedade de poder. 
