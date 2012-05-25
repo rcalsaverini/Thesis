@@ -1,32 +1,34 @@
- \documentclass[ twoside
-              , justified 
-              , symmetric ]{tufte-book}
+\documentclass[twoside, justified, symmetric]{tufte-book}
 
-%% CONFIGURACOES
+% configuration and commands
 \input{./confs/packs}
 \input{./confs/commands}
 \input{./confs/tikzconfig}
 \input{./confs/tweaks}
-
-%% Elementos de texto:
 \input{./tex/pretext/details}
 \makeindex
+
 \begin{document}
-%    \maketitle
-   \input{./tex/pretext/paginatitulo}
-   \input{./tex/pretext/folhaderosto}
-   \input{./tex/pretext/creativecommons}
-   \tableofcontents
-   \listoffigures '
-%   \listoftables
-   \include{./tex/pretext/resumo}
-   \include{./tex/introducao}
-   \include{./tex/copulas}
-   \include{./tex/autoridade}
-   \include{./tex/conclusoes}
-   \appendix
-   \include{./tex/apendices/glossario}
-  \bibliographystyle{plainnat}
-  %\bibliographystyle{unsrtnat}
-  \bibliography{bibdatabase}
+    %\maketitle
+    %pretextual area 
+        \input{./tex/pretext/paginatitulo}
+        \input{./tex/pretext/folhaderosto}
+        \input{./tex/pretext/creativecommons}
+        \tableofcontents
+        \listoffigures '
+        %\listoftables
+        \include{./tex/pretext/resumo}
+    %body of chapters
+        \include{./tex/introducao}
+        \include{./tex/copulas}
+        \include{./tex/autoridade}
+        \include{./tex/conclusoes}
+    %bibliography
+        \bibliographystyle{plainnat}
+        %\bibliographystyle{unsrtnat}
+        \bibliography{bibdatabase}
+    %body of appendices
+    \appendix
+        \include{./tex/apendices/glossario}
+
 \end{document}
