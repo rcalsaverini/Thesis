@@ -102,22 +102,34 @@ que poderiam ser aplicados em outras atividades - coleta de alimentos, construç
 Nesse grafo, não é possível conhecer diretamente todas as relações sociais pois apenas $n-1$ das $\frac{1}{2}n(n-1)$ arestas possíveis está presente. Mas todas as relações sociais podem ser indiretamente determinadas por heurísticas sobre caminhos de comprimento 2 (``amigo do amigo é amigo'', etc...). Os grafos mais esparsos possíveis que ainda são conexos possuem $n-1$ arestas, no mínimo.
 
 \subsection{Custos}
-O custo de manter esse modelo mental consiste em duas partes:  
+
+\newthought{Existem custos associados} à manutenção de um certo grafo de informações sociais. Há principalmente dois tipos de custos:  
 \begin{enumerate}
-\item \newthought{O custo cognitivo} de adquirir e manter informação dos diferentes pares de individuos. Se o agente tem recursos cognitivos limitados, manter essas informações é custoso. Se assumirmos que o investimento de recursos para obter informações sobre cada aresta do grafo é constante, o custo cognitivo total é proporcional ao número de arestas do grafo.
-\item \newthought{O custo social} de falhar em determinar corretamente a relação entre dois indivíduos. Se um agente comete um erro desse tipo, e toma decisões baseadas nesse erro, ele pode incorrer em custos - avaliar incorretamente em que lado de uma disputa um individuo vai se posicionar, falhar em reconhecer uma coalizão em formação, etc. Para inferir relações sociais desconhecidas, que não possuem uma aresta no grafo, o agente recorre a heuristicas que agem sobre trajetos de arestas conhecidas (regras do tipo ``amigo do amigo''). Quanto mais longos os trajetos a serem percorridos, maior é a probabilidade de erro. Portanto, o custo social esperado deve ser proporcional à distância geodésica média entre os nós do grafo.
+
+\item \newthought{O custo cognitivo} de adquirir e manter informação dos diferentes pares de individuos. Como discutido anteriormente, se o agente tem recursos cognitivos limitados, manter essas informações é custoso. Se assumirmos que o investimento de recursos para obter informações sobre cada aresta do grafo é constante, o custo cognitivo total por agente deverá ser proporcional ao número de arestas do grafo:
+\begin{equation}
+   H_{\text{cognitivo}} \propto n_{e}
+\end{equation}
+onde $n_{e}$ é o número de arestas (\emph{edges}).
+
+\item \newthought{O custo social} de falhar em determinar corretamente a relação entre dois indivíduos. As heuristicas utilizadas pelo agente quando ele não possui informação direta sobre uma certa relação social podem falhar e, nesse caso, o agente pode comete um erro e tomar decisões baseadas nesse erro. Nesse caso existem custos - o agente pode avaliar incorretamente em que lado de uma disputa um individuo vai se posicionar, falhar em reconhecer uma coalizão em formação, etc, e ter prejuízos reais com uma situação social inesperada. As heuristicas que se valem de arestas conhecidas para inferir as relações desconhecidas devem tão menos confiáveis quanto maior o caminho mais curto no grafo entre os dois nós em questão. Quanto mais longos os trajetos a serem percorridos, maior é a probabilidade de erro. Portanto, o custo social esperado deve ser proporcional à distância geodésica média entre os nós do grafo:
+\begin{equation}
+ H_{\text{social}} \propto \frac{2}{n(n-1)} \sum_{i<j}{L_{ij}}
+\end{equation}
+onde $L_{ij}$ é a distância geodésica entre os nós $i$ e $j$, e a soma é realizada sobre todos pares de agentes. 
+
 \end{enumerate}
-O custo total será dado, portanto, por:
+O custo total para cada agente será dado, portanto, por:
 \begin{equation}
    \label{eq:hamiltoniano}
-   H = \frac{N_{e}}{\alpha}  + \bar{L}
+   H = \frac{n_{e}}{\alpha}  + \bar{L}
 \end{equation}
-Onde $\bar{L}$ é a distancia geodésica média do grafo, $\alpha$ é uma constante associada à capacidade cognitiva do agente (quanto maior $a$, menos importante é o custo cognitivo) e $N_{e}$ é o número de arestas do grafo. Note que tipicamente \(N_{e}\) escala como uma fração do número total de arestas possíveis \(N(N-1)/2\) e que \(\bar{L}\) escala tipicamente com \(\log(N)\) para grafos aleatórios. É, portanto, interessante, reescrever (\ref{eq:hamiltoniano}), a menos de uma constante multiplicativa, como:
+Onde $\bar{L}$ é a distancia geodésica média do grafo, $\alpha$ é uma constante associada à capacidade cognitiva do agente (quanto maior $\alpha$, menos importante é o custo cognitivo). Note que tipicamente $n_{e}$ escala como uma fração do número total de arestas possíveis $n(n-1)/2$ e que $\bar{L}$ escala tipicamente com $\log(n)$ para grafos aleatórios. É, portanto, interessante, reescrever (\ref{eq:hamiltoniano}), a menos de uma constante multiplicativa, como:
 \begin{equation}
    \label{eq:hamiltoniano2}
    H = \phi_{e}  + a \bar{L}
 \end{equation}
-onde \(\phi_{e} = \frac{N_{e}}{N(N-1)/2}\) é a fração de arestas ocupadas e \(a = \frac{2\alpha}{N(N-1)}\) é a constante de acoplamento adequada, a capacidade cognitiva por aresta. 
+onde $\phi_{e} = \frac{n_{e}}{n(n-1)/2}$ é a fração de arestas ocupadas e $a = \frac{2\alpha}{n(n-1)}$ é uma constante de acoplamento: a capacidade cognitiva média dedicada a cada aresta. 
 
 \subsection{Dinâmica para agentes isolados - máxima entropia}
 \newthought{Para que um modelo possa ser estabelecido}, não basta a expressão para o custo, mas uma descrição de que ações o agente deverá tomar com base em sua aferição do custo. A estratégia do agente é definida por uma certa escolha de arestas a investir. Em uma primeira abordagem, atribuimos ao agente a tendência a usar a estratégia que minimiza o custo total. Então deveriamos procurar pelo grafo definido por:
