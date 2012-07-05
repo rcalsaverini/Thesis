@@ -36,43 +36,23 @@ vez mais complexas e sugere um cenário em que o rápido crescimento na importâ
 
 \newthought{O objetivo dessa seção é} descrever um modelo estatístico para a formação de estrutura social que seja tratável por técnicas comuns à mecânica estatística e teoria de informação e compatível com as informações experimentais descritas acima. O primeiro passo na descrição do modelo consiste na elaboração de uma dinâmica de comportamento para um conjunto de agentes hipotéticos, que será a dinâmica temporal microscópica que dará origem a um modelo mecânico-estatístico. 
 
-\newthought{Considere um grupo de agentes} dotados de certa capacidade cognitiva limitada e engajados em atividades sociais. Cada agente carrega um registro mental da informação que possui a respeito das relações sociais entre os membros do seu grupo. Essa informação está relacionada a como cada par de outros agentes do grupo se relaciona socialmente. Essa informação deve responder perguntas como: 
+\newthought{Considere um grupo de $n$ agentes} dotados de certa capacidade cognitiva limitada e engajados em atividades sociais. Cada agente carrega um registro mental da informação que possui a respeito das relações sociais entre os membros do seu grupo. Essa informação está relacionada a como cada par de outros agentes do grupo se relaciona socialmente. Essa informação deve responder perguntas como: 
 \begin{itemize}
  \item qual a possibilidade de esse par de individuos serem adversários em uma disputa ou aliados em uma coalizão?
  \item com que frequencia cooperam em uma atividade conjunta?
  \item como compartilham seus recursos um com o outro?
  \item etc...
 \end{itemize}  
-Cada agente adquire essa informação através de mecanismos diversos: através da história social do grupo, baseado no comportamento pregresso dos agentes; através de mecanismos de aprendizado social como fofoca (\textit{gossip}) em que a comunicação com outros agentes permite que o agente aprenda sobre experiências de outros; através de regras práticas de inferência como ``o amigo do amigo é amigo'' ou regras semelhantes; etc. Uma vez adquirida, essa informação é critica para subsidiar decisões sociais a serem tomadas pelo agente: com que grupo de agentes fazer uma coalizão, quando esperar cooperação de um certo indivíduo, etc. Erros em decisões podem custar recursos e posição social, e influenciar negativamente a capacidade reprodutiva do agente. Portanto, espera-se que uma espécie de agentes que tenha surgido por evolução via seleção natural tenha mecanismos congnitivos adequados para tentar minimizar esses erros em algum sentido. 
+Cada agente adquire essa informação através de mecanismos diversos: através da história social do grupo, baseado no comportamento pregresso dos agentes; através de mecanismos de aprendizado social como fofoca (\textit{gossip}) em que a comunicação com outros agentes permite que o agente aprenda sobre experiências de outros; etc. Uma vez adquirida, essa informação é critica para subsidiar decisões sociais a serem tomadas pelo agente: com que grupo de agentes fazer uma coalizão, quando esperar cooperação de um certo indivíduo, etc. Erros em decisões podem custar recursos e posição social, e influenciar negativamente a capacidade reprodutiva do agente. Portanto, espera-se que uma espécie de agentes que tenha surgido por evolução via seleção natural tenha mecanismos congnitivos adequados para tentar minimizar esses erros em algum sentido. 
 
 \newthought{A aquisição desse tipo de informação social} é uma atividade cognitivamente custosa. A capacidade limitada de processar essas informações implica que para mantê-las atualizadas, o indivíduo precisa desviar recursos 
 que poderiam ser aplicados em outras atividades - coleta de alimentos, construção de abrigos, etc. Há evidências \cite[-5em]{deWaal2007,deWaal1990}\sourcesneeded de que o rastreamento de relações sociais demanda um considerável tempo dos individuos adultos em tribos de chimpanzés e humanos. Conforme se aumenta o tamanho do grupo, esse custo cresce com o número de ligações sociais possíveis e, portanto, quadraticamente com o número de indivíduos. Isso pode pode tornar a estratégia de adquirir e manter informações sobre todas as ligações sociais possíveis no grupo pouco adaptativa. Pode ser preferível ao agente nesse caso obter apenas informação sobre certas ligações sociais importantes e fiar-se em heurísticas para inferir as outras relações sociais (regras como ``amigo do amigo é amigo'', etc\ldots{}).
 
 \newthought{Dessa forma, o modelo consistirá} dos seguintes elementos: muitos \emph{agentes} que interagem entre si, cada um carregando uma \emph{representação mental da estrutura social} do grupo a que pertence e individualmente tentando \emph{minimizar custos} associados a carregar esass informações sociais. Abaixo discutiremos uma representação matemática de cada um desses elementos. 
 
-\subsection{Variáveis dinâmicas e custos}
+\subsection{Variáveis dinâmicas - grafos sociais}
 
-
-\newthought{A realização matemática} da representação mental da estrutura social que cada agente carrega será feita através de grafos. A cada agente está associado um grafo cujos nós representam todos os indivíduos do grupo e as arestas representam as relações sociais sobre as quais o agente possui informação. A informação será considerada binária: o agente sabe ou não qual é a relação social entre dois outros agentes do grupo, dando origem a arestas que podem estar apenas ligadas ou desligadas. As arestas do grafo são entidades dinâmicas, que podem ser criadas quando o agente adquire informação sobre uma relação social anteriormente desconhecida, ou destruídas quando o agente, por alguma razão, desiste de continuar mantendo aquela informação. Dados os custos, que serão discutidos abaixo, o agente deverá decidir quais informações valem a pena ser guardadas ou não. 
-
-
-O custo de manter esse modelo mental consiste em duas partes:   
-
-\begin{enumerate}
-\item \newthought{O custo cognitivo} de adquirir e manter informação dos diferentes pares de individuos. Se o agente tem recursos cognitivos limitados, manter essas informações é custoso. Se assumirmos que o investimento de recursos para obter informações sobre cada aresta do grafo é constante, o custo cognitivo total é proporcional ao número de arestas do grafo.
-\item \newthought{O custo social} de falhar em determinar corretamente a relação entre dois indivíduos. Se um agente comete um erro desse tipo, e toma decisões baseadas nesse erro, ele pode incorrer em custos - avaliar incorretamente em que lado de uma disputa um individuo vai se posicionar, falhar em reconhecer uma coalizão em formação, etc. Para inferir relações sociais desconhecidas, que não possuem uma aresta no grafo, o agente recorre a heuristicas que agem sobre trajetos de arestas conhecidas (regras do tipo ``amigo do amigo''). Quanto mais longos os trajetos a serem percorridos, maior é a probabilidade de erro. Portanto, o custo social esperado deve ser proporcional à distância geodésica média entre os nós do grafo.
-\end{enumerate}
-O custo total será dado, portanto, por:
-\begin{equation}
-   \label{eq:hamiltoniano}
-   H = \frac{N_{e}}{\alpha}  + \bar{L}
-\end{equation}
-Onde $\bar{L}$ é a distancia geodésica média do grafo, $\alpha$ é uma constante associada à capacidade cognitiva do agente (quanto maior $a$, menos importante é o custo cognitivo) e $N_{e}$ é o número de arestas do grafo. Note que tipicamente \(N_{e}\) escala como uma fração do número total de arestas possíveis \(N(N-1)/2\) e que \(\bar{L}\) escala tipicamente com \(\log(N)\) para grafos aleatórios. É, portanto, interessante, reescrever (\ref{eq:hamiltoniano}), a menos de uma constante multiplicativa, como:
-\begin{equation}
-   \label{eq:hamiltoniano2}
-   H = \phi_{e}  + a \bar{L}
-\end{equation}
-onde \(\phi_{e} = \frac{N_{e}}{N(N-1)/2}\) é a fração de arestas ocupadas e \(a = \frac{2\alpha}{N(N-1)}\) é a constante de acoplamento adequada, a capacidade cognitiva por aresta. 
+\newthought{A realização matemática} da representação mental da estrutura social que cada agente carrega será feita através de grafos. A cada agente está associado um grafo cujos nós representam todos os indivíduos do grupo e arestas representam as relações sociais sobre as quais o agente possui informação. A informação será considerada binária: o agente pode ter certeza sobre a relação social entre dois individuos, havendo portanto uma aresta ligada entre os nós correspondentes de seu grafo, ou não tem nenhuma informação direta sobre ela, caso em que não haverá uma aresta enter os nós correspondentes. As arestas do grafo portanto podem estar apenas ligadas ou desligadas, sem estados intermediários. As arestas do grafo são entidades dinâmicas, que podem ser criadas quando o agente adquire informação sobre uma relação social anteriormente desconhecida, ou destruídas quando o agente, por alguma razão, desiste de continuar mantendo aquela informação. Dados os custos, que serão discutidos abaixo, o agente deverá decidir quais informações valem a pena ser guardadas ou não. Um agente que possui informação completa sobre todas as relações sociais do grupo tem um grafo totalmente conectado, como o representado na figura \ref{fig:graph1}. 
 \begin{marginfigure}[-45em]
 \begin{tikzpicture}[every node/.style={circle,white,fill=red}, shorten >= 1pt, auto, node distance =2cm, semithick]
    \node     (A)                    {A};
@@ -97,10 +77,12 @@ onde \(\phi_{e} = \frac{N_{e}}{N(N-1)/2}\) é a fração de arestas ocupadas e \
    \draw (D) -- (F);
    \draw (E) -- (F);
  \end{tikzpicture}
- \caption[Grafo totalmente conectado]{Exemplo de grafo social - um grafo completamente conectado. Um agente com essa estratégia despende recursos para conhecer todas as relações sociais do grupo}
+ \caption[Grafo totalmente conectado]{Exemplo de grafo social - um grafo completamente conectado. Um agente com essa estratégia despende recursos para conhecer todas as relações sociais do grupo. Um grafo como esse possui $\frac{1}{2} n(n-1)$ arestas, onde $n$ é o número de agentes.}
  \label{fig:graph1}
  \end{marginfigure}
- \begin{marginfigure}[-10em]
+ 
+ \newthought{Quando uma aresta é faltante} no grafo carregado por um agente, a informação social correspondente à essa aresta é incompleta - o agente não tem informação direta sobre essa, e o agente deve recorrer a heuristicas para determinar quaisquer informações necessárias. Para tal, vamos considerar que o grafo deve ser conexo - deve ser possível, para todos os pares de nós, encontrar um \emph{caminho} de arestas ligadas conectando os dois nós. Dessa forma, sempre é possível a um agente determinar alguma informação indireta enter dois nós desconexos, através de uma heuristica que utilize as outras arestas conhecidas. Um exemplo é o grafo da figura \ref{fig:graph2}, que representa um grafo do tipo estrela. 
+  \begin{marginfigure}[-10em]
  \begin{tikzpicture}[every node/.style={circle,white,fill=red}, shorten >= 1pt, auto, node distance =2cm, semithick]
    \node  (A)                    {A};
    \node  (B) [above right of=A] {B};
@@ -114,9 +96,28 @@ onde \(\phi_{e} = \frac{N_{e}}{N(N-1)/2}\) é a fração de arestas ocupadas e \
    \draw (A) -- (E);
    \draw (A) -- (F);
 \end{tikzpicture}
-\caption[Grafo estrela]{Exemplo de grafo social - um grafo estrela. Um agente com essa estratégia despende recursos para conhecer apenas as relações envolvendo um certo indivíduo central (o nó A na figura). As outras relações são determinadas através de regras heurísticas.}
+\caption[Grafo estrela]{Exemplo de grafo social - um grafo estrela. Um agente com essa estratégia despende recursos para conhecer apenas as relações envolvendo um certo indivíduo central (o nó A na figura). As outras relações são determinadas através de regras heurísticas. Esse grafo possui $n-1$ arestas.}
 \label{fig:graph2}
 \end{marginfigure}
+Nesse grafo, não é possível conhecer diretamente todas as relações sociais pois apenas $n-1$ das $\frac{1}{2}n(n-1)$ arestas possíveis está presente. Mas todas as relações sociais podem ser indiretamente determinadas por heurísticas sobre caminhos de comprimento 2 (``amigo do amigo é amigo'', etc...). Os grafos mais esparsos possíveis que ainda são conexos possuem $n-1$ arestas, no mínimo.
+
+\subsection{Custos}
+O custo de manter esse modelo mental consiste em duas partes:  
+\begin{enumerate}
+\item \newthought{O custo cognitivo} de adquirir e manter informação dos diferentes pares de individuos. Se o agente tem recursos cognitivos limitados, manter essas informações é custoso. Se assumirmos que o investimento de recursos para obter informações sobre cada aresta do grafo é constante, o custo cognitivo total é proporcional ao número de arestas do grafo.
+\item \newthought{O custo social} de falhar em determinar corretamente a relação entre dois indivíduos. Se um agente comete um erro desse tipo, e toma decisões baseadas nesse erro, ele pode incorrer em custos - avaliar incorretamente em que lado de uma disputa um individuo vai se posicionar, falhar em reconhecer uma coalizão em formação, etc. Para inferir relações sociais desconhecidas, que não possuem uma aresta no grafo, o agente recorre a heuristicas que agem sobre trajetos de arestas conhecidas (regras do tipo ``amigo do amigo''). Quanto mais longos os trajetos a serem percorridos, maior é a probabilidade de erro. Portanto, o custo social esperado deve ser proporcional à distância geodésica média entre os nós do grafo.
+\end{enumerate}
+O custo total será dado, portanto, por:
+\begin{equation}
+   \label{eq:hamiltoniano}
+   H = \frac{N_{e}}{\alpha}  + \bar{L}
+\end{equation}
+Onde $\bar{L}$ é a distancia geodésica média do grafo, $\alpha$ é uma constante associada à capacidade cognitiva do agente (quanto maior $a$, menos importante é o custo cognitivo) e $N_{e}$ é o número de arestas do grafo. Note que tipicamente \(N_{e}\) escala como uma fração do número total de arestas possíveis \(N(N-1)/2\) e que \(\bar{L}\) escala tipicamente com \(\log(N)\) para grafos aleatórios. É, portanto, interessante, reescrever (\ref{eq:hamiltoniano}), a menos de uma constante multiplicativa, como:
+\begin{equation}
+   \label{eq:hamiltoniano2}
+   H = \phi_{e}  + a \bar{L}
+\end{equation}
+onde \(\phi_{e} = \frac{N_{e}}{N(N-1)/2}\) é a fração de arestas ocupadas e \(a = \frac{2\alpha}{N(N-1)}\) é a constante de acoplamento adequada, a capacidade cognitiva por aresta. 
 
 \subsection{Dinâmica para agentes isolados - máxima entropia}
 \newthought{Para que um modelo possa ser estabelecido}, não basta a expressão para o custo, mas uma descrição de que ações o agente deverá tomar com base em sua aferição do custo. A estratégia do agente é definida por uma certa escolha de arestas a investir. Em uma primeira abordagem, atribuimos ao agente a tendência a usar a estratégia que minimiza o custo total. Então deveriamos procurar pelo grafo definido por:
