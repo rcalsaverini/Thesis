@@ -2,15 +2,11 @@
 \label{ch:autoridade}
 \section{Introdução}
 
-
-
 \newthought{Os grandes primatas}, em particular os humanos, apresentam vidas sociais intensas\footnote{Para um curto glossário taxonômico dos primatas, incluindo o significado de termos como ``hominóide'', ``hominídeo'', ``grandes primatas'', ``símios'' e ``humanos'', ver apêndice \ref{ap:glossario}}. Atividades sociais, formação de coalizões, cooperação para realização de diversas tarefas, guerras, compartilhamento de alimentos, disputas por liderança \textit{et cetera}, situações ubíquas em agrupamentos humanos, não são entretanto limitadas a essa espécie mas são pervasivas em todas as espécies desse grupo\sourcesneeded. Estudos em chimpanzés e bonobos\cite{deWaal2007}\sourcesneeded, por exemplo, mostram que a variedade de suas experiências sociais são comparáveis apenas à da espécie humana.
 
 Entretanto a natureza dessa experiência social pode ser bem diferente entre humanos e outras espécies aparentadas. Enquanto a maioria dos grandes primatas vivem em sociedades hierárquicas, marcadas por uma grande concentração dos usos de recursos energéticos e sexuais por parte de poucos membros do grupo, os humanos se destacam pela variabilidade de suas experiências sociais nesse espectro. Certos grupos humanos\footnote{ Dizer aqui que nos preocupamos com a evolução dos humanos e portanto vamos nos fixar em hunter-gatherers e sociedades simples.\clarificationneeded} apresentam organização fortemente centralizada e hierárquica, com concentração de uso de recursos e riqueza. Outros grupos apresentam sociedades basicamente equalitárias, com compartilhamento de recursos e alimentos, ausência de distinções de status, autoridades ou concentração de riqueza. \sourcesneeded
 
 Nossa intenção é desenvolver um modelo matemático para a formação de estruturas sociais baseado em recentes observações nos campos da arqueologia, primatologia e neurociências. 
-
-
 
 \section{Evidências empiricas}
 \subsection{``U-shaped evolution'' e dinâmica da organização social em primatas pré-humanos} 
@@ -36,14 +32,32 @@ vez mais complexas e sugere um cenário em que o rápido crescimento na importâ
 
 \subsection{Dados etnoráficos (?)}
 \section{Um modelo mecanico-estatístico baseado em agentes}
-\subsection{Modelo de Agentes}
-\subsection{Representação da Estrutura Social}
-\subsection{Custo social e custo cognitivo}
+\subsection{Descrição dos agentes}
 
-\newthought{A capacidade do cérebro de processar relações sociais} é limitada. Considere um grupo de agentes dotados de certa capacidade cognitiva limitada e engajados em atividades sociais. Cada agente carrega um registro mental da informação que possui a respeito das relações sociais entre os membros do seu grupo. Essa informação consiste de variáveis associadas a como cada par de indivíduos do grupo se comporta socialmente: a probabilidade de serem adversários em uma disputa, ou aliados em uma coalizão, a capacidade de cooperarem em uma atividade conjunta, etc. Essa informação é adquirida através da história do grupo, de observação e de aprendizado social (``fofoca'' ou \textit{gossip}) e é utilizada pada subsidiar decisões sociais a serem tomadas pelo agente. Segundo as hipóteses aqui adotadas, a aquisição desse tipo de informação social é uma atividade cognitivamente custosa. A capacidade limitada de processar essas informações implica que para mantê-las atualizadas, o indivíduo precisa desviar recursos 
-que poderiam ser aplicados em outras atividades - coleta de alimentos, construção de abrigos, etc. Há evidências \cite[-5em]{deWaal2007,deWaal1990}de que o rastreamento de relações sociais demanda um considerável tempo dos individuos adultos em tribos de chimpanzés e humanos. Conforme se aumenta o tamanho do grupo, esse custo cresce com o número de ligações sociais possíveis e, portanto, quadraticamente com o número de indivíduos. Isso pode pode tornar a estratégia de adquirir e manter informações sobre todas as ligações sociais possíveis no grupo pouco adaptativa. Pode ser preferível ao agente nesse caso obter apenas informação sobre certas ligações sociais importantes e fiar-se em heurísticas para inferir as outras relações sociais (regras como ``amigo do amigo é amigo'', etc\ldots{}).
+\newthought{O objetivo dessa seção é} descrever um modelo estatístico para a formação de estrutura social que seja tratável por técnicas comuns à mecânica estatística e teoria de informação e compatível com as informações experimentais descritas acima. O primeiro passo na descrição do modelo consiste na elaboração de uma dinâmica de comportamento para um conjunto de agentes hipotéticos, que será a dinâmica temporal microscópica que dará origem a um modelo mecânico-estatístico. 
 
-\newthought{A realização quantitativa dessa idéia} será feita representando o modelo mental que cada agente faz das relações sociais do grupo por um grafo cujos nós representam os indivíduos do grupo e as arestas representam para que pares de indivíduos o agente em questão está dispendendo recursos para obter informações sociais. O custo de manter esse modelo mental consiste em duas partes:   
+\newthought{Considere um grupo de agentes} dotados de certa capacidade cognitiva limitada e engajados em atividades sociais. Cada agente carrega um registro mental da informação que possui a respeito das relações sociais entre os membros do seu grupo. Essa informação está relacionada a como cada par de outros agentes do grupo se relaciona socialmente. Essa informação deve responder perguntas como: 
+\begin{itemize}
+ \item qual a possibilidade de esse par de individuos serem adversários em uma disputa ou aliados em uma coalizão?
+ \item com que frequencia cooperam em uma atividade conjunta?
+ \item como compartilham seus recursos um com o outro?
+ \item etc...
+\end{itemize}  
+Cada agente adquire essa informação através de mecanismos diversos: através da história social do grupo, baseado no comportamento pregresso dos agentes; através de mecanismos de aprendizado social como fofoca (\textit{gossip}) em que a comunicação com outros agentes permite que o agente aprenda sobre experiências de outros; através de regras práticas de inferência como ``o amigo do amigo é amigo'' ou regras semelhantes; etc. Uma vez adquirida, essa informação é critica para subsidiar decisões sociais a serem tomadas pelo agente: com que grupo de agentes fazer uma coalizão, quando esperar cooperação de um certo indivíduo, etc. Erros em decisões podem custar recursos e posição social, e influenciar negativamente a capacidade reprodutiva do agente. Portanto, espera-se que uma espécie de agentes que tenha surgido por evolução via seleção natural tenha mecanismos congnitivos adequados para tentar minimizar esses erros em algum sentido. 
+
+\newthought{A aquisição desse tipo de informação social} é uma atividade cognitivamente custosa. A capacidade limitada de processar essas informações implica que para mantê-las atualizadas, o indivíduo precisa desviar recursos 
+que poderiam ser aplicados em outras atividades - coleta de alimentos, construção de abrigos, etc. Há evidências \cite[-5em]{deWaal2007,deWaal1990}\sourcesneeded de que o rastreamento de relações sociais demanda um considerável tempo dos individuos adultos em tribos de chimpanzés e humanos. Conforme se aumenta o tamanho do grupo, esse custo cresce com o número de ligações sociais possíveis e, portanto, quadraticamente com o número de indivíduos. Isso pode pode tornar a estratégia de adquirir e manter informações sobre todas as ligações sociais possíveis no grupo pouco adaptativa. Pode ser preferível ao agente nesse caso obter apenas informação sobre certas ligações sociais importantes e fiar-se em heurísticas para inferir as outras relações sociais (regras como ``amigo do amigo é amigo'', etc\ldots{}).
+
+\newthought{Dessa forma, o modelo consistirá} dos seguintes elementos: muitos \emph{agentes} que interagem entre si, cada um carregando uma \emph{representação mental da estrutura social} do grupo a que pertence e individualmente tentando \emph{minimizar custos} associados a carregar esass informações sociais. Abaixo discutiremos uma representação matemática de cada um desses elementos. 
+
+\subsection{Variáveis dinâmicas e custos}
+
+
+\newthought{A realização matemática} da representação mental da estrutura social que cada agente carrega será feita através de grafos. A cada agente está associado um grafo cujos nós representam todos os indivíduos do grupo e as arestas representam as relações sociais sobre as quais o agente possui informação. A informação será considerada binária: o agente sabe ou não qual é a relação social entre dois outros agentes do grupo, dando origem a arestas que podem estar apenas ligadas ou desligadas. As arestas do grafo são entidades dinâmicas, que podem ser criadas quando o agente adquire informação sobre uma relação social anteriormente desconhecida, ou destruídas quando o agente, por alguma razão, desiste de continuar mantendo aquela informação. Dados os custos, que serão discutidos abaixo, o agente deverá decidir quais informações valem a pena ser guardadas ou não. 
+
+
+O custo de manter esse modelo mental consiste em duas partes:   
+
 \begin{enumerate}
 \item \newthought{O custo cognitivo} de adquirir e manter informação dos diferentes pares de individuos. Se o agente tem recursos cognitivos limitados, manter essas informações é custoso. Se assumirmos que o investimento de recursos para obter informações sobre cada aresta do grafo é constante, o custo cognitivo total é proporcional ao número de arestas do grafo.
 \item \newthought{O custo social} de falhar em determinar corretamente a relação entre dois indivíduos. Se um agente comete um erro desse tipo, e toma decisões baseadas nesse erro, ele pode incorrer em custos - avaliar incorretamente em que lado de uma disputa um individuo vai se posicionar, falhar em reconhecer uma coalizão em formação, etc. Para inferir relações sociais desconhecidas, que não possuem uma aresta no grafo, o agente recorre a heuristicas que agem sobre trajetos de arestas conhecidas (regras do tipo ``amigo do amigo''). Quanto mais longos os trajetos a serem percorridos, maior é a probabilidade de erro. Portanto, o custo social esperado deve ser proporcional à distância geodésica média entre os nós do grafo.
