@@ -5,19 +5,26 @@
 
 \usepackage{amssymb}
 \usepackage{amsmath}
-
+\usepackage{nameref}
 \usepackage{makeidx}
 \usepackage{lipsum}
 \usepackage{bm}
 
 
 \usepackage{color}
+
+% If this error started happening:
+% 	! Argument of \@iiminipage has an extra }.
+% 	! Paragraph ended before \@iiminipage was complete. 
+% eliminate the caption package and load subfib with the \usepackage[caption=false]{subfig} option.
+% Also, always use \label outside \caption.
 \usepackage[labelsep=endash]{caption} 
 \usepackage{subfig} 
+
 \usepackage{amssymb,amsmath, amsfonts, amsthm} 
 \usepackage[final]{pdfpages}
 
 \usepackage{tikz}
-
-
+\usepackage{etoolbox}
+\usepackage{nameref}
 
