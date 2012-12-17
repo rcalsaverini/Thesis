@@ -191,8 +191,8 @@ distribuição de equilíbrio em pontos correspondentes do diagrama de fases.
 
 \newthought{Na figura}\ref{fig:phasediagram} temos um diagrama de fases completo variando $\alpha$ e a temperatura para um número fixo de agentes. A variável descrita no mapa de cores é a razão $\frac{\davg}{\dmax}$. Esse diagrama mostra uma linha de transição de fases entre a região azul escura - a região em que a organização do grafo é fortemente centralizada, com nós periféricos pouco conectados, e uma região em que a razão $\frac{\davg}{\dmax}$ é menos extrema. Acima de uma temperatura crítica essa fase não é mais observada. A região vermelho escura corresponde à fase totalmente conectada, ou situações bem próximas disso. Nessa região não há grandes saltos nos parâmetros de ordem, que mudam continuamente com a temperatura e $a$. A linha de transição de fase pode ser observada para diferentes valores da temperatura na figura \ref{fig:critical}. Note que para $\beta^{-1} \to 0$, temos $\alpha^{\star} = 1$.
 \begin{figure}
-  \subfloat[\label{fig:critical}Valor crítico do parâmetro $a$ em função da temperatura para diferentes tamanhos do sistema.]{\includegraphics[width = \textwidth]{figuras/critical.png}}\\
-  \subfloat[\label{fig:acceptrate}Taxa de aceitação do algoritmo de Monte Carlo - fração das propostas de mudanças no microestado do sistema que foram aceitas com probabilidade dada pelo fator de Gibbs, sampleada com $\beta = 1.0$]{\includegraphics[width = \textwidth]{figuras/acceptrate.png}}
+  \subfloat[Valor crítico do parâmetro $a$ em função da temperatura para diferentes tamanhos do sistema.]{\label{fig:critical}\includegraphics[width = \textwidth]{figuras/critical.png}}\\
+  \subfloat[Taxa de aceitação do algoritmo de Monte Carlo - fração das propostas de mudanças no microestado do sistema que foram aceitas com probabilidade dada pelo fator de Gibbs, sampleada com $\beta = 1.0$]{\label{fig:acceptrate}\includegraphics[width = \textwidth]{figuras/acceptrate.png}}
   \caption[Variação do diagrama de fases com o tamanho do grupo.]{Variação do diagrama de fases com o tamanho do grupo.}
   \label{fig:criticalandacceptrate}
 \end{figure}
@@ -201,17 +201,35 @@ distribuição de equilíbrio em pontos correspondentes do diagrama de fases.
 
 O diagrama de fases apresenta três regimes. Para valores altos de $a = \frac{2\alpha}{N(N-1)}$, ou seja, alta capacidade cognitiva ou grupos com poucos agentes, todos os nós apresentam praticamente a mesma conectividade. O grafo é simétrico, com conectividade densa e bem próximo de totalmente conexo. A variação de $\E{\dmax}$ e $\E{\davg}$ com $a$ nesse regime é compatível com a de um ensemble de Erdös-Renyi com alta conectividade, o que indica que as arestas são mais ou menos aleatóriamente distribuidas, de forma totalmente simétrica.
 
-Para valores intermediários de $a$, existe um nó com conectividade ligeiramente maior, mas existem flutuações grandes. A taxa de aceitação do algoritmo de monte carlo é alta (ver: figura \ref{fig:acceptrate}). Nesse regime, o grafo é momentaneamente não-simétrico, mas estatísticamente qualquer nó pode ocupar a posição de conectividade maior e alterações desse nó central são frequentes. Há um pico nos desvios padrão dos parâmetros de ordem para um certo valor do parâmetro de controle $a{\star}$, indicando um possível ponto crítico. 
+Para valores intermediários de $a$, existe um nó com conectividade ligeiramente maior, mas existem flutuações grandes. A taxa de aceitação do algoritmo de monte carlo é alta (ver: figura \ref{fig:acceptrate}). Nesse regime, o grafo é momentaneamente não-simétrico, mas estatísticamente qualquer nó pode ocupar a posição de conectividade maior e alterações desse nó central são frequentes. Há um pico nos desvios padrão dos parâmetros de ordem para um certo valor do parâmetro de controle $a^{\star}$, indicando um possível ponto crítico. 
+% \begin{figure}
+%   \centering
+%   \begin{subfigure}[b]{\textwidth}
+%     \centering
+%     \includegraphics[width = \textwidth]{./figuras/manysizes.png}
+%     \caption{Corte do diagrama de fase para vários tamanhos do grupo.}
+%     \label{fig:corte}
+%   \end{subfigure}\\
+%   \begin{subfigure}[b]{	\textwidth}
+%     \centering
+%     \includegraphics[width = \textwidth]{./figuras/manysizes.png}
+%     \caption{Finite size scaling do modelo.}
+%     \label{fig:finitess} 
+%   \end{subfigure}
+%   \caption{Variação do diagrama de fases com o tamanho do grupo.}
+%   \label{fig:manysizes}
+% \end{figure}
+
 \begin{figure}
-  \subfloat[Corte do diagrama de fase para vários tamanhos do grupo.]{\includegraphics[width = \textwidth]{./figuras/manysizes.png}}\\
-  \subfloat[Finite size scaling do modelo.]{\includegraphics[width = \textwidth]{./figuras/manysizes.png}}
+  \subfloat[Corte do diagrama de fase para vários tamanhos do grupo.]{\label{fig:corte}\includegraphics[width = \textwidth]{./figuras/manysizes.png}}\\
+  \subfloat[Finite size scaling do modelo.]{\label{fig:finitess}\includegraphics[width = \textwidth]{./figuras/manysizes.png}}
   \caption[Variação do diagrama de fases com o tamanho do grupo.]{Variação do diagrama de fases com o tamanho do grupo.}
   \label{fig:manysizes}
 \end{figure}
 
 Para valores mais baixos de $a$, a simetria é espontaneamente quebrada e apenas um nó ocupa uma posição central. Esse nó está conectado a todos os outros, que estão quase que exclusivamente conectados a ele. O grafo se torna uma estrela e não há flutuação observável na conectividade do nó central. Neste regime, a representação mental da rede de relacionamenos sociais construídas pelo agente é assimétrica e existe um único nó que serve como proxy para todas as relações sociais do grupo. Na representação mental do agente em questão, o status social de cada um dos outros nós é definido por como ele se relaciona a esse nó central.
 
-Na figura \ref{fig:manysizes} pode-se ver como o diagrama de fases varia com o número de agentes. Quanto maior o número de agentes, maiores as variações dos parametros de ordem durante a possível transição de fase. Na mesma figura podemos ver uma simulação com finite size scaling em um gráfico do inverso do desvio padrão de $\E{\dmax}$ no ponto crítico $\alpha^{\star}$ contra o tamanho do sistema, mostrando que essa grandeza diverge para $N\to \infty$.
+Na figura \ref{fig:manysizes} pode-se ver como o diagrama de fases varia com o número de agentes. Quanto maior o número de agentes, maiores as variações dos parametros de ordem durante a possível transição de fase (figura: \ref{fig:corte}). Na figura \ref{fig:finitess} podemos ver uma simulação com finite size scaling em um gráfico do inverso do desvio padrão de $\E{\dmax}$ no ponto crítico $\alpha^{\star}$ contra o tamanho do sistema, mostrando que essa grandeza diverge para $N\to \infty$.
 
 \subsection{Dinâmica para muitos agentes e resultados numéricos} 
 \newthought{As figuras acima} tratam de propriedades independentes da interação entre os agentes. Essa interação, como dito anteriormente, será introduzidas na forma de aprendizado social (``fofoca'' ou \textit{gossip}). Durante a simulação de Monte Carlo, duas possíveis fontes serão consideradas para a proposta de uma nova aresta no passo de Metropolis:
