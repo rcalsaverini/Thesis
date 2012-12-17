@@ -209,6 +209,12 @@ Para valores intermediários de $a$, existe um nó com conectividade ligeirament
 
 Para valores mais baixos de $a$, a simetria é espontaneamente quebrada e apenas um nó ocupa uma posição central. Esse nó está conectado a todos os outros, que estão quase que exclusivamente conectados a ele. O grafo se torna uma estrela e não há flutuação observável na conectividade do nó central. Neste regime, a representação mental da rede de relacionamenos sociais construídas pelo agente é assimétrica e existe um único nó que serve como proxy para todas as relações sociais do grupo. Na representação mental do agente em questão, o status social de cada um dos outros nós é definido por como ele se relaciona a esse nó central.
 
+Na figura \ref{fig:manysizes} pode-se ver como o diagrama de fases varia com o número de agentes. Quanto maior o número de agentes, maiores as variações dos parametros de ordem durante a possível transição de fase. 
+\begin{figure}
+	\includegraphics[width = \textwidth]{figuras/manysizes.png}
+ 	\caption{Variação do diagrama de fases com o tamanho do grupo.}
+ 	\label{fig:manysizes}
+\end{figure}
 \subsection{Dinâmica para muitos agentes } 
 
 \newthought{As figuras acima} tratam de propriedades independentes da interação entre os agentes. Essa interação, como dito anteriormente, será introduzidas na forma de aprendizado social (``fofoca'' ou \textit{gossip}). Durante a simulação de Monte Carlo, duas possíveis fontes serão consideradas para a proposta de uma nova aresta no passo de Metropolis:
