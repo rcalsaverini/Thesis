@@ -91,7 +91,7 @@ Dessa forma, pode-se interpretar $I(X_1, \ldots, X_n)$ como a redução na incer
 \end{equation}
 satisfaz todos os critérios discutidos na seção anterior para ser uma boa medida de dependência. 
 \section{Cópulas}
-\newthought{A elucidação do conceito de dependência} eventualmente se choca com a noção de cópula\cite{Nelsen1999}. Um teorema devido a Sklar\cite{Sklar1959} permite separar a distribuição cumulativa conjunta - $F_{X,Y}(x,y)$ - de duas variáveis em duas partes: (a) as distribuições cumulativas marginais de cada variável - $F_{X}(x)$ e $F_{Y}(y)$, que trazem informação idiossincrática a respeito de cada uma das variáveis (b) e uma função cópula C(u,v), que traz informação sobre a dependência entre as variáves. De maneira geral o teorema de Sklar pode ser enunciado da seguinte forma:
+\newthought{A elucidação do conceito de dependência} eventualmente se choca com a noção de cópula\cite{Nelsen2006}. Um teorema devido a Sklar\cite{Sklar1959} permite separar a distribuição cumulativa conjunta - $F_{X,Y}(x,y)$ - de duas variáveis em duas partes: (a) as distribuições cumulativas marginais de cada variável - $F_{X}(x)$ e $F_{Y}(y)$, que trazem informação idiossincrática a respeito de cada uma das variáveis (b) e uma função cópula C(u,v), que traz informação sobre a dependência entre as variáves. De maneira geral o teorema de Sklar pode ser enunciado da seguinte forma:
 \begin{Teorema}[Teorema de Sklar]
 Para toda distribuição cumulativa conjunta contínua de duas variáveis $F_{XY}(x,y)$, com distribuições cumulativas $F_X(x)$ e $F_Y(y)$, existe uma função cópula única $C(u,v)$ tal que:
 \begin{equation}
@@ -161,7 +161,7 @@ parametrizadas por uma função $\phi$. Essas funções cópula existem desde qu
 c(u,v) &= 1, \\
 C(u,v) &= uv,
 \end{align}
-Para o caso de dependência completa é possível mostrar que\cite{Nelsen1999} toda cópula está limitada por duas funções que representam dependência máxima, denominadas limites de Frechet-Hoeffding. Essas funções são:
+Para o caso de dependência completa é possível mostrar que\cite{Nelsen2006} toda cópula está limitada por duas funções que representam dependência máxima, denominadas limites de Frechet-Hoeffding. Essas funções são:
 \begin{align}
 \label{eq:frechethoeffding}
 W(u,v) &= \max(0, u+v-1) \\

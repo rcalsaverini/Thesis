@@ -1,13 +1,55 @@
 \chapter{Introdução}
 
 \section{Visão geral}
-Este trabalho trata de dois tópicos -- uma abordagem da teoria de dependência estatística e um modelo para a origem de estruturas sociais hierárquicas -- sob o ponto de vista da mecânica estatística, da teoria de informação e da inferência estatística. A adoção desse ponto de vista norteia as estratégias de modelagem matemática aqui selecionadas, e de uma certa forma, são mais essenciais ao trabalho do que os específicos tópicos em si. Dessa forma se faz necessário esclarecer o ponto de vista adotado de forma detalhada antes que os tópicos específicos sejam apresentados.
+Este trabalho trata de dois tópicos -- uma abordagem da teoria de dependência estatística e um modelo para a origem de estruturas sociais hierárquicas -- sob o ponto de vista da mecânica estatística, da teoria de informação e da inferência estatística. A adoção desse ponto de vista norteia as estratégias de modelagem matemática aqui selecionadas, e de uma certa forma, são mais essenciais ao trabalho do que os específicos tópicos em si. Dessa forma se faz necessário explicitar e esclarecer o ponto de vista adotado antes que os tópicos específicos sejam apresentados. Nas subseções seguintes apresentaremos um sumário desse ponto de vista, com os detalhes seguindo a partir da seção \emph{\nameref{sec:inferencia}}.
 
-\section{Inferência}
+\subsection{Probabilidades como ferramentas de inferência}
+\subsection{Atualização de probabilidades através do princípio da máxima entropia}
 
-Adquirir informação e tomar decisões sob incerteza -- dois pontos centrais em qualquer estudo quantitativo -- são os temas centrais da teoria da inferência estatística. A tradição do uso da teoria de probabilidades como ferramenta de inferência é centenária e remonta aos primeiros trabalhos sobre o conceito de probabilidades no século XVII\sourcesneeded. A relação entre o conceito de probabilidade e os problemas de inferência ficaram ainda mais fortes com os trabalhos de Richard Cox\cite{Cox1946,Cox1961} e Claude Shannon\cite{Shannon1948} e suas versões mais modernas\cite{ACaticha2008, ACaticha2009}, lançam novas visões sobre o conceito de entropia e a física estatística. Nessa introdução pretendemos apresentar rapidamente o paradigma de inferência segundo o método de Máxima Entropia (ME) e suas relações com a mecânica estatística, que pensamos ser a linha unificadora que dá coerência à diversidade de temas abordados nesse trabalho. 
+\section{Inferência, Probabilidades e Entropia}
+\label{sec:inferencia}
+
+Adquirir informação e tomar decisões sob incerteza -- dois pontos centrais em qualquer estudo quantitativo -- são os temas centrais da teoria da inferência estatística. A tradição do uso da teoria de probabilidades como ferramenta de inferência é centenária e remonta aos primeiros trabalhos sobre o conceito de probabilidades no século XVII \sourcesneeded. A relação entre o conceito de probabilidade e os problemas de inferência ficaram ainda mais fortes com os trabalhos de \citet{Cox1946}\cite[-6cm]{Cox1946,Cox1961} e \citet{Shannon1948}\cite[-3cm]{Shannon1948}, e as versões mais modernas desse paradigma\cite[-2cm]{Jaynes2003,ACaticha2008,ACaticha2009} lançam luz sobre a natureza da física estatística e do conceito de entropia. Nessa introdução pretendemos apresentar rapidamente o paradigma de inferência segundo o método de Máxima Entropia (ME) e suas relações com a mecânica estatística, que pensamos ser a linha unificadora que dá coerência à diversidade de temas abordados nesse trabalho. 
+
+Raciocínio sobre informação completa a respeito da veracidade ou não de um conjunto de proposições pode ser representado através da tradicional álgebra booleana. Se é conhecido o valor de verdade de uma certa proposição e como ela se relaciona com outras proposições, pode-se inferir o valor de verdade das proposições relacionadas através das regras bem definidas da álgebra de proposições. Por exemplo, se é sabido que $P_{1} \Rightarrow P_{2}$, e há certeza de que $P_{1}$ é verdadeira, pode-se inferir imediatamente que $P_{2}$ é verdadeira. Da mesma forma, a certeza de que $P_{2}$ é falsa imediatamente implica na certeza de que $P_{1}$ é falsa. Em outras palavras, a hipótese $P_{1} = V$ fornece \textit{informação completa} a respeito de $P_{2}$, bem como a hipótese $P_{2} = F$ fornece informação completa sobre $P_1$. Entretanto, a certeza a respeito da falsidade de $P_{1}$ não oferece conclusão alguma, dentro desse paradigma de inferência sobre informação completa, a respeito da veracidade de $P_{2}$. Não é difícil porém formular um exemplo em que a informação sobre a falsidade de $P_{1}$ fornece \textit{alguma informação}, ainda que incompleta, sobre $P_{2}$. 
+
+Consideremos, em um exemplo simples, a hipótese de que a proposição $P_{1} = $``vai chover'' implica a proposição $P_{2} =$``há nuvens de chuva''. No \textit{ambiente lógico} criado por essa hipótese, a observação de nuvens de chuva não leva à conclusão certa de que está chovendo, mas é uma decisão razoável carregar um guarda-chuvas ao se observar essas nuvens. De alguma forma, a observação de que há nuvens de chuva trouxe alguma informação ao observador a respeito da possibilidade de que chova. Construir um método de inferência capaz de levar em conta informação incompleta é o objetivo da teoria de probabilidades bayesiana e do método de máxima entropia. 
 
 \subsection{Probabilidades e Inferência}
+
+Para derivar uma teoria coerente de inferência, devem ser estabelecidos alguns requisitos. Dada duas proposições $P$ e $Q$, postulamos uma medida\footnote{A justificativa para usar números reais vem de um argumento simples de transitividade - se a confiança na veracidade de $P_1$ é maior que na veracidade de $P_2$ e esta é maior que a confiança na veracidade de $P_3$, então, um requisito razoável é que a confiança em $P_1$ seja maior que em $P_3$. Dessa forma, $(P_1|Q)>(P_2|Q)$ e $(P_2|Q)>(P_3|Q)$ implica $(P_1|Q)>(P_3|Q)$. Isso é suficiente para mostrar que existe uma representação real para essas quantidades. Conseqüências interessantes de se relaxar o requesito de transitividade são discutidas em  \citet{Goyal2010}}\cite{Goyal2010} $(P | Q) \in \mathbb{R}$ denominada \textit{plausibilidade da proposição $P$ dada a proposição $Q$}. A plausibilidade $(P|Q)$ representa o \emph{grau de confiança} de que $P$ esteja correta dada uma certa informação prévia $Q$. 
+ Postulamos ainda que, sempre que existam duas formas diferentes de calcular a mesma plausibilidade, o resultado deve ser idêntico. Esse requisito leva aos seguintes resultados\footnote{Todas as outras possibilidades são consideradas em \citet{Tribus1969} e essas são as únicas que não conduzem a resultados manifestamente inconsistentes.}\cite{Tribus1969}:
+\begin{itemize}
+\item A plausibilidade de $\text{não-}P$ dado $Q$ é uma função monotônica e decrescente da plausibilidade de $P$ dado $Q$: 
+\[
+ (\bar{P}|Q) = F(({P}|Q)).
+\]
+\item A plausibilidade da conjunção ``$P_1$ e $P_2$'' ($P_1\wedge P_2$) dado $Q$ é uma função das plausibilidades de $P_1$ dado $Q$ e de $P_2$ dado $P_1\wedge Q$:
+\[
+ (P_1\wedge P_2|Q) = G((P_1|Q), (P_2|Q\wedge P_2)).
+\]
+\end{itemize}
+
+Agora, uma série de casos especiais podem ser apresentados junto com o requisito de consistência, de forma a tentar reduzir as funções $F(\cdot)$ e $G(\cdot,\cdot)$ a uma representação única. Por exemplo, a conjunção booleana ($\wedge$) é uma operação associativa, ou seja:
+\[
+P_1\wedge (P_2 \wedge P_3) =  (P_1\wedge P_2) \wedge P_3.
+\] 
+Isso implica também na associatividade da função $G(u,v)$, ou seja:
+\[
+G(G(u,v),w) = G(u,G(v,w)). 
+\]
+Esse vínculo é satisfeito por infinitas possíveis funções $G(u,v)$, porém todas elas \cite{ACaticha2008, Aczel1975} têm a forma:
+\[
+ G(u,v)  = g^{-1}(g(u) g(v)) 
+\]
+com $g(\cdot)$ uma função monotônica. Sendo $g(u)$ monotônica, pode-se redefinir a atribuição de números reais às plausibilidades para $g(P|Q)$ sem perder o ordenamento de proposições segundo suas plausibilidades. Ao fazer isso podemos enunciar o primeiro teorema de Cox:
+\begin{Teorema}[1º teorema de regraduação de Cox]
+ Uma vez que uma representação consistente de plausibilidades $(P|Q)$ com um ordenamento bem definido foi encontrada, sempre é possível encontrar uma outra equivalente $\pi(P|Q)$ tal que:
+\begin{equation}
+ \pi(P_1\wedge P_2|Q) = \pi(P2 | Q \wedge P_1) \pi(P_1| Q)
+\end{equation}
+\end{Teorema}
+
 \subsection{Informação e Máxima Entropia}
 
 \section{Inferência e Mecânica Estatística}
