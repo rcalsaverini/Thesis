@@ -2,9 +2,16 @@
 
 \renewcommand{\captionfont}{\footnotesize}
 \renewcommand{\captionlabelfont}{\footnotesize}
-
-
 \hypersetup{pageanchor=false}
+
+% Fix unicode errors:
+
+\PrerenderUnicode{ó}
+\PrerenderUnicode{â}
+\PrerenderUnicode{í}
+\PrerenderUnicode{ã}
+\PrerenderUnicode{õ}
+
 
 % fix bug with hyperref that doesn't link to the figure but the section it belongs to.
 \AtBeginEnvironment{figure}{\phantomsection}

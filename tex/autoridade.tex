@@ -170,13 +170,13 @@ e^{-\beta \left(H(G') - H(G)\right)}.
 \end{equation}
 
 \begin{figure}
-  \includegraphics[width = 1.1\textwidth]{figuras/cutstar.png}
+  \includegraphics[width = \textwidth]{figuras/cutstar.png}
   \caption[Corte do diagrama de fases apresentando o valor esperado dos parâmetros de ordem.]{Corte do diagrama de fases apresentando o valor esperado obtido via  Monte Carlo dos parâmetros de ordem normalizados $\dmax$ e $\davg$ em função de $\alpha$, com temperatura e número de agentes fixo, bem como seus desvios padrão. Sobreposto ao gráfico se observam exemplos de arquiteturas do grafo sorteadas da distribuição de equilibrio na região correspondente do diagrama. }
   \label{fig:cutstar}
 \end{figure}
 \begin{fullwidth}
 \begin{figure}
-	\includegraphics[width = 2.1\textwidth, angle=90]{figuras/phasediagram.png}
+	\includegraphics[width =2.3\textwidth, angle=90]{figuras/phasediagram.png}
  	\caption{ Diagrama de fases apresentando a razão $\frac{\davg}{\dmax}$ em função de $\alpha$ e temperatura, para um número fixo de agentes.}
  	\label{fig:phasediagram}
 \end{figure}
@@ -188,48 +188,40 @@ e^{-\beta \left(H(G') - H(G)\right)}.
 \end{align}
 obtida através da simulação de Monte Carlo do modelo, enquanto o sombreado ao redor da linha representa o desvio padrão obtido da mesma forma. No painel inferior apresentamos novamente o desvio padrão para melhor visualização. Sobrepostas aos gráficos estão figuras representativas de grafos sorteados da 
 distribuição de equilíbrio em pontos correspondentes do diagrama de fases. 
+\begin{figure}
+  \includegraphics[width = \textwidth]{figuras/critical.png}
+  \caption{Valor crítico do parâmetro $a$ em função da temperatura para diferentes tamanhos do sistema.}
+  \label{fig:critical}
+\end{figure}
+\begin{figure}
+  \includegraphics[width = \textwidth]{figuras/acceptrate.png}
+  \caption{Taxa de aceitação do algoritmo de Monte Carlo - fração das propostas de mudanças no microestado do sistema que foram aceitas com probabilidade dada pelo fator de Gibbs, sampleada com $\beta = 1.0$}
+  \label{fig:acceptrate}
+\end{figure}
 
 \newthought{Na figura}\ref{fig:phasediagram} temos um diagrama de fases completo variando $\alpha$ e a temperatura para um número fixo de agentes. A variável descrita no mapa de cores é a razão $\frac{\davg}{\dmax}$. Esse diagrama mostra uma linha de transição de fases entre a região azul escura - a região em que a organização do grafo é fortemente centralizada, com nós periféricos pouco conectados, e uma região em que a razão $\frac{\davg}{\dmax}$ é menos extrema. Acima de uma temperatura crítica essa fase não é mais observada. A região vermelho escura corresponde à fase totalmente conectada, ou situações bem próximas disso. Nessa região não há grandes saltos nos parâmetros de ordem, que mudam continuamente com a temperatura e $a$. A linha de transição de fase pode ser observada para diferentes valores da temperatura na figura \ref{fig:critical}. Note que para $\beta^{-1} \to 0$, temos $\alpha^{\star} = 1$.
-\begin{figure}
-  \subfloat[Valor crítico do parâmetro $a$ em função da temperatura para diferentes tamanhos do sistema.]{\label{fig:critical}\includegraphics[width = \textwidth]{figuras/critical.png}}\\
-  \subfloat[Taxa de aceitação do algoritmo de Monte Carlo - fração das propostas de mudanças no microestado do sistema que foram aceitas com probabilidade dada pelo fator de Gibbs, sampleada com $\beta = 1.0$]{\label{fig:acceptrate}\includegraphics[width = \textwidth]{figuras/acceptrate.png}}
-  \caption[Variação do diagrama de fases com o tamanho do grupo.]{Variação do diagrama de fases com o tamanho do grupo.}
-  \label{fig:criticalandacceptrate}
-\end{figure}
+
+
 
 \subsection{Interpretação parcial dos resultados}
 
 O diagrama de fases apresenta três regimes. Para valores altos de $a = \frac{2\alpha}{N(N-1)}$, ou seja, alta capacidade cognitiva ou grupos com poucos agentes, todos os nós apresentam praticamente a mesma conectividade. O grafo é simétrico, com conectividade densa e bem próximo de totalmente conexo. A variação de $\E{\dmax}$ e $\E{\davg}$ com $a$ nesse regime é compatível com a de um ensemble de Erdös-Renyi com alta conectividade, o que indica que as arestas são mais ou menos aleatóriamente distribuidas, de forma totalmente simétrica.
 
 Para valores intermediários de $a$, existe um nó com conectividade ligeiramente maior, mas existem flutuações grandes. A taxa de aceitação do algoritmo de monte carlo é alta (ver: figura \ref{fig:acceptrate}). Nesse regime, o grafo é momentaneamente não-simétrico, mas estatísticamente qualquer nó pode ocupar a posição de conectividade maior e alterações desse nó central são frequentes. Há um pico nos desvios padrão dos parâmetros de ordem para um certo valor do parâmetro de controle $a^{\star}$, indicando um possível ponto crítico. 
-% \begin{figure}
-%   \centering
-%   \begin{subfigure}[b]{\textwidth}
-%     \centering
-%     \includegraphics[width = \textwidth]{./figuras/manysizes.png}
-%     \caption{Corte do diagrama de fase para vários tamanhos do grupo.}
-%     \label{fig:corte}
-%   \end{subfigure}\\
-%   \begin{subfigure}[b]{	\textwidth}
-%     \centering
-%     \includegraphics[width = \textwidth]{./figuras/manysizes.png}
-%     \caption{Finite size scaling do modelo.}
-%     \label{fig:finitess} 
-%   \end{subfigure}
-%   \caption{Variação do diagrama de fases com o tamanho do grupo.}
-%   \label{fig:manysizes}
-% \end{figure}
-
 \begin{figure}
-  \subfloat[Corte do diagrama de fase para vários tamanhos do grupo.]{\label{fig:corte}\includegraphics[width = \textwidth]{./figuras/manysizes.png}}\\
-  \subfloat[Finite size scaling do modelo.]{\label{fig:finitess}\includegraphics[width = \textwidth]{./figuras/manysizes.png}}
-  \caption[Variação do diagrama de fases com o tamanho do grupo.]{Variação do diagrama de fases com o tamanho do grupo.}
-  \label{fig:manysizes}
+  \includegraphics[width = \textwidth]{./figuras/manysizes.png}
+  \caption[Corte do diagrama de fase para vários tamanhos do grupo.]{Corte do diagrama de fase para vários tamanhos do grupo.}
+  \label{fig:corte}
+\end{figure}
+\begin{figure}
+  \includegraphics[width = \textwidth]{./figuras/manysizes.png}
+  \caption{Finite size scaling do modelo.}
+  \label{fig:finitess}
 \end{figure}
 
 Para valores mais baixos de $a$, a simetria é espontaneamente quebrada e apenas um nó ocupa uma posição central. Esse nó está conectado a todos os outros, que estão quase que exclusivamente conectados a ele. O grafo se torna uma estrela e não há flutuação observável na conectividade do nó central. Neste regime, a representação mental da rede de relacionamenos sociais construídas pelo agente é assimétrica e existe um único nó que serve como proxy para todas as relações sociais do grupo. Na representação mental do agente em questão, o status social de cada um dos outros nós é definido por como ele se relaciona a esse nó central.
 
-Na figura \ref{fig:manysizes} pode-se ver como o diagrama de fases varia com o número de agentes. Quanto maior o número de agentes, maiores as variações dos parametros de ordem durante a possível transição de fase (figura: \ref{fig:corte}). Na figura \ref{fig:finitess} podemos ver uma simulação com finite size scaling em um gráfico do inverso do desvio padrão de $\E{\dmax}$ no ponto crítico $\alpha^{\star}$ contra o tamanho do sistema, mostrando que essa grandeza diverge para $N\to \infty$.
+Na figura \ref{fig:corte} pode-se ver como o diagrama de fases varia com o número de agentes. Quanto maior o número de agentes, maiores as variações dos parametros de ordem durante a possível transição de fase. Na figura \ref{fig:finitess} podemos ver uma simulação com finite size scaling em um gráfico do inverso do desvio padrão de $\E{\dmax}$ no ponto crítico $\alpha^{\star}$ contra o tamanho do sistema, mostrando que essa grandeza diverge para $N\to \infty$.
 
 \subsection{Dinâmica para muitos agentes e resultados numéricos} 
 \newthought{As figuras acima} tratam de propriedades independentes da interação entre os agentes. Essa interação, como dito anteriormente, será introduzidas na forma de aprendizado social (``fofoca'' ou \textit{gossip}). Durante a simulação de Monte Carlo, duas possíveis fontes serão consideradas para a proposta de uma nova aresta no passo de Metropolis:
@@ -252,15 +244,16 @@ Na figura \ref{fig:gossip} são exibidas duas grandezas que quantificam a correl
 a sua distribuição de probabilidades. O primeiro parâmetro de ordem, correspondente às linhas tracejadas, é dada por $\E{\max_{c} p(c)}$, ou seja, o fração do número de agentes que possuem como nó central o nó que mais vezes aparece como nó central. Isso corresponde de forma grosseira a que fração dos agentes tem grafos estrela com o mesmo nó ocupando o centro da estrela. A segunda variável é, a menos de uma constante multiplicativa, simplesmente a entropia da distribuição de $c$: $S(c) = -\sum_{c} p(c) \log p(c)$. Ambas as grandezas são calculadas para grafos em forma de estrela, em função da probabilidade de encontro entre dois agentes dada por $g$, para valores fixos de temperatura, variando-se o número de agentes. O resultado mostra que, para baixos valores de $g$, a probabilidade de que um certo nó seja o centro de um agente tomado ao acaso é aproximadamente uniforme, e nenhum dos nós domina como centro de uma fração substancial de grafos. Para valores maiores de $g$, os grafos estrela tendem a se correlacionar e o mesmo nó pode ser central em uma grande fração de agentes. Dessa forma, é possível que no regime em que o grafo é uma estrela, o mesmo agente sirva como proxy para as relações sociais de todo o grupo para uma substancial maioria dos agentes.
 
 \section{Sumarização e interpretação dos Resultados}
-\newthought{É possível}, dessa forma, distinguir três situações, ou ``fases'' desse modelo:
-\begin{enumerate}
- \item Para $a$ grande, ou seja, grupos de tamanho pequeno ou agentes com grande capacidade cognitiva, os agentes possuem modelos mentais do panorama social do seu grupo em que nenhum agente em particular ocupa uma posição central. Em outras palavras, a representação mental das redes sociais nesse grupo são todas simétricas e nenhum agente se destaca. 
+Construímos um modelo para a organização social de uma sociedade de agentes que tentam representar mentalmente sua estrutura social. A representação mental tem um custo cognitivo, derivado da limitação cognitiva do agente, e um custo social, derivado da necessidade de se navegar corretamente as relações sociais. Esses custos levam a um modelo mecanico-estatístico que possui um diagrama de fases com alguns regimes interessantes, controlados pelos parâmetros $a$, que regula a capacidade cognitiva do agente e/ou o tamanho do grupo, $g$ que controla a intensidade da interação social e $\beta$, que controla a tolerância a flutuações no custo total do agente. As fases observadas são:
 
- \item Para $a$ pequeno e $g$ pequeno, ou seja, grupos de tamanho grande ou agentes com capacidade cognitiva pequena, e pouca interação social, cada agente possui um modelo mental da paisagem social que privilegia um dos agentes como central na definição de todas as relações sociais do grupo. Suas decisões em jogos sociais são tomadas levando em conta a natureza das relações sociais de todos os agentes com esse agente central. Entretanto os nós centrais de cada agente são sorteados aleatóriamente e, de certa forma, apesar de haver uma quebra de simetria na representação mental que cada agente faz do grupo, a situação global ainda é simétrica. 
+\subsection{Grupos pequenos e/ou alta capacidade cognitiva}
+Para $a$ grande, ou seja, grupos de tamanho pequeno ou agentes com grande capacidade cognitiva, os agentes possuem modelos mentais do panorama social do seu grupo em que nenhum agente em particular ocupa uma posição central. Em outras palavras, a representação mental das redes sociais nesse grupo são todas simétricas e nenhum agente se destaca. Nessa fase, em que nenhum agente se destaca como referência social para os outros, pode-se invocar a teoria da dominância reversa. Em situações em que a representação mental dos agentes é simétrica, tentativas de dominação hierárquica encontram resistência. A ausência de um indivíduo específico com suficiente capital social para dominar o grupo implica em uma estrutura igualitária. \sourcesneeded \clarificationneeded
 
- \item Para $a$ pequeno e $g$ grande,  ou seja, grupos de tamanho grande ou agentes com capacidade cognitiva pequena, e interação social intensa, todos os agentes possuem o mesmo modelo mental: uma rede social centrada em torno de um agente específico, que se torna a medida de todas as relações sociais no grupo. Todo agente do grupo usa as conexões desse mesmo agente central como informação mais relevante na tomada de decisões em jogos sociais. Esse agente central está posicionado de forma privilegiada como central na solução de dilemas sociais, formação de coalizões e outras atividades sociais do grupo. 
-\end{enumerate}
-Postulando que o capital social derivado dessa posição central quebra a simetria do resultado desses jogos sociais de maneira vantajosa ao agente central, esse resultado é compatível com as observações empíricas descritas no inicio do texto. 
-\ldots
+\subsection{Grupos de tamanho intermediário e/ou capacidade cognitiva intermediária}
+Para valores intermediários de $a$, os agentes possuem representações fluidas do panorama social de seu grupo, com flutuações grandes. Há uma pequena concentração de conectividade, que pode rapidamente flutuar entre um ou outro nó temporariamente central. Estatísticamente, o modelo ainda é simétrico. \clarificationneeded
+ 
+\subsection{Grupos grandes e/ou capacidade cognitiva menor}
+Quando $a$ é pequeno, ou seja, para grupos grandes e/ou agentes com menor capacidade cognitiva, existe uma quebra de simetria: as representações mentais da rede social dos agentes é centralizada e congelada em um grafo em forma de estrela. Cada um dos agentes possui uma representação mental assimétrica da rede social. O nó central do grafo de um agente se torna a única referência para todos os cálculos sociais a serem realizado por ele e todas as suas decisões em jogos sociais são tomadas levando em conta a natureza da relação dos outros nós com esse nó central. 
+ 
+Quando $g$ é pequeno (baixo aprendizado via \emph{``gossip''}), entretanto,  os nós centrais de cada agente são aleatórios e, de certa forma, apesar de haver uma quebra de simetria na representação mental que cada agente faz do grupo, a situação global ainda é simétrica. Para valores maiores de $g$, a maioria dos agentes possui o mesmo modelo mental: um grafo em forma de estrela, centrado em torno do mesmo agente específico. O grupo usa as conexões desse mesmo agente central como informação mais relevante na tomada de decisões em jogos sociais. Esse agente central está posicionado de forma privilegiada na solução de dilemas sociais, formação de coalizões e outras atividades sociais do grupo. Fazendo a hipótese de que o capital social derivado dessa posição quebra a simetria do resultado de jogos sociais de maneira vantajosa ao agente central, pode-se esperar que esse agente atinja um certo grau de proeminência ou dominância. A simetria assumida na teoria da dominância reversa é quebrada, pois existe um agente com vantagens sociais claras.
 
-\section{Conclusão}
