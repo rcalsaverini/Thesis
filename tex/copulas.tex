@@ -333,10 +333,13 @@ A matriz diagonal $\Lambda$ pode ser escrita como $\Lambda = D^{T} D$, onde $D_{
 \begin{equation*}
  H[\vec{x}] = - \int \ud^N x \frac{1}{\sqrt{(2\pi)^N}} \Psi_{N}\left(-\frac{1}{2} \vec{x}^{T}\vec{x}\right) \log\left[\frac{1}{\sqrt{(2\pi)^N |\Sigma|}} \Psi_{N}\left(-\frac{1}{2} \vec{x}^{T}\vec{x}\right)\right]
 \end{equation*}
-Uma vez que $|D| = \prod_{i} \sqrt{\lambda_i} = \frac{1}{\sqrt{|\Sigma|}}$. O termo que contém $|\Sigma|$ dentro do logaritmo pode ser removido da integral\footnote{Note que a normalização de p($\vec{x}$) exige que $\int \ud^N x \psi_{N}(\vec{x}^{T}\vec{x}) = \sqrt{(2\pi)^N}$} e ficamos com:
+Uma vez que $|D| = \prod_{i} \sqrt{\lambda_i} = \frac{1}{\sqrt{|\Sigma|}}$. O termo que contém $|\Sigma|$ dentro do logaritmo pode ser removido da integral\footnote[][-2cm]{Note que a normalização de p($\vec{x}$) exige que $\int \ud^N x \psi_{N}(\vec{x}^{T}\vec{x}) = \sqrt{(2\pi)^N}$} e ficamos com:
+\begin{fullwidth}
 \[
 H[\vec{x}] = - \int \ud^N x \frac{1}{\sqrt{(2\pi)^N}} \Psi_{N}\left(-\frac{1}{2} \vec{x}^{T}\vec{x}\right) \log\left[\frac{1}{\sqrt{(2\pi)^N}} \Psi_{N}\left(-\frac{1}{2} \vec{x}^{T}\vec{x}\right)\right] + \frac{1}{2}\log|\Sigma|
 \]
+\end{fullwidth}
+\newpage
 e finalmente podemos escrever\footnote{No caso bivariado essa expressão se reduz à expressão \ref{eq:mutinfogaussian}}:
 \begin{equation}
 I = I[p(u)] - \frac{1}{2}\log|\Sigma|
@@ -421,6 +424,7 @@ Uma vez que todas as marginais são idênticas\footnote{Todas são iguais à dis
  I(\nu) =  N H_{1}(\nu) - H_{N}(\nu),
 \end{equation}
 onde $H_n(\nu)$ é a entropia de uma distribuição de student $n$-dimensional. Para calcular $H_n$ note que:
+\begin{fullwidth}
 \begin{align*}
 H_n(\nu) &= -\int \ud^n x \frac{1}{Z_n(\nu)} \left(1 + \frac{\vec{x}^T\vec{x}}{\nu}\right)^{-\frac{\nu+n}{2}} \left[-\frac{\nu+n}{2} \log\left(1 + \frac{\vec{x}^T\vec{x}}{\nu}\right) -\log Z_n(\nu)\right] \\
 	 &= \log Z_n(\nu) + \frac{\nu+n}{2Z_n(\nu)} \int \ud^n x \left(1 + \frac{\vec{x}^T\vec{x}}{\nu}\right)^{-\frac{\nu+n}{2}} \log\left(1 + \frac{\vec{x}^T\vec{x}}{\nu}\right) \\
@@ -428,6 +432,7 @@ H_n(\nu) &= -\int \ud^n x \frac{1}{Z_n(\nu)} \left(1 + \frac{\vec{x}^T\vec{x}}{\
 	 &= \log Z_n(\nu) + \frac{(\nu+n)\Omega_{n}\sqrt{\nu^n}}{2Z_n(\nu)}  \int_{0}^\infty \ud u u^{n-1} \left(1+u^2\right)^{-\frac{\nu+n}{2}}\log\left(1 + u^2\right)\\
 	 &= \log Z_n(\nu) + \frac{(\nu+n)\Omega_{n}\sqrt{\nu^n}}{2Z_n(\nu)}  R_n(\nu)
 \end{align*}
+\end{fullwidth}
 Onde $\Omega_n = \frac{2\pi^{n/2}}{\Gamma\left(\frac{n}{2}\right)}$ é a área de uma esfera unitaria em n dimensões e \[R_n(\nu) = \int_{0}^\infty \ud u u^{n-1} \left(1+u^2\right)^{-\frac{\nu+n}{2}}\log\left(1 + u^2\right). \] Essa integral pode ser feita com o auxílio de um truque similar ao truque de réplicas comum em mecânica estatística. Se notarmos que $\log(x) = \lim_{r\to 0}\frac{\partial}{\partial r}x^r$ podemos escrever\footnote{Pois: \[\int_{0}^\infty \ud u u^{n-1} \left(1+u^2\right)^{-\alpha} = B\left(\alpha - \frac{n}{2}, \frac{n}{2}\right),\]\[\frac{\partial}{\partial x} B(x,y) = - B(x,y) (\psi(x+y) - \psi(x))\]}:
 \[
 R_n(\nu) = \lim_{r\to 0} \frac{\partial}{\partial r}B\left(\frac{\nu}{2}-r, \frac{n}{2}\right) = - B\left(\frac{\nu}{2}, \frac{n}{2}\right)\left[\psi\left(\frac{\nu+n}{2}\right) -\psi\left(\frac{\nu}{2}\right)\right]
@@ -452,6 +457,7 @@ Para $N = 2$ isso se reduz a:
   I(\nu) = 2\log\left(\sqrt{\frac{\nu}{2\pi}}B\left(\frac{\nu}{2},\frac{1}{2}\right) \right) - \frac{2+\nu}{\nu} + (1+\nu)\left[ \psi \left(\frac{\nu+1}{2}\right) - \psi \left(\frac{\nu}{2}\right) \right]
 \end{equation}
 \end{fullwidth}
+\newpage
 
 Finalmente, a expressão acima pode ser usada, segundo o método discutido na seção \ref{sec:ajuste}, para ajustar cópulas \textit{t} a dados empíricos. Como ilustração, a figura \ref{fig:ajuste} apresenta uma série de simulações de ajuste com dados sorteados de uma cópula \textit{t} com diversos valores de correlação e $\nu$ conhecidos. O excesso de informação mútua é estimado usando o algoritmo KSG \cite{Kraskov2004} e o tau de Kendall e plotado em função do $\nu$ conhecido. A linha cheia corresponde à eq.\eqref{eq:excesst}. Esse gráfico mostra que, exceto por um ponto que não pode ser recuperado\footnote{Para um valor muito pequeno de $\nu$, para o qual a distribuição \textit{t} começa a apresentar diversas patologias, como variância infinita.}, é possível recuperar cópulas \textit{t} a partir de dados experimentais através desse procedimento. 
 \begin{figure} 

@@ -17,8 +17,8 @@
 \AtBeginEnvironment{figure}{\phantomsection}
 \AtBeginEnvironment{table}{\phantomsection}
 
-%Show number in chapters
-\setcounter{secnumdepth}{0}
+%Show number in chapters, sections and subsections
+\setcounter{secnumdepth}{2}
 
 % Adjust number position in chapters and a a \rceil symbol to separate the number from the title
 \titleformat{\chapter}%
@@ -28,3 +28,4 @@
   {2pt}% horizontal separation between label and title body
   {\huge\rmfamily\itshape}% before the title body
   [\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\end{fullwidth}}{}]% after the title body
+

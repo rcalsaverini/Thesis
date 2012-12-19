@@ -1,0 +1,104 @@
+\chapter{Provas dos teoremas de Cox}
+\label{ap:provateoremas}
+
+Este apêndice contém demonstrações dos teoremas exibidos na seção \ref{sec:probabilidadeseinferencia}, \emph{\nameref{sec:probabilidadeseinferencia}}.
+
+\section{Primeiro teorema de Cox e a regra do produto} \clarificationneeded\newline
+Por exemplo, a conjunção booleana ($\wedge$) é uma operação associativa, ou seja:
+\[
+  P_1\wedge (P_2 \wedge P_3) =  (P_1\wedge P_2) \wedge P_3.
+\] 
+Isso implica também na associatividade da função $G(u,v)$, ou seja:
+\[
+  G(G(u,v),w) = G(u,G(v,w)). 
+\]
+Esse vínculo é satisfeito por infinitas possíveis funções $G(u,v)$, porém todas elas \cite{Aczel1975, ACaticha2008} têm a forma:
+\[
+  G(u,v)  = g^{-1}(g(u) g(v)) 
+\]
+com $g(\cdot)$ uma função monotônica. Sendo $g(u)$ monotônica, pode-se redefinir a atribuição de números reais às plausibilidades para $g(P|Q)$ sem perder o ordenamento de proposições segundo suas plausibilidades. Ao fazer isso podemos enunciar o primeiro teorema de Cox:
+A equação \eqref{eq:productrule} é reminiscente da regra do produto da Teoria das Probabilidades, o que indica o objetivo do presente raciocínio. 
+
+\section{Valores extremos} \clarificationneeded\newline
+Sejam\footnote{Das palavras inglesas \emph{``true''} e \emph{``false''}, respectivamente.} $P_T$ e $P_F$ os valores associados à plausibilidade regraduada $\pi(\cdot| \cdot)$ de eventos sabidamente verdadeiros ou falsos, respectivamente\footnote{Requisitos de consistência exigem que sejam iguais para quaisquer proposições falsas ou verdadeiras}. Se $P$ é sabido verdadeiro, então a plausibilidade de que $P$ e $Q$ sejam simultaneamente verdadeiros é exatamente a plausibilidade de apenas $Q$ ser verdadeiro, ou seja, $\pi(P\wedge Q|P) = \pi(Q|P)$. Mas, pela regra do produto:
+\[
+ \pi(P\wedge Q|P) = \pi(P|P) \pi(Q|P\wedge P) = P_T \pi(Q|P) 
+\]
+Dessa forma, $P_T \pi(Q|P) = \pi(Q|P)$, para quaisquer $Q$ e $P$, o que implica em $P_T = 1$. Da mesma forma, a plausibilidade de que simultaneamente $P$ e $\bar{P}$ sejam verdadeiros, dada uma proposição $Q$ qualquer, deve ser $P_F$, pois é uma contradição. Mas, pela regra do produto:
+\[
+ \pi(P\wedge\bar{P}|Q) = \pi(P | Q\wedge\bar{P}) \pi(\bar{P}|Q)
+\]
+Independentemente de $Q$, $\pi(P|Q\wedge\bar{P})$ deve ser também igual a $P_F$ e, assim, $P_F = P_F \pi(\bar{P}|Q)$, para quaisquer $P$ e $Q$. Duas soluções são possíveis: $P_F = 0$ ou $P_F = \infty$. Uma vez que quaisquer das soluções para $P_F$ pode ser mapeada na outra por uma regraduação monotônica, pode-se arbitrariamente escolher $P_F = 0$, e assim limitar valores de $\pi(P|Q)$ no intervalo $[0,1]$. 
+
+\section{Teorema de Bayes}\clarificationneeded\newline
+Uma conseqüência imediata da regra do produto segue da seguinte observação. Uma vez que a conjunção $P\wedge Q$ é simétrica:
+\[
+ \pi(P_1\wedge P_2| Q) = \pi(P_2\wedge P_1 | Q) 
+\]
+Aplicando a regra do produto em ambos os membros da equação acima, temos:
+\[
+ \pi(P2 | Q \wedge P_1) \pi(P_1| Q) = \pi(P1 | Q \wedge P_2) \pi(P_2| Q)
+\]
+e portanto:
+\begin{equation}
+ \label{eq:regradebayes}
+ \pi(P2 | Q \wedge P_1)  = \frac{\pi(P1 | Q \wedge P_2) \pi(P_2| Q)}{\pi(P_1| Q)}
+\end{equation}
+que é similar ao teorema de Bayes da Teoria de Probabilidades.
+
+\section{Regra da soma}\clarificationneeded\newline
+Considere as proposições $P$, $S$ e $Q = \overline{P\wedge S}$. Note, em primeiro lugar, que: 
+\[
+  P\wedge\bar{Q} = P \wedge (P \wedge S) = P \wedge S = \bar{Q}.
+\]
+Note ainda que:
+\[
+ \overline{\bar{P}\wedge Q} = P \vee \bar{Q} = P \vee (P \wedge S) = P,
+\]
+e portanto $\bar{P}\wedge Q = \bar{P}$ e $P\wedge\bar{Q} = \bar{Q}$.
+
+Considere a seguir a plausibilidade regraduada dada por $\pi(P \wedge Q | R) = \pi(P|R) \pi(Q|P \wedge R)$. Note que a função $F(\cdot)$ deve ser idempotente, uma vez que $\bar{\bar{P}} = P$ implica que $F(F(u)) = u$. Portanto, 
+\[
+\pi(Q|S) = F(\pi(\bar{Q}|S)) 
+\]
+para qualquer $S$. Assim, usando a regra do produto:
+\begin{align}
+\pi(P\wedge Q | R) &= \pi(P|R) F\left(\pi(\bar{Q}|P\wedge R)\right) \\
+&= \pi(P|R) F\left(\frac{\pi(\bar{Q}\wedge P|R)}{\pi(P|R)}\right).
+\end{align}
+Mas a mesma operação pode ser feita em outra ordem -- uma vez que a conjunção $P\wedge Q$ é simétrica na troca de $P$ por $Q$ e, portanto:
+\[
+\pi(P\wedge Q | R) = \pi(P|R) F\left(\frac{\pi(\bar{Q}\wedge P|R)}{\pi(P|R)}\right) = \pi(Q|R) F\left(\frac{\pi(\bar{P}\wedge Q|R)}{\pi(Q|R)}\right)
+\]
+para quaisquer $P$, $Q$ e $R$. Em particular, deve valer para o caso particular em que $\bar{Q} = {P\wedge S}$. Nesse caso, é possível mostrar, através das regras da álgebra booleana, que $P\wedge\bar{Q} = \bar{Q}$ e que $\bar{P}\wedge Q = \bar{P}$\footnote{Basta notar que:
+\[
+  P\wedge\bar{Q} = P \wedge (P\wedge S)= (P \wedge P)\wedge S = P\wedge S = \bar{Q}
+\]
+Para simplificar o outro caso, note que $\bar{P}\wedge \bar{Q} =\bar{P}\wedge (P\wedge S)$ e é falso, pois é uma contradição. Mas $\bar{P}\wedge \bar{Q} = \overline{P\vee Q}$ ($\vee$ representando a disjunção ``OU''), o que implica que $P\vee Q$ é verdadeiro. uma vez que $A\wedge V = A$, para qualquer $A$, temos $\bar{P}\wedge(P\vee Q) = \bar{P}$. Mas:
+\[
+\bar{P} = \bar{P}\wedge(P\vee Q) = (\bar{P}\wedge P) \vee (\bar{P}\wedge Q) = F \vee (\bar{P} \wedge Q) = \bar{P} \wedge Q.
+\]
+onde usamos o fato que $F \vee A = A$ para qualquer $A$ e que $A\wedge (B\vee C) = (A\wedge B) \vee (A\wedge C)$.}. Finalmente isso significa que:
+\[
+u F\left(\frac{v}{u}\right) = v F\left(\frac{u}{v}\right)
+\]
+Novamente, há infinitas soluções $F(\cdot)$ para esse vínculo, mas todas elas satisfazem\cite{Aczel1975, ACaticha2008}:
+\begin{equation}
+ f(u)^\alpha + u^\alpha = 1, 
+\end{equation}
+o que, regraduando as plausibilidades novamente por uma transformação monotônica $p(P|Q) = \pi(P|Q)^\alpha$, que preserva os valores $P_F = 0$ e $P_V = 1$, permite enunciar o segundo teorema de Cox.
+\begin{Teorema}[2º teorema de regraduação de Cox]
+ Uma vez que uma representação consistente de plausibilidades $\pi(P|Q)$ com um ordenamento bem definido foi encontrada para a qual vale a regra do produto, sempre é possível encontrar uma outra equivalente $p(P|Q)$ tal que:
+ \begin{equation}
+ p(P|Q) + p(\bar{P} | Q) = 1 
+ \end{equation}
+\end{Teorema}
+Essa é denominada a regra da soma. A partir das regras da soma e do produto todas as outras regras comuns da teoria de probabilidades podem ser facilmente derivadas. Por exemplo a regra de Bayes vem diretamente da regra do produto através da identificação:
+\begin{equation}
+ p(Q| R\wedge P) P(Q | R) = p(P\wedge Q | R) = p(P| R\wedge Q) P(Q | R).
+\end{equation}
+A forma mais geral da regra da soma:
+\begin{equation}
+p(Q|R) + p(P|R) = p(Q\vee P | R) +  p(Q\wedge P | R) 
+\end{equation}
+também pode ser deduzida dessas duas regras. Isso leva à conclusão de que, se há uma teoria consistente de inferência sobre informação incompleta representada por números reais, essa teoria deve ser idêntica à teoria das probabilidades. Por essa razão, chamaremos o funcional $p(\cdot|\cdot)$ de probabilidade, daqui por diante.

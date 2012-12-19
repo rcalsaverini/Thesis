@@ -1,4 +1,4 @@
-\documentclass[twoside, justified, symmetric]{tufte-book}
+\documentclass[justified, symmetric]{tufte-book}
 
 % configuration and commands
 \input{./confs/packs}
@@ -8,26 +8,25 @@
 \input{./tex/pretext/details}
 \makeindex
 \begin{document}
-    %\maketitle
-    %pretextual area 
-        \input{./tex/pretext/paginatitulo}
-        \input{./tex/pretext/folhaderosto}
-        \input{./tex/pretext/creativecommons}
-        \tableofcontents
-        \listoffigures
-        %\listoftables
-        \include{./tex/pretext/resumo}
-    %body of chapters
-        \include{./tex/introducao}
-        \include{./tex/copulas}
-        \include{./tex/autoridade}
-        \include{./tex/conclusoes}
-    %bibliography
-        \bibliographystyle{plainnat}
-        %\bibliographystyle{unsrtnat}
-        \bibliography{bibdatabase}
-    %body of appendices
-%     \appendix
-%         \include{./tex/apendices/glossario}
-
+  %\maketitle
+  %pretextual area 
+	  \input{./tex/pretext/paginatitulo}
+	  \input{./tex/pretext/folhaderosto}
+	  \input{./tex/pretext/creativecommons}
+	  \tableofcontents
+	  \listoffigures
+	  %\listoftables
+	  \include{./tex/pretext/resumo}
+  %body of chapters
+	  \include{./tex/introducao}
+	  \include{./tex/copulas}
+	  \include{./tex/autoridade}
+	  \include{./tex/conclusoes}
+  %body of appendices
+  \appendix
+% 	  \include{./tex/apendices/glossario}
+	  \include{./tex/apendices/provas}
+  %bibliography
+	  \bibliographystyle{plainnat}
+	  \bibliography{bibdatabase}
 \end{document}

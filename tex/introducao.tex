@@ -1,26 +1,29 @@
 \chapter{Introdução}
 
 \section{Visão geral}
-Este trabalho trata de dois tópicos -- uma abordagem da teoria de dependência estatística e um modelo para a origem de estruturas sociais hierárquicas -- sob o ponto de vista da mecânica estatística, da teoria de informação e da inferência estatística. A adoção desse ponto de vista norteia as estratégias de modelagem matemática aqui selecionadas, e de uma certa forma, são mais essenciais ao trabalho do que os específicos tópicos em si. Dessa forma se faz necessário explicitar e esclarecer o ponto de vista adotado antes que os tópicos específicos sejam apresentados. Nas subseções seguintes apresentaremos um sumário desse ponto de vista, com os detalhes seguindo a partir da seção \emph{\nameref{sec:inferencia}}.
-
-\subsection{Probabilidades como ferramentas de inferência}
-\subsection{Atualização de probabilidades através do princípio da máxima entropia}
+\newthought{Este trabalho trata de dois tópicos} -- uma abordagem da teoria de dependência estatística e um modelo para a origem de estruturas sociais hierárquicas -- sob o ponto de vista da mecânica estatística, da teoria de informação e da inferência estatística. A adoção desse ponto de vista norteia as estratégias de modelagem matemática aqui selecionadas, e de uma certa forma, são mais essenciais ao trabalho do que os específicos tópicos em si. Dessa forma se faz necessário explicitar e esclarecer o ponto de vista adotado antes que os tópicos específicos sejam apresentados. 
 
 \section{Inferência, Probabilidades e Entropia}
 \label{sec:inferencia}
 
-Adquirir informação e tomar decisões sob incerteza -- dois pontos centrais em qualquer estudo quantitativo -- são os temas centrais da teoria da inferência estatística. A tradição do uso da teoria de probabilidades como ferramenta de inferência é centenária e remonta aos primeiros trabalhos sobre o conceito de probabilidades no século XVII \sourcesneeded. A relação entre o conceito de probabilidade e os problemas de inferência ficaram ainda mais fortes com os trabalhos de \citet{Cox1946}\cite[-6cm]{Cox1946,Cox1961} e \citet{Shannon1948}\cite[-3cm]{Shannon1948}, e as versões mais modernas desse paradigma\cite[-2cm]{Jaynes2003,ACaticha2008,ACaticha2009} lançam luz sobre a natureza da física estatística e do conceito de entropia. Nessa introdução pretendemos apresentar rapidamente o paradigma de inferência segundo o método de Máxima Entropia (ME) e suas relações com a mecânica estatística, que pensamos ser a linha unificadora que dá coerência à diversidade de temas abordados nesse trabalho. 
+\newthought{Adquirir informação e tomar decisões sob incerteza} -- dois pontos centrais em qualquer estudo quantitativo -- são os temas centrais da teoria da inferência estatística. A tradição do uso da teoria de probabilidades como ferramenta de inferência é centenária e remonta aos primeiros trabalhos sobre o conceito de probabilidades no século XVII \sourcesneeded. A relação entre o conceito de probabilidade e os problemas de inferência ficaram ainda mais fortes com os trabalhos de \citet{Cox1946}\cite[-9cm]{Cox1946,Cox1961} e \citet{Shannon1948}\cite[-5.75cm]{Shannon1948}, e as versões mais modernas desse paradigma\cite[-5cm]{Jaynes2003,ACaticha2008,ACaticha2009} lançam luz sobre a natureza da física estatística e do conceito de entropia. Nessa introdução pretendemos apresentar rapidamente o paradigma de inferência segundo o método de Máxima Entropia (ME) e suas relações com a mecânica estatística, que pensamos ser a linha unificadora que dá coerência à diversidade de temas abordados nesse trabalho. 
 
-Raciocínio sobre informação completa a respeito da veracidade ou não de um conjunto de proposições pode ser representado através da tradicional álgebra booleana. Se é conhecido o valor de verdade de uma certa proposição e como ela se relaciona com outras proposições, pode-se inferir o valor de verdade das proposições relacionadas através das regras bem definidas da álgebra de proposições. Por exemplo, se é sabido que $P_{1} \Rightarrow P_{2}$, e há certeza de que $P_{1}$ é verdadeira, pode-se inferir imediatamente que $P_{2}$ é verdadeira. Da mesma forma, a certeza de que $P_{2}$ é falsa imediatamente implica na certeza de que $P_{1}$ é falsa. Em outras palavras, a hipótese $P_{1} = V$ fornece \textit{informação completa} a respeito de $P_{2}$, bem como a hipótese $P_{2} = F$ fornece informação completa sobre $P_1$. Entretanto, a certeza a respeito da falsidade de $P_{1}$ não oferece conclusão alguma, dentro desse paradigma de inferência sobre informação completa, a respeito da veracidade de $P_{2}$. Não é difícil porém formular um exemplo em que a informação sobre a falsidade de $P_{1}$ fornece \textit{alguma informação}, ainda que incompleta, sobre $P_{2}$. 
+\newthought{Raciocínio sobre informação completa} a respeito da veracidade ou não de um conjunto de proposições pode ser representado através da tradicional álgebra booleana. Se é conhecido o valor de verdade de uma certa proposição e como ela se relaciona com outras proposições, pode-se inferir o valor de verdade das proposições relacionadas através das regras bem definidas da álgebra de proposições. Por exemplo, se é sabido que $P_{1} \Rightarrow P_{2}$, e há certeza de que $P_{1}$ é verdadeira, pode-se inferir imediatamente que $P_{2}$ é verdadeira. Da mesma forma, a certeza de que $P_{2}$ é falsa imediatamente implica na certeza de que $P_{1}$ é falsa. Em outras palavras, a hipótese $P_{1} = V$ fornece \textit{informação completa} a respeito de $P_{2}$, bem como a hipótese $P_{2} = F$ fornece informação completa sobre $P_1$. Entretanto, a certeza a respeito da falsidade de $P_{1}$ não oferece conclusão alguma, dentro desse paradigma de inferência sobre informação completa, a respeito da veracidade de $P_{2}$. Não é difícil porém formular um exemplo em que a informação sobre a falsidade de $P_{1}$ fornece \textit{alguma informação}, ainda que incompleta, sobre $P_{2}$. 
 
-Consideremos, em um exemplo simples, a hipótese de que a proposição $P_{1} = $``vai chover'' implica a proposição $P_{2} =$``há nuvens de chuva''. No \textit{ambiente lógico} criado por essa hipótese, a observação de nuvens de chuva não leva à conclusão certa de que está chovendo, mas é uma decisão razoável carregar um guarda-chuvas ao se observar essas nuvens. De alguma forma, a observação de que há nuvens de chuva trouxe alguma informação ao observador a respeito da possibilidade de que chova. Construir um método de inferência capaz de levar em conta informação incompleta é o objetivo da teoria de probabilidades bayesiana e do método de máxima entropia. 
+\newthought{Consideremos, em um exemplo simples}, a hipótese de que a proposição $P_{1} = $``vai chover'' implica a proposição $P_{2} =$``há nuvens de chuva''. No \textit{ambiente lógico} criado por essa hipótese, a observação de nuvens de chuva não leva à conclusão certa de que está chovendo, mas é uma decisão razoável carregar um guarda-chuvas ao se observar essas nuvens. De alguma forma, a observação de que há nuvens de chuva trouxe alguma informação ao observador a respeito da possibilidade de que chova. Construir um método de inferência capaz de levar em conta informação incompleta é o objetivo da teoria de probabilidades bayesiana e do método de máxima entropia. 
 
 \subsection{Probabilidades e Inferência}
-
-Para derivar uma teoria coerente de inferência, devem ser estabelecidos alguns requisitos. Dada duas proposições $P$ e $Q$, postulamos uma medida\footnote{A justificativa para usar números reais vem de um argumento simples de transitividade - se a confiança na veracidade de $P_1$ é maior que na veracidade de $P_2$ e esta é maior que a confiança na veracidade de $P_3$, então, um requisito razoável é que a confiança em $P_1$ seja maior que em $P_3$. Dessa forma, $(P_1|Q)>(P_2|Q)$ e $(P_2|Q)>(P_3|Q)$ implica $(P_1|Q)>(P_3|Q)$. Isso é suficiente para mostrar que existe uma representação real para essas quantidades. Conseqüências interessantes de se relaxar o requesito de transitividade são discutidas em  \citet{Goyal2010}}\cite{Goyal2010} $(P | Q) \in \mathbb{R}$ denominada \textit{plausibilidade da proposição $P$ dada a proposição $Q$}. A plausibilidade $(P|Q)$ representa o \emph{grau de confiança} de que $P$ esteja correta dada uma certa informação prévia $Q$. 
- Postulamos ainda que, sempre que existam duas formas diferentes de calcular a mesma plausibilidade, o resultado deve ser idêntico. Esse requisito leva aos seguintes resultados\footnote{Todas as outras possibilidades são consideradas em \citet{Tribus1969} e essas são as únicas que não conduzem a resultados manifestamente inconsistentes.}\cite{Tribus1969}:
+\label{sec:probabilidadeseinferencia}
+\newthought{Para derivar uma teoria coerente de inferência}, devem ser estabelecidos alguns requisitos. Dada duas proposições $P$ e $Q$, postulamos uma medida\sidenote[][-8cm]{A justificativa para usar números reais vem de um argumento simples de transitividade - se a confiança na veracidade de $P_1$ é maior que na veracidade de $P_2$ e esta é maior que a confiança na veracidade de $P_3$, então, um requisito razoável é que a confiança em $P_1$ seja maior que em $P_3$. Dessa forma, $(P_1|Q)>(P_2|Q)$ e $(P_2|Q)>(P_3|Q)$ implica $(P_1|Q)>(P_3|Q)$. Isso é suficiente para mostrar que existe uma representação real para essas quantidades. Conseqüências interessantes de se relaxar o requesito de transitividade são discutidas em  \citet{Goyal2010}}\cite[-2.5cm]{Goyal2010} $(P | Q) \in \mathbb{R}$ denominada \textit{plausibilidade da proposição $P$ dada a proposição $Q$}. A plausibilidade $(P|Q)$ representa o \emph{grau de confiança} de que $P$ esteja correta dada uma certa informação prévia $Q$. 
+Postulamos ainda que, sempre que existam duas formas diferentes de calcular a mesma plausibilidade, o resultado deve ser idêntico. Esse requisito leva aos seguintes resultados\footnote[][-3cm]{Todas as outras possibilidades são consideradas em \citet{Tribus1969} e essas são as únicas que não conduzem a resultados manifestamente inconsistentes.}\cite[-2cm]{Tribus1969}:
 \begin{itemize}
-\item A plausibilidade de $\text{não-}P$ dado $Q$ é uma função monotônica e decrescente da plausibilidade de $P$ dado $Q$: 
+\item A plausibilidade\footnote[][-2cm]{Os seguintes símbolos serão usados para as operações booleanas no presente capítulo:
+\begin{description}
+ \item[Conjunção - $\wedge$:] representa a conjunção ``e'' entre duas proposições: $P\wedge Q$, lido ``p e q''.
+ \item[Disjunção - $\vee$:] representa a disjunção ``ou'' entre duas proposições: $P\vee Q$, lido ``p ou q''.
+ \item[Negação - $\bar{\phantom{a}}$:] representa a negação ``não'' de uma proposição: $\bar{P}$, lido ``não-p''.
+\end{description}
+} de $\text{não-}P$ dado $Q$ é uma função monotônica e decrescente da plausibilidade de $P$ dado $Q$: 
 \[
  (\bar{P}|Q) = F(({P}|Q)).
 \]
@@ -30,27 +33,144 @@ Para derivar uma teoria coerente de inferência, devem ser estabelecidos alguns 
 \]
 \end{itemize}
 
-Agora, uma série de casos especiais podem ser apresentados junto com o requisito de consistência, de forma a tentar reduzir as funções $F(\cdot)$ e $G(\cdot,\cdot)$ a uma representação única. Por exemplo, a conjunção booleana ($\wedge$) é uma operação associativa, ou seja:
-\[
-P_1\wedge (P_2 \wedge P_3) =  (P_1\wedge P_2) \wedge P_3.
-\] 
-Isso implica também na associatividade da função $G(u,v)$, ou seja:
-\[
-G(G(u,v),w) = G(u,G(v,w)). 
-\]
-Esse vínculo é satisfeito por infinitas possíveis funções $G(u,v)$, porém todas elas \cite{ACaticha2008, Aczel1975} têm a forma:
-\[
- G(u,v)  = g^{-1}(g(u) g(v)) 
-\]
-com $g(\cdot)$ uma função monotônica. Sendo $g(u)$ monotônica, pode-se redefinir a atribuição de números reais às plausibilidades para $g(P|Q)$ sem perder o ordenamento de proposições segundo suas plausibilidades. Ao fazer isso podemos enunciar o primeiro teorema de Cox:
-\begin{Teorema}[1º teorema de regraduação de Cox]
- Uma vez que uma representação consistente de plausibilidades $(P|Q)$ com um ordenamento bem definido foi encontrada, sempre é possível encontrar uma outra equivalente $\pi(P|Q)$ tal que:
-\begin{equation}
- \pi(P_1\wedge P_2|Q) = \pi(P2 | Q \wedge P_1) \pi(P_1| Q)
-\end{equation}
+\newthought{Uma série de teoremas} sobre a forma das funções $F(\cdot)$ e $G(\cdot,\cdot)$ podem ser demonstrados com o requisito de consistência e as regras básicas da álgebra booleana. Alguns dos principais teoremas, cujas provas se encontram no apêndice \ref{ap:provateoremas}, \emph{\nameref{ap:provateoremas}}, são:
+\begin{description}
+ \item[1º teorema de Cox]
+\begin{Teorema}
+    Uma vez que uma representação consistente de plausibilidades $(P|Q)$ com um ordenamento bem definido foi encontrada, sempre é possível encontrar uma outra equivalente $\pi(P|Q)$ de forma que $G(u,v) = uv$, ou seja:
+    \begin{equation}
+	\label{eq:productrule}
+	\pi(P_1\wedge P_2|Q) = \pi(P2 | Q \wedge P_1) \pi(P_1| Q)
+    \end{equation}
 \end{Teorema}
 
+\item[Valores limites para plausibilidades]
+\begin{Teorema}
+  Uma vez que uma representação consistente de plausibilidades $\tilde{\pi}(P|Q)$ que satisfaça a regra do produto, é sempre possível encontrar uma equivalente $\pi(P|Q)$ tal que:
+ \begin{equation}
+    0 \le \pi(P|Q) \le 1
+ \end{equation}
+ de tal forma que $\pi(P|Q) = 0$ se, e somente se, $P$ for uma proposição falsa dado $Q$ e $\pi(P|Q) = 1$ se, e somente se, $P$ for uma proposição verdadeira dado $Q$.
+\end{Teorema}
+\item[2º teorema de Cox]
+\begin{Teorema}
+ Uma vez que uma representação consistente de plausibilidades $\pi(P|Q)$ com um ordenamento bem definido foi encontrada para a qual vale a regra do produto, sempre é possível encontrar uma outra equivalente $p(P|Q)$, que também satisfaz a regra do produto, de forma que $F(u) = 1 - u$, ou seja:
+ \begin{equation}
+ p(\bar{P} | Q) = 1 - p(P|Q)
+ \end{equation}
+\end{Teorema}
+\end{description}
+
+Tomados em conjunto, esses teoremas sugerem que as regras de uma álgebra de plausibilidades deve ser idêntica às conhecidas regras da Teoria das Probabilidades. A partir de agora portanto daremos o nome ``probabilidade'' ao funcional $p(P|Q)$, e interpretaremos probabilidades como formas de codificar matematicamente graus de certeza a respeito de certas proposições. Quando essas proposições são afirmações sobre o valor de uma grandeza matemática, definem-se distribuições de probabilidade sobre o valor dessas variáveis:
+\begin{equation}
+ P(x \in [a,b] | Q) = \int_{a}^{b}\;\ud x p(x | Q)
+\end{equation}
+Um modelo matemático, nesse paradigma, é portanto uma atribuição de distribuições de probabilidade para as variáveis de interesse do modelo, indicando graus de confiança sobre os valores dessas variáveis sob certas condições. 
+
 \subsection{Informação e Máxima Entropia}
+Se modelos de inferência são atribuições de probabilidades sobre as variáveis de interesse, como é possível fazer isso a partir de informação pré-existente sobre o sistema sendo modelado, ou ainda, como é possível incorporar novas informações obtidas sobre o sistema? 
+Eventualmente, o objetivo de realizar inferência é processar informação nova que nos é disponibilizada depois da realização de um certo experimento ou observação. No presente paradigma isso significa atualizar nossa atribuição de probabilidades. Suponha a proposição $P_{[a,b]} =$``A variável $X\in \mathcal{X}$ tem seu valor no intervalo $[a,b]$''. Suponha ainda que, inicialmente, há um certo conjunto de informações que nos levam a crer que, nas condições $U$, a nossa atribuição de probabilidades dever ser:
+\[
+ p(P_{[a,b]} | U ) = \int_a^b p(x) \ud x.
+\]
+Uma vez que nova informação que nos force a mudar de opinião a respeito da atribuição de probabilidades torne-se disponível, qual deve ser a nova distribuição a ser utilizada? Se pudessemos ordenar todas as distribuições $q(x) \in \mathbb{P}$, o conjunto de todas as distribuições possíveis, em ordem de preferência como nova distribuição a ser atribuida a $P_x$, certamente escolheríamos a com melhor ranking de preferência. Se essa preferência for transitiva, existe um funcional $S:\mathbb{P}\to\mathbb{R}$ que representa esse ordenamento e a nova distribuição será obtida através da maximização do funcional $S[\cdot]$:
+\[
+ q^{\star}(x) = \argmax_{q(x) \in \mathbb{P}} S[q(x) | p(x)], 
+\]
+sob quaisquer vínculos impostos pela nova informação. É possível impor requisitos plausíveis sobre $S[\cdot]$ de forma a definir um único funcional compatível com uma atualização racional de crenças (probabilidades)? De fato é possível impondo apenas um requisito: as crenças devem ser atualizadas apenas até onde requerido pela nova informação disponível. Resumidamente (detalhes podem ser obtidos em \citet{ACaticha2008}), esse princípio leva às seguintes conseqüências:
+\begin{itemize}
+\item{\bf Localidade} - 
+    Se a nova informação diz respeito apenas a um subdomínio do espaço onde $X$ toma valores, então a atribuição de probabilidades fora desse subdomínio não deve mudar. Isso implica que o funcional deve ser aditivo:
+    \[
+     S[q | p] = \int_{\mathcal{X}} \ud\mu(x) F(q(x), p(x), x)
+    \]
+    onde $\mu(x)$ é uma medida de integração sobre $\mathcal{X}$. 
+\item{\bf Invariância por mudança de variáveis} - 
+    Uma mudança de sistema de coordenadas não deve mudar a forma do funcional $S$ e nem a ordem das preferências. Isso implica que:
+    \[
+     S[q | p] = \int_{\mathcal{X}} \ud\mu(x) \Phi\left(\frac{p(x)}{\mu(x)},\frac{q(x)}{\mu(x)}\right)
+    \]
+\item{\bf Ausência de nova informação} - 
+    Se não há nova informação, não há razão para mudar de idéia e, portanto, o máximo sem vínculos de $S[\cdot|\cdot]$ deve ser a própria distribuição original $p(x)$. Isso implica que:
+    \[
+     S[q | p] = \int_{\mathcal{X}} \ud x\; p(x) \Phi\left(\frac{q(x)}{p(x)}\right) 
+    \]
+\item{\bf Sistemas independentes} - 
+    Se a distribuição $p(x)$ contém informação de que dois subsistemas $X_1$ e $X_2$ são independentes, nova informação a respeito de um deles não deve afetar o outro. Esse princípio leva a uma equação funcional para $\Phi(x)$ que finalmente implica que:
+\end{itemize}
+\begin{equation}
+\label{eq:relel}
+S[q(x) | p(x)] =  - \int_{\mathcal{X}} \ud x\; q(x) \log\frac{q(x)}{p(x)}
+\end{equation}
+Esse funcional é conhecido em Teoria de Informação\cite{Cover2006} e é denominado ``entropia relativa''. Os passos acima levam à formulação do princípio de máxima entropia\footnote{Os nomes atribuídos às distribuições são traduções do inglês \textit{prior distribution} e {\it posterior distribution}}:
+\begin{Principio}
+  Dada uma atribuição inicial de probabilidades sobre uma variável $X \in \mathcal{X}$ dada por $p(x)$ (distribuição a priori, ou prévia), quando nova informação se torna disponível, uma nova distribuição de probabilidades deve ser atribuida de forma a maximizar a entropia relativa entre a antiga distribuição $p(x)$  e a nova $q(x)$ (distribuição  posterior), de forma a satisfazer os vínculos impostos pela nova informação.
+  \begin{align}
+    q(x) &= \argmax_{q(x)} S[q(x)|p(x)] \\
+    F_i[q(x)] &= 0 \;\text{,}\;i = 1,2,\ldots,m
+  \end{align}
+  onde $F_i[\cdot]$ são funcionais que codificam os vínculos relacionados às informações disponíveis.
+\end{Principio}
+Uma vez que o funcional $S[q | p]$ é convexo, se os vínculos forem também convexos o máximo será interior e único, e pode ser encontrado pela técnica de multiplicadores de Lagrange, resolvendo para $q(x)$ a condição variacional de primeira ordem:
+\begin{equation}
+\label{eq:entropymaximization}
+\frac{\delta }{\delta q(x)}\left( S[q|p] - \sum_{i} \lambda_i F_i[q]\right) = 0
+\end{equation}
+A entropia relativa na eq.\eqref{eq:relel} também pode ser ligada a outro conceito corrente em teoria de informação e geometria de distribuições de probabilidade, denominado divergência de Kullback-Leibler\cite{Amari2000}:
+\begin{equation}
+\label{eq:kldiv}
+ D[q(x) | p(x)] = \int_{\mathcal{X}} \ud x\; q(x) \log\frac{q(x)}{p(x)} = - S[q(x) | p(x)].
+\end{equation}
+A divergência de Kullback-Leibler apresenta as propriedades de uma pré-métrica, ou seja:  $D[q(x) | p(x)]\ge 0$ e $ D[q(x) | p(x)] = 0$ se, e somente se, $q(x) = p(x)$, no sentido de igualdade de distribuições. Entretanto, por não ser simétrica e não satisfazer a desigualdade do triângulo, $D[q|p]$ não oferece uma estrutura métrica para o conjunto de distribuições de probabilidades. Se restrita a uma família paramétrica  $\mathcal{P}_\theta$ de distribuições parametrizadas por um certo conjunto de parâmetros $\theta$ (denotaremos por $p(x|\theta)$), a quantidade:
+\begin{equation}
+ D[p(x|\theta+\ud\theta), p(x|\theta)] = \frac{1}{2}\sum g_{ij} \ud\theta_i \ud\theta_j + \mathrm{O}(\ud\theta^3),
+\end{equation}
+onde $g_{ij} = \avg{\partial \log p(x|\theta)/ \partial \theta_i\;{\partial \log p(x|\theta) / \partial \theta_j}}$ é a chamada métrica de Fisher-Rao, que provê uma estrutura métrica\cite{Amari2000} ao conjunto $\mathcal{P}_\theta$. Nessa linguagem, o princípio de máxima entropia pode ser entendido como um princípio de ``mínima distância'' -- a distribuição posterior deve ser tão próxima da distribuição \emph{a priori} quanto permitido pelos vínculos impostos pela nova informação.
+\subsection{Informação e Vínculos - atualização Bayesiana}
+\label{sec:bayes}
+Um caso específico de aplicação do princípio de Máxima Entropia é o da ajuste de parâmetros teóricos de um modelo quando novos dados empíricos são coletados. Suponha que um par de variáveis $X$ e $\Theta$ são considerados em um modelo $M$. A variável $X$ é experimentalmente mensurável e a variável $\Theta$ é um parâmetro teórico do modelo. O modelo oferece informação prévia sob a forma de (1) uma distribuição \emph{a priori} dos valores possíveis do parâmetro $\Theta$, dada por $p(\theta | M)$ e (2) uma distribuição condicional \emph{a priori}  $p(x | \theta, M)$ que indica, dado um valor do parâmetro $\Theta = \theta$, os possíveis resultados para $X$. Eventualmente o valor de $X$ é medido, com resultado $X = x_0$. Como devemos atualizar nossa atribuição de probabilidades? O princípio da máxima entropia indica que a distribuição posterior $q(x,\theta)$ é aquela que maximiza o funcional da eq.\eqref{eq:relel} sob o vínculo de que conhecemos o valor de $X$. Ou seja, o vínculo é dado por\footnote{Note que essa equação implementa, na verdade, um número infinito de vínculos -- um para cada valor de $x$.}:
+\begin{equation}
+\label{aux:aux1}
+ \int q(x, \theta) d\theta = q(x) = \delta(x-x_0).
+\end{equation}
+ A distribuição \emph{a priori} sobre $x$ e $\theta$ é dada por $p(x, \theta| M) = p(x|\theta, M) p(\theta| M)$. Finalmente, a minimização é dada por:
+\begin{fullwidth}
+\[
+ \frac{\delta}{\delta q} \left[S[q | p] + \lambda \left(\int \ud x\ud\theta\; q(x,\theta) -1 \right) + \int \ud x\; \beta(x) \left(\int\ud\theta q(x,\theta) - \delta(x-x_0)\right)\right] =0
+\]
+\end{fullwidth}
+onde $\lambda$ e $\beta(x)$ são multiplicadores de Lagrange que implementam, respectivamente, o vínculo de normalização de $q(x,\theta)$ e os vínculos impostos pela eq.\eqref{aux:aux1}. Executando essa diferenciação funcional e isolando $q(x,\theta)$, obtemos\footnote{O segundo passo é uma aplicação a definição de distribuição condicional}:
+\begin{equation}
+ q(x,\theta| M) = p(x,\theta| M)\frac{e^{\beta(x)}}{Z} = p(\theta|x, M)p(x |M)\frac{e^{\beta(x)}}{Z}
+\end{equation}
+onde $Z$ é uma constante de normalização. Impondo o vínculo eq.\eqref{aux:aux1}, finalmente obtém-se:
+\begin{align*}
+ q(x,\theta|M) &= q(x|M)q(\theta|x, M) =  \delta(x-x_0) p(\theta|x, M) \\ &\Rightarrow q(\theta|x_0, M) = p(\theta|x_0, M)
+\end{align*}
+Ou seja, as distribuições condicionais de $\theta$ devem ser iguais antes e depois de receber a informação, pois apenas informação a respeito de $x$ -- informação marginal, que diz respeito apenas à distribuição marginal de $x$ -- foi recebida. Isso é conseqüência do princípio de mínima atualização usado na dedução do princípio de máxima entropia: apenas se deve atualizar as probabilidades quando isso é imposto pela nova informação recebida. Essa equação pode ser reescrita como:
+\begin{equation}
+ q(\theta | x_0, M) = \dfrac{p(x_0 | \theta, M)p(\theta, M)}{p(x_0 |M)}
+\end{equation}
+e esse é o teorema de Bayes como entendido em inferência bayesiana -- como um princípio de atualização de graus de confiança quando um nova informação está disponível. A distribuição $q(\theta | x_0, M)$ incorpora informações a respeito do modelo original e do fato de que a variável $X$ foi medida e vale $x_0$. 
+
+\subsection{Informação e vínculos - distribuições de Gibbs}
+Outro tipo de possível informação que pode ser recebido é a respeito do valor esperado de uma certa função de $x$:
+\[
+ \avg{E(x)} = E_0.
+\]
+Nesse caso, a maximização da entropia será:
+\begin{align*}
+  &\frac{\delta}{\delta q} \left[S[q | p] - \lambda \left(\int \ud x\; q(x) -1 \right) - \beta\left(\int\ud x\; q(x) E(x) - E_0\right)\right] =0\\
+  &= - \log\left(\frac{q(x)}{p(x)}\right) - 1 - \lambda -\beta E(x) = 0
+\end{align*}
+e obtém-se finalmente:
+\begin{equation}
+\label{eq:gibbs}
+ q(x) = \dfrac{1}{Z}p(x) e^{-\beta E(x)}
+\end{equation}
+Essa distribuição faz parte da classe de distribuições gibbsianas, comuns em mecânica estatística\footnote[][-5.5cm]{Esse raciocínio é reminiscente do encontrado em \citet{Landau1980}, onde a distribuição de probabilidades para um conjunto de partículas é encontrada maximizando a entropia sob vínculos associados a quantidades conservadas microscopicamente.}\cite[-3cm]{Landau1980}.
+
+Uma forma alternativa dessa visão pode ser encontrada\cite[-1cm]{NCaticha2011} em \citet{NCaticha2011}.
 
 \section{Inferência e Mecânica Estatística}
 \subsection{Uma visão informacional da Mecânica Estatística}

@@ -146,10 +146,10 @@ também é possível. Entretanto, para o grafo caminho, \(\bar{L}\) é proporcio
 
 \newthought{Podemos  relaxar o vínculo de estrita minimização} e propor o seguinte modelo: o agente decide sua estratégia através de uma dinamica interna que ocorre em seu cérebro, ditada por regras que levam em conta o custo total. Podemos então associar probabilidades às estratégias de acordo com nossa expectativa de que grafos devem surgir dessa dinâmica. Se não conhecemos detalhes da dinâmica, mas temos informação de que o valor esperado do custo total é uma variável importante, o procedimento bayesiano adequado é associar ao grafo uma distribuição de máxima entropia, restringida pelo valor do custo total. A distribuição resultante é a distribuição de Gibbs:
 \begin{equation}
-   \label{eq:gibbs}
+   \label{eq:gibbsian}
    p(G) = \frac{q(G)}{Z} e^{-\beta H(G)}
 \end{equation}
-onde $\beta$, uma espécie de inverso de temperatura, regula a importância relativa dos efeitos que o custo \(H(G)\) e outros efeitos negligenciados pelo modelo, e \(q(G)\) é a atribuição de probabilidades a priori. Assumiremos probabilidades uniformes a priori, com a restrição de que o grafo seja conexo (veja nota \footnotemark[\value{footnote}]).A atribuição de probabilidades da equação (\ref{eq:gibbs}) torna o problema de determinar as propriedades macroscópicas desse sistema em um problema de mecânica estatística, cuja variável dinâmica é a matriz de adjacências do grafo G:
+onde $\beta$, uma espécie de inverso de temperatura, regula a importância relativa dos efeitos que o custo \(H(G)\) e outros efeitos negligenciados pelo modelo, e \(q(G)\) é a atribuição de probabilidades a priori. Assumiremos probabilidades uniformes a priori, com a restrição de que o grafo seja conexo (veja nota \footnotemark[\value{footnote}]).A atribuição de probabilidades da equação (\ref{eq:gibbsian}) torna o problema de determinar as propriedades macroscópicas desse sistema em um problema de mecânica estatística, cuja variável dinâmica é a matriz de adjacências do grafo G:
 \begin{equation}
   M_{ij} = \begin{cases}
       1  & \text{se $i$ e $j$ estão ligados por uma aresta} \\
