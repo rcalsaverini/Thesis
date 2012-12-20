@@ -8,6 +8,7 @@ main.pdf:
 	@pdflatex -interaction=nonstopmode main.tex
 	
 clean:
+	$(RM) *.dvi *.toc *.bbl *.blg *.swp *.aux *.idx *.lof *.log *.out *.ilg *.ind  *.backup *~ 
 	cd ./tex; $(RM) *.dvi *.toc *.bbl *.blg *.swp *.aux *.idx *.lof *.log *.out *~
 	cd ./tex/apendices; $(RM) *.dvi *.toc *.bbl *.blg *.swp *.aux *.idx *.lof *.log *.out *~
 	cd ./tex/pretex; $(RM) *.dvi *.toc *.bbl *.blg *.swp *.aux *.idx *.lof *.log *.out *~
