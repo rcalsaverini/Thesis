@@ -14,8 +14,7 @@
 
 \subsection{Probabilidades e Inferência}
 \label{sec:probabilidadeseinferencia}
-\newthought{Para derivar uma teoria coerente de inferência}, devem ser estabelecidos alguns requisitos. Dada duas proposições $P$ e $Q$, postulamos uma medida\sidenote[][-12cm]{A justificativa para usar números reais vem de um argumento simples de transitividade - se a confiança na veracidade de $P_1$ é maior que na veracidade de $P_2$ e esta é maior que a confiança na veracidade de $P_3$, então, um requisito razoável é que a confiança em $P_1$ seja maior que em $P_3$. Dessa forma, $(P_1|Q)>(P_2|Q)$ e $(P_2|Q)>(P_3|Q)$ implica $(P_1|Q)>(P_3|Q)$. Isso é suficiente para mostrar que existe uma representação real para essas quantidades. Conseqüências interessantes de se relaxar o requesito de transitividade são discutidas em  \citet{Goyal2010}}\cite[-6cm]{Goyal2010} $(P | Q) \in \mathbb{R}$ denominada \textit{plausibilidade da proposição $P$ dada a proposição $Q$}. A plausibilidade $(P|Q)$ representa o \emph{grau de confiança} de que $P$ esteja correta dada uma certa informação prévia $Q$. 
-Postulamos ainda que, sempre que existam duas formas diferentes de calcular a mesma plausibilidade, o resultado deve ser idêntico. Esse requisito leva aos seguintes resultados\footnote[][-6cm]{Todas as outras possibilidades são consideradas em \citet{Tribus1969} e essas são as únicas que não conduzem a resultados manifestamente inconsistentes.}\cite[-4cm]{Tribus1969}:
+\newthought{Para derivar uma teoria coerente de inferência}, devem ser estabelecidos alguns requisitos. Dada duas proposições $P$ e $Q$, postulamos uma medida\sidenote[][-12cm]{A justificativa para usar números reais vem de um argumento simples de transitividade - se a confiança na veracidade de $P_1$ é maior que na veracidade de $P_2$ e esta é maior que a confiança na veracidade de $P_3$, então, um requisito razoável é que a confiança em $P_1$ seja maior que em $P_3$. Dessa forma, $(P_1|Q)>(P_2|Q)$ e $(P_2|Q)>(P_3|Q)$ implica $(P_1|Q)>(P_3|Q)$. Isso é suficiente para mostrar que existe uma representação real para essas quantidades. Conseqüências interessantes de se relaxar o requesito de transitividade são discutidas em  \citet{Goyal2010}}\cite[-6cm]{Goyal2010} $(P | Q) \in \mathbb{R}$ denominada \textit{plausibilidade da proposição $P$ dada a proposição $Q$}. A plausibilidade $(P|Q)$ representa o \emph{grau de confiança} de que $P$ esteja correta dada uma certa informação prévia $Q$. Postulamos ainda que, sempre que existam duas formas diferentes de calcular a mesma plausibilidade, o resultado deve ser idêntico. Esse requisito leva aos seguintes resultados\footnote[][-6cm]{Todas as outras possibilidades são consideradas em \citet{Tribus1969} e essas são as únicas que não conduzem a resultados manifestamente inconsistentes.}\cite[-4cm]{Tribus1969}:
 \begin{itemize}
 \item A plausibilidade\footnote[][-2cm]{Os seguintes símbolos serão usados para as operações booleanas no presente capítulo:
 \begin{description}
@@ -61,15 +60,14 @@ Postulamos ainda que, sempre que existam duas formas diferentes de calcular a me
 \end{Teorema}
 \end{description}
 
-Tomados em conjunto, esses teoremas sugerem que as regras de uma álgebra de plausibilidades deve ser idêntica às conhecidas regras da Teoria das Probabilidades. A partir de agora portanto daremos o nome ``probabilidade'' ao funcional $p(P|Q)$, e interpretaremos probabilidades como formas de codificar matematicamente graus de certeza a respeito de certas proposições. Quando essas proposições são afirmações sobre o valor de uma grandeza matemática, definem-se distribuições de probabilidade sobre o valor dessas variáveis:
+\newthought{Tomados em conjunto}, esses teoremas sugerem que as regras de uma álgebra de plausibilidades deve ser idêntica às conhecidas regras da Teoria das Probabilidades. A partir de agora portanto daremos o nome ``probabilidade'' ao funcional $p(P|Q)$, e interpretaremos probabilidades como formas de codificar matematicamente graus de certeza a respeito de certas proposições. Quando essas proposições são afirmações sobre o valor de uma grandeza matemática, definem-se distribuições de probabilidade sobre o valor dessas variáveis:
 \begin{equation}
  P(x \in [a,b] | Q) = \int_{a}^{b}\;\ud x p(x | Q)
 \end{equation}
 Um modelo matemático, nesse paradigma, é portanto uma atribuição de distribuições de probabilidade para as variáveis de interesse do modelo, indicando graus de confiança sobre os valores dessas variáveis sob certas condições. 
 
 \subsection{Informação e Máxima Entropia}
-Se modelos de inferência são atribuições de probabilidades sobre as variáveis de interesse, como é possível fazer isso a partir de informação pré-existente sobre o sistema sendo modelado, ou ainda, como é possível incorporar novas informações obtidas sobre o sistema? 
-Eventualmente, o objetivo de realizar inferência é processar informação nova que nos é disponibilizada depois da realização de um certo experimento ou observação. No presente paradigma isso significa atualizar nossa atribuição de probabilidades. Suponha a proposição $P_{[a,b]} =$``A variável $X\in \mathcal{X}$ tem seu valor no intervalo $[a,b]$''. Suponha ainda que, inicialmente, há um certo conjunto de informações que nos levam a crer que, nas condições $U$, a nossa atribuição de probabilidades dever ser:
+\newthought{Se modelos de inferência} são atribuições de probabilidades sobre as variáveis de interesse, como é possível fazer isso a partir de informação pré-existente sobre o sistema sendo modelado, ou ainda, como é possível incorporar novas informações obtidas sobre o sistema? Eventualmente, o objetivo de realizar inferência é processar informação nova que nos é disponibilizada depois da realização de um certo experimento ou observação. No presente paradigma isso significa atualizar nossa atribuição de probabilidades. Suponha a proposição $P_{[a,b]} =$``A variável $X\in \mathcal{X}$ tem seu valor no intervalo $[a,b]$''. Suponha ainda que, inicialmente, há um certo conjunto de informações que nos levam a crer que, nas condições $U$, a nossa atribuição de probabilidades dever ser:
 \[
  p(P_{[a,b]} | U ) = \int_a^b p(x) \ud x.
 \]
@@ -78,31 +76,30 @@ Uma vez que nova informação que nos force a mudar de opinião a respeito da at
  q^{\star}(x) = \argmax_{q(x) \in \mathbb{P}} S[q(x) | p(x)], 
 \]
 sob quaisquer vínculos impostos pela nova informação. É possível impor requisitos plausíveis sobre $S[\cdot]$ de forma a definir um único funcional compatível com uma atualização racional de crenças (probabilidades)? De fato é possível impondo apenas um requisito: as crenças devem ser atualizadas apenas até onde requerido pela nova informação disponível. Resumidamente (detalhes podem ser obtidos em \citet{ACaticha2008}), esse princípio leva às seguintes conseqüências:
-\begin{itemize}
-\item{\bf Localidade} - 
-    Se a nova informação diz respeito apenas a um subdomínio do espaço onde $X$ toma valores, então a atribuição de probabilidades fora desse subdomínio não deve mudar. Isso implica que o funcional deve ser aditivo:
+\begin{description}
+\item[Localidade] -- Se a nova informação diz respeito apenas a um subdomínio do espaço onde $X$ toma valores, então a atribuição de probabilidades fora desse subdomínio não deve mudar. Isso implica que o funcional deve ser aditivo:
     \[
      S[q | p] = \int_{\mathcal{X}} \ud\mu(x) F(q(x), p(x), x)
     \]
     onde $\mu(x)$ é uma medida de integração sobre $\mathcal{X}$. 
-\item{\bf Invariância por mudança de variáveis} - 
-    Uma mudança de sistema de coordenadas não deve mudar a forma do funcional $S$ e nem a ordem das preferências. Isso implica que:
+\item[Invariância por mudança de variáveis] -- Uma mudança de sistema de coordenadas não deve mudar a forma do funcional $S$ e nem a ordem das preferências. Isso implica que:
     \[
      S[q | p] = \int_{\mathcal{X}} \ud\mu(x) \Phi\left(\frac{p(x)}{\mu(x)},\frac{q(x)}{\mu(x)}\right)
     \]
-\item{\bf Ausência de nova informação} - 
-    Se não há nova informação, não há razão para mudar de idéia e, portanto, o máximo sem vínculos de $S[\cdot|\cdot]$ deve ser a própria distribuição original $p(x)$. Isso implica que:
+\item[Ausência de nova informação] -- Se não há nova informação, não há razão para mudar de idéia e, portanto, o máximo sem vínculos de $S[\cdot|\cdot]$ deve ser a própria distribuição original $p(x)$. Isso implica que:
     \[
      S[q | p] = \int_{\mathcal{X}} \ud x\; p(x) \Phi\left(\frac{q(x)}{p(x)}\right) 
     \]
-\item{\bf Sistemas independentes} - 
+\item[Sistemas independentes] 
     Se a distribuição $p(x)$ contém informação de que dois subsistemas $X_1$ e $X_2$ são independentes, nova informação a respeito de um deles não deve afetar o outro. Esse princípio leva a uma equação funcional para $\Phi(x)$ que finalmente implica que:
-\end{itemize}
-\begin{equation}
-\label{eq:relel}
-S[q(x) | p(x)] =  - \int_{\mathcal{X}} \ud x\; q(x) \log\frac{q(x)}{p(x)}
-\end{equation}
-Esse funcional é conhecido em Teoria de Informação\cite{Cover2006} e é denominado ``entropia relativa''. Os passos acima levam à formulação do princípio de máxima entropia\footnote{Os nomes atribuídos às distribuições são traduções do inglês \textit{prior distribution} e {\it posterior distribution}}:
+    \begin{equation}
+      \label{eq:relel}
+      S[q(x) | p(x)] =  - \int_{\mathcal{X}} \ud x\; q(x) \log\frac{q(x)}{p(x)}
+    \end{equation}
+\end{description}
+
+\newthought{Esse funcional} é conhecido em Teoria de Informação\cite{Cover2006} e é denominado ``entropia relativa''. Os passos acima levam à formulação do princípio de máxima entropia\footnote{Os nomes atribuídos às distribuições são traduções do inglês \textit{prior distribution} e {\it posterior distribution}}:
+
 \begin{Principio}
   Dada uma atribuição inicial de probabilidades sobre uma variável $X \in \mathcal{X}$ dada por $p(x)$ (distribuição a priori, ou prévia), quando nova informação se torna disponível, uma nova distribuição de probabilidades deve ser atribuida de forma a maximizar a entropia relativa entre a antiga distribuição $p(x)$  e a nova $q(x)$ (distribuição  posterior), de forma a satisfazer os vínculos impostos pela nova informação.
   \begin{align}
@@ -111,12 +108,14 @@ Esse funcional é conhecido em Teoria de Informação\cite{Cover2006} e é denom
   \end{align}
   onde $F_i[\cdot]$ são funcionais que codificam os vínculos relacionados às informações disponíveis.
 \end{Principio}
-Uma vez que o funcional $S[q | p]$ é convexo, se os vínculos forem também convexos o máximo será interior e único, e pode ser encontrado pela técnica de multiplicadores de Lagrange, resolvendo para $q(x)$ a condição variacional de primeira ordem:
+
+\newthought{Uma vez que o funcional} $S[q | p]$ é convexo, se os vínculos forem também convexos o máximo será interior e único, e pode ser encontrado pela técnica de multiplicadores de Lagrange, resolvendo para $q(x)$ a condição variacional de primeira ordem:
 \begin{equation}
 \label{eq:entropymaximization}
 \frac{\delta }{\delta q(x)}\left( S[q|p] - \sum_{i} \lambda_i F_i[q]\right) = 0
 \end{equation}
-A entropia relativa na eq.\eqref{eq:relel} também pode ser ligada a outro conceito corrente em teoria de informação e geometria de distribuições de probabilidade, denominado divergência de Kullback-Leibler\cite{Amari2000}:
+
+\newthought{A entropia relativa} na eq.\eqref{eq:relel} também pode ser ligada a outro conceito corrente em teoria de informação e geometria de distribuições de probabilidade, denominado divergência de Kullback-Leibler\cite{Amari2000}:
 \begin{equation}
 \label{eq:kldiv}
  D[q(x) | p(x)] = \int_{\mathcal{X}} \ud x\; q(x) \log\frac{q(x)}{p(x)} = - S[q(x) | p(x)].
@@ -126,9 +125,10 @@ A divergência de Kullback-Leibler apresenta as propriedades de uma pré-métric
  D[p(x|\theta+\ud\theta), p(x|\theta)] = \frac{1}{2}\sum g_{ij} \ud\theta_i \ud\theta_j + \mathrm{O}(\ud\theta^3),
 \end{equation}
 onde $g_{ij} = \avg{\partial \log p(x|\theta)/ \partial \theta_i\;{\partial \log p(x|\theta) / \partial \theta_j}}$ é a chamada métrica de Fisher-Rao, que provê uma estrutura métrica\footnote{\citet{Amari2000}} ao conjunto $\mathcal{P}_\theta$. Nessa linguagem, o princípio de máxima entropia pode ser entendido como um princípio de ``mínima distância'' -- a distribuição posterior deve ser tão próxima da distribuição \emph{a priori} quanto permitido pelos vínculos impostos pela nova informação.
+
 \subsection{Informação e Vínculos - atualização Bayesiana}
 \label{sec:bayes}
-Um caso específico de aplicação do princípio de Máxima Entropia é o da ajuste de parâmetros teóricos de um modelo quando novos dados empíricos são coletados. Suponha que um par de variáveis $X$ e $\Theta$ são considerados em um modelo $M$. A variável $X$ é experimentalmente mensurável e a variável $\Theta$ é um parâmetro teórico do modelo. O modelo oferece informação prévia sob a forma de (1) uma distribuição \emph{a priori} dos valores possíveis do parâmetro $\Theta$, dada por $p(\theta | M)$ e (2) uma distribuição condicional \emph{a priori}  $p(x | \theta, M)$ que indica, dado um valor do parâmetro $\Theta = \theta$, os possíveis resultados para $X$. Eventualmente o valor de $X$ é medido, com resultado $X = x_0$. Como devemos atualizar nossa atribuição de probabilidades? O princípio da máxima entropia indica que a distribuição posterior $q(x,\theta)$ é aquela que maximiza o funcional da eq.\eqref{eq:relel} sob o vínculo de que conhecemos o valor de $X$. Ou seja, o vínculo é dado por\footnote{Note que essa equação implementa, na verdade, um número infinito de vínculos -- um para cada valor de $x$.}:
+\newthought{Um caso específico de aplicação} do princípio de Máxima Entropia é o da ajuste de parâmetros teóricos de um modelo quando novos dados empíricos são coletados. Suponha que um par de variáveis $X$ e $\Theta$ são considerados em um modelo $M$. A variável $X$ é experimentalmente mensurável e a variável $\Theta$ é um parâmetro teórico do modelo. O modelo oferece informação prévia sob a forma de (1) uma distribuição \emph{a priori} dos valores possíveis do parâmetro $\Theta$, dada por $p(\theta | M)$ e (2) uma distribuição condicional \emph{a priori}  $p(x | \theta, M)$ que indica, dado um valor do parâmetro $\Theta = \theta$, os possíveis resultados para $X$. Eventualmente o valor de $X$ é medido, com resultado $X = x_0$. Como devemos atualizar nossa atribuição de probabilidades? O princípio da máxima entropia indica que a distribuição posterior $q(x,\theta)$ é aquela que maximiza o funcional da eq.\eqref{eq:relel} sob o vínculo de que conhecemos o valor de $X$. Ou seja, o vínculo é dado por\footnote{Note que essa equação implementa, na verdade, um número infinito de vínculos -- um para cada valor de $x$.}:
 \begin{equation}
 \label{aux:aux1}
  \int q(x, \theta) d\theta = q(x) = \delta(x-x_0).
@@ -154,7 +154,7 @@ Ou seja, as distribuições condicionais de $\theta$ devem ser iguais antes e de
 e esse é o teorema de Bayes como entendido em inferência bayesiana -- como um princípio de atualização de graus de confiança quando um nova informação está disponível. A distribuição $q(\theta | x_0, M)$ incorpora informações a respeito do modelo original e do fato de que a variável $X$ foi medida e vale $x_0$. 
 
 \subsection{Informação e vínculos - distribuições de Gibbs}
-Outro tipo de possível informação que pode ser recebido é a respeito do valor esperado de uma certa função de $x$:
+\newthought{Outro tipo de possível} de informação que pode ser incorporada à distribuição de probabilidades é a respeito do valor esperado de uma certa função de $x$:
 \[
  \avg{E(x)} = E_0.
 \]
@@ -169,13 +169,17 @@ e obtém-se finalmente:
  q(x) = \dfrac{1}{Z}p(x) e^{-\beta E(x)}
 \end{equation}
 
-A distribuição \eqref{eq:gibbs} faz parte da classe de distribuições gibbsianas, comuns em mecânica estatística\footnote{Esse raciocínio é reminiscente do encontrado em textos clássicos de mecânica estatística como \citet{Landau1980}, onde a distribuição de probabilidades para um conjunto de partículas é encontrada maximizando a entropia sob vínculos associados a quantidades conservadas microscopicamente.}\cite{Landau1980}. Uma forma alternativa dessa visão pode ser encontrada\cite{NCaticha2011} em \citet{NCaticha2011}. Nesse trabalho, os autores consideraram um modelo em que há uma função das variáveis microscópicas cujo valor deve ser importante determinante para uma dinâmica microscópica desconhecida. Ainda que não haja indicação de que essa deve ser uma grandeza estritamente conservada pela dinâmica interna dos agentes, há uma indicação de que o valor dessa função oferece informação sobre esta dinâmica. Isso é o suficiente para que a incorporação do valor dessa função na distribuição de probabilidades através de um vínculo traga informação útil. 
+\newthought{A distribuição \eqref{eq:gibbs}} faz parte da classe de distribuições gibbsianas, comuns em mecânica estatística\footnote{Esse raciocínio é reminiscente do encontrado em textos clássicos de mecânica estatística como \citet{Landau1980}, onde a distribuição de probabilidades para um conjunto de partículas é encontrada maximizando a entropia sob vínculos associados a quantidades conservadas microscopicamente.}\cite{Landau1980}. Uma forma alternativa dessa visão pode ser encontrada\cite{NCaticha2011} em \citet{NCaticha2011}. Nesse trabalho, os autores consideraram um modelo em que há uma função das variáveis microscópicas cujo valor deve ser importante determinante para uma dinâmica microscópica desconhecida. Ainda que não haja indicação de que essa deve ser uma grandeza estritamente conservada pela dinâmica interna dos agentes, há uma indicação de que o valor dessa função oferece informação sobre esta dinâmica. Isso é o suficiente para que a incorporação do valor dessa função na distribuição de probabilidades através de um vínculo traga informação útil. 
 
 \subsection{Métodos de campo médio}
-Eventualmente, podemos nos deparar com uma distribuição $p(\vec{x})$ que não conseguimos tratar analiticamente. Esse é frequentemente o caso das distribuições gibbsianas como as da eq.\eqref{eq:gibbs}. Nesse caso, a interpretação do negativo da entropia relativa -- a divergência de Kullback-Leibler -- como espécie de distância pode oferecer um esquema aproximativo conveniente. Se uma família de distribuições tratáveis analiticamente $\mathcal{P}_\theta$ é conhecida, pode-se selecionar uma dessas como aproximação para a distribuição original $p(\vec{x})$ maximizando a entropia relativa, ou, de forma equivalente, minimizando a divergência de Kullback-Leibler:
+\label{sec:meanfield}
+\newthought{Eventualmente}, podemos nos deparar com uma distribuição $p(\vec{x})$ que não conseguimos tratar analiticamente. Esse é frequentemente o caso das distribuições gibbsianas como as da eq.\eqref{eq:gibbs}. Nesse caso, a interpretação do negativo da entropia relativa -- a divergência de Kullback-Leibler -- como espécie de distância pode oferecer um esquema aproximativo conveniente. Se uma família de distribuições tratáveis analiticamente $\mathcal{P}_\theta$ é conhecida, pode-se selecionar uma dessas como aproximação para a distribuição original $p(\vec{x})$ maximizando a entropia relativa, ou, de forma equivalente, minimizando a divergência de Kullback-Leibler:
 \begin{equation}
  D[ p(x|\theta)|p(x) ] = \int p(x|\theta) \log\frac{p(x|\theta)}{p(x)}.
 \end{equation}
+\clarificationneeded
+
+
 No caso de uma distribuição gibbsiana como eq.\eqref{eq:gibbs} temos:
 \begin{equation*}
  D[ p(x|\theta)|p(x) ] = \int \ud x\; p(x|\theta) \log\left[p(x|\theta)\frac{Z}{e^{-\beta H(x)}}\right]
@@ -189,16 +193,33 @@ onde $S(\theta) = - \int \ud x p(x|\theta) \log p(x|\theta)$ é a entropia de Sh
 \label{eq:thermoapprox}
  D[ p(x|\theta)|p(x) ] = \dfrac{F(\theta) - F}{T}.
 \end{equation}
-onde $T = \frac{1}{\beta}$ é uma quantidade similar à temperatura e $F(\theta) = \avg{H}_{\theta} - T S(\theta)$ e $F = -T\log(Z)$ são funções similares às energias livres da termodinâmica. Essa função deve ser otimizada com relação aos parâmetros $\theta$ para obter uma distribuição aproximativa. Se a distribuição original $p(\vec{x})$ pertence ao conjunto $\mathcal{P}_\theta$, as propriedades da divergência de Kullback-Leibler garantem que a solução do problema de otimização é a própria $p(\vec{x})$. Nesse caso, $D[p|p] = 0$ e a energia livre $F(\theta)$ ótima é igual à energia livre exata. Caso contrário, a distribuição e energia livre ótimas são aproximações para a distribuição e energia livre exatas. Uma vez que a divergência de Kullback-Leibler nunca é negativa, a equação \eqref{eq:thermoapprox} resulta em:
+onde $T = \frac{1}{\beta}$ é uma quantidade similar à temperatura e 
+\begin{equation}
+\label{eq:freenergy}
+F(\theta) = \avg{H}_{\theta} - T S(\theta) 
+\end{equation}
+e $F = -T\log(Z)$ são funções similares às energias livres da termodinâmica. Essa função deve ser otimizada com relação aos parâmetros $\theta$ para obter uma distribuição aproximativa. Uma vez que $F$ independe do parâmetro $\theta$, o parâmetro basta então maximizar a energia livre $F(\theta)$:
+\begin{equation}
+p(x) \cong p(x | \tilde{\theta}), \text{   onde: } \tilde{\theta} = \argmax_{\theta} F(\theta)
+\end{equation}
+
+\newthought{Se a distribuição original} $p(\vec{x})$ pertence ao conjunto $\mathcal{P}_\theta$, as propriedades da divergência de Kullback-Leibler garantem que a solução do problema de otimização é a própria $p(\vec{x})$. Nesse caso, $D[p|p] = 0$ e a energia livre $F(\theta)$ ótima é igual à energia livre exata. Caso contrário, a distribuição e energia livre ótimas são aproximações para a distribuição e energia livre exatas. Uma vez que a divergência de Kullback-Leibler nunca é negativa, a equação \eqref{eq:thermoapprox} resulta em:
 \begin{equation}
  \label{eq:bogouliubov}
   F(\theta) \ge F,
 \end{equation}
-mais uma versão da célebre desigualdade de Bogouliubov, familiar da teoria de aproximações de campo médio em mecânica estatística.
+mais uma versão da célebre desigualdade de Bogouliubov, familiar da teoria de aproximações de campo médio em mecânica estatística\cite{Salinas1997}.
 
-O exemplo clássico desse esquema aproximativo é a escolha da família de distribuições aproximativas como o conjunto de distribuições em que as variáveis $x_1, x_2, \ldots, x_N$ são independentes. Nesse caso, obtém-se o que tradicionalmente se chama, em mecânica estatística, uma aproximação de campo-médio. Aproximações sucessivamente mais refinadas, como a de Bethe-Peierls\footnote{Também conhecida como \emph{``sum-product algorithm''} ou \emph{``belief propagation''} } e de Kikuchi podem ser colocadas no mesmo esquema escolhendo famílias de distribuições adequadas\footnote{Escolhendo funções com vários graus diferentes de fatorização da dependência entre as variáveis.}. Mais sobre aproximações de campo médio sob este ponto de vista pode ser encontrado em \citet{Opper2001}\cite{Opper2001} e \citet{Mezard2009}\cite{Mezard2009}.
+\newthought{O exemplo clássico desse esquema aproximativo} é a escolha da família de distribuições aproximativas como o conjunto de distribuições em que as variáveis $x_1, x_2, \ldots, x_N$ são independentes. Nesse caso, obtém-se o que tradicionalmente se chama, em mecânica estatística, uma aproximação de campo-médio. Diversos outros esquemas de aproximação, como a aproximação de Bethe-Peierls\footnote{Também conhecida como \emph{``sum-product algorithm''} ou \emph{``belief propagation''}}, podem ser colocadas no mesmo esquema escolhendo famílias de distribuições adequadas\footnote{Famílias de distribuições com vários graus diferentes de fatorização da dependência entre as variáveis.}. Mais sobre aproximações de campo médio sob este ponto de vista pode ser encontrado em \citet{Opper2001}\cite{Opper2001} e \citet{Mezard2009}\cite{Mezard2009}.
 
 \section{Tópicos tratados na Tese}
+\newthought{As idéias e pontos de vista} desenvolvidos acima norteiam o desenvolvimento de dois temas independentes no presente trabalho, que passarão a ser descritos agora. 
 
 \subsection{Teoria de Dependência Estatística, Cópulas e Teoria de Informação}
+
+\newthought{A primeira parte da tese} trata de uma análise da relação entre três campos isolados sobre os quais trabalhos recentes lançam luz - a teoria de informação, a teoria de medidas de dependência estatística e a teoria de cópulas. 
+
+\newthought{A teoria de cópulas} nasceu em \citeyear{Sklar1959} com o trabalho\cite{Sklar1959} de \citeauthor{Sklar1959} sobre a estrutura de distribuições conjuntas de pares de variáveis aleatórias . Neste trabalho encontra-se a prova do teorema de Sklar, que 
+
+
 \subsection{Um modelo Mecânico-Estatístico para a emergência de autoridade}

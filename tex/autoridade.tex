@@ -163,7 +163,7 @@ O parâmetro $\alpha$ (ou sua versão normalizada, $a$) regula a importância re
 O parâmetro $\beta$ regula a escala em que flutuações no valor do custo total são toleradas. Para $\beta$ grande, variações no custo total acima do custo mínimo são muito pouco prováveis. Para valores maiores de $\beta$ as mesmas flutuações apresentam probabilidades maiores. Dessa forma, $\beta$ regula o quão prováveis são configurações que consistem de flutuações em torno das configurações ótimas discutidas na seção \emph{\nameref{sec:mincusto}}. Flutuações em torno do custo mínimo representam um dispêndio extra de energia e recursos que poderiam ser gastos em outras atividades, portanto $\beta$ pode ser parcialmente entendido como uma variável ecológica - escassez de recursos implica em menor possibilidade de permitir grandes flutuações do custo total. Além disso, pressões de pares pode causar o mesmo tipo de efeito de intolerância a erros de minimização do custo \sourcesneeded. Assim, $\beta$ é uma variável externa, que regula a intensidade da pressão para otimização do custo total, que pode ter origem social ou ecológica. 
 
 \subsection{Resultados numéricos para agentes isolados}
-\newthought{Simulações de Monte Carlo} desse modelo foram feitas usando o algoritmo de Metrópolis. Partindo de um grafo inicial aleatório (sorteado do ensemble de Erdos-Renyi, com fração de arestas $\frac{1}{2}$), a cada passo do algoritmo é proposta uma mudança em uma aresta do grafo - adicionando uma aresta faltante ou removendo uma aresta existente. Caso a mudança não quebre a conectividade do grafo, ela será aceita com probabilidade dada pelo fator de Gibbs: 
+\newthought{Simulações de Monte Carlo} desse modelo foram feitas usando o algoritmo de Metrópolis. Partindo de um grafo inicial aleatório (sorteado do ensemble de Erdos-Rényi, com fração de arestas $\frac{1}{2}$), a cada passo do algoritmo é proposta uma mudança em uma aresta do grafo - adicionando uma aresta faltante ou removendo uma aresta existente. Caso a mudança não quebre a conectividade do grafo, ela será aceita com probabilidade dada pelo fator de Gibbs: 
 \begin{equation}
 \label{eq:gibbsfactor}
 e^{-\beta \left(H(G') - H(G)\right)}.
@@ -201,11 +201,45 @@ distribuição de equilíbrio em pontos correspondentes do diagrama de fases.
 
 \newthought{Na figura}\ref{fig:phasediagram} temos um diagrama de fases completo variando $\alpha$ e a temperatura para um número fixo de agentes. A variável descrita no mapa de cores é a razão $\frac{\davg}{\dmax}$. Esse diagrama mostra uma linha de transição de fases entre a região azul escura - a região em que a organização do grafo é fortemente centralizada, com nós periféricos pouco conectados, e uma região em que a razão $\frac{\davg}{\dmax}$ é menos extrema. Acima de uma temperatura crítica essa fase não é mais observada. A região vermelho escura corresponde à fase totalmente conectada, ou situações bem próximas disso. Nessa região não há grandes saltos nos parâmetros de ordem, que mudam continuamente com a temperatura e $a$. A linha de transição de fase pode ser observada para diferentes valores da temperatura na figura \ref{fig:critical}. Note que para $\beta^{-1} \to 0$, temos $\alpha^{\star} = 1$.
 
+\subsection{Aproximação de Campo Médio}
+\newthought{É possível} fazer uma aproximação de campo médio para os resultados numéricos encontrados, no espírito do descrito na seção \ref{sec:meanfield}, \emph{\nameref{sec:meanfield}}. A família de distribuições escolhida para tratar esse problema é a ensemble de grafos de Erdös-Rényi\cite{Erdos1960, Newman2001}, $G(n, p)$, que consiste de grafos de $n$ vertices em que cada aresta está presente com probabilidade $p$. A família de distribuições de probabilidades sobre grafos associada ao ensemble de Erdös-Rényi, parametrizada por $p$, consiste de distribuições uniformes dentro do conjunto de grafos com mesmo número de vértices $n$ e mesmo número de arestas $n_e$. A probabalidade de que um grafo sorteado do ensemble de Erdös-Rényi tenha número de arestas $n_e$ é dada por uma distribuição binomial:
+\begin{equation}
+\label{eq:erdist}
+ p(n_e | G(n, p)) = {N_e \choose n_e} p^{n_e}(1-p)^{N_e - n_e}
+\end{equation}
+onde $N_e = n(n-1)/2$ é o número máximo de arestas. 
 
+\newthought{Com a família de distribuições escolhida}, podemos calcular a energia livre aproximativa definida na equação \ref{eq:freenergy}, dada por:
+\begin{equation}
+ F(p) = \E{H(G, \alpha) | G(n, p)} - T S[G(n,p)]
+\end{equation}
+Onde $T = \frac{1}{\beta}$ é o inverso do parametro $\beta$. 
+
+A entropia $S[G(n,p)]$ é simplesmente a entropia da distribuição binomial \ref{eq:erdist}, que para $n$ grande pode ser aproximada por:
+\begin{equation}
+ S[G(n,p)] = \frac{1}{2}\log\left(2\pi N_e p (1-p)\right)  + O\left(\frac{1}{N_e}\right).
+\end{equation}
+O valor esperado da energia consiste em duas partes: o valor esperado da fração de arestas ocupadas, que é simplesmente $p$, e a distância geodésica média do grafo. Uma aproximação para o segundo valor pode ser obtida usando a técnica de funções geratrizes\footnote{\citet{Newman2001}} e é dada por\footnote{Ver apêndice \ref{ap:erdosrenyi}}:
+\begin{equation}
+ \E{\bar{L}} = \frac{\log(n-1)}{\log(p) + \log(n-1)}
+\end{equation}
+Dessa forma, a expressão para a energia livre se torna:
+\begin{equation}
+\label{eq:erfreeenergy}
+ F(p) = p  + a \frac{\log(n-1)}{\log(p) + \log(n-1)} - \frac{T}{2}\log\left(2\pi N_e p (1-p)\right),
+\end{equation}
+que pode ser facilmente maximizada numericamente para obter os resultados da figura \ref{fig:campomedio}. 
+\begin{figure}
+  \centering
+  \includegraphics[width = \textwidth]{./figuras/manysizes.png}
+  \caption{Comparação do resultado de campo médio obtido pela maximização numérica da energia livre \ref{eq:erfreeenergy} e do resultado de Monte Carlo. O resultado é blabla.}
+  \label{fig:campomedio}
+\end{figure}
+\clarificationneeded Mais discussão aqui.
 
 \subsection{Interpretação parcial dos resultados}
 
-O diagrama de fases apresenta três regimes. Para valores altos de $a = \frac{2\alpha}{N(N-1)}$, ou seja, alta capacidade cognitiva ou grupos com poucos agentes, todos os nós apresentam praticamente a mesma conectividade. O grafo é simétrico, com conectividade densa e bem próximo de totalmente conexo. A variação de $\E{\dmax}$ e $\E{\davg}$ com $a$ nesse regime é compatível com a de um ensemble de Erdös-Renyi com alta conectividade, o que indica que as arestas são mais ou menos aleatóriamente distribuidas, de forma totalmente simétrica.
+O diagrama de fases apresenta três regimes. Para valores altos de $a = \frac{2\alpha}{N(N-1)}$, ou seja, alta capacidade cognitiva ou grupos com poucos agentes, todos os nós apresentam praticamente a mesma conectividade. O grafo é simétrico, com conectividade densa e bem próximo de totalmente conexo. A variação de $\E{\dmax}$ e $\E{\davg}$ com $a$ nesse regime é compatível com a de um ensemble de Erdös-Rényi com alta conectividade, o que indica que as arestas são mais ou menos aleatóriamente distribuidas, de forma totalmente simétrica.
 
 Para valores intermediários de $a$, existe um nó com conectividade ligeiramente maior, mas existem flutuações grandes. A taxa de aceitação do algoritmo de monte carlo é alta (ver: figura \ref{fig:acceptrate}). Nesse regime, o grafo é momentaneamente não-simétrico, mas estatísticamente qualquer nó pode ocupar a posição de conectividade maior e alterações desse nó central são frequentes. Há um pico nos desvios padrão dos parâmetros de ordem para um certo valor do parâmetro de controle $a^{\star}$, indicando um possível ponto crítico. 
 \begin{figure}
