@@ -1,12 +1,13 @@
-\documentclass[justified, symmetric]{tufte-book}
+\documentclass[justified]{tufte-book}
 
 % configuration and commands
 \input{./confs/packs}
 \input{./confs/commands}
 \input{./confs/tikzconfig}
 \input{./confs/tweaks}
+
 \input{./tex/pretext/details}
-\makeindex
+% \makeindex
 \begin{document}
   %\maketitle
   %pretextual area 
@@ -22,11 +23,12 @@
 	  \include{./tex/copulas}
 	  \include{./tex/autoridade}
 	  \include{./tex/conclusoes}
+  %bibliography
+	  \bibliographystyle{abbrvnat}
+	  \bibliography{bibdatabase}
+
   %body of appendices
   \appendix
 % 	  \include{./tex/apendices/glossario}
 	  \include{./tex/apendices/provas}
-  %bibliography
-	  \bibliographystyle{plainnat}
-	  \bibliography{bibdatabase}
 \end{document}

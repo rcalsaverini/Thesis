@@ -2,7 +2,6 @@
 
 \renewcommand{\captionfont}{\footnotesize}
 \renewcommand{\captionlabelfont}{\footnotesize}
-\hypersetup{pageanchor=false}
 
 % Fix unicode errors:
 
@@ -19,15 +18,31 @@
 
 %Show number in chapters, sections and subsections
 \setcounter{secnumdepth}{2}
-%Show sections on TOC
-\setcounter{tocdepth}{1}
+
+%Show sections and subsections on TOC
+\setcounter{tocdepth}{2}
 
 % Adjust number position in chapters and a a \rceil symbol to separate the number from the title
 \titleformat{\chapter}%
   [hang]% shape
-  {\relax\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\begin{fullwidth}}{}}% format applied to label+text
-  {\itshape\huge\thechapter$\rceil$}% label
-  {2pt}% horizontal separation between label and title body
-  {\huge\rmfamily\itshape}% before the title body
-  [\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\end{fullwidth}}{}]% after the title body
+  {\relax}% format applied to label+text
+  {\itshape\scshape\huge$\lceil$\thechapter$\rceil$}% label
+  {15pt}% horizontal separation between label and title body
+  {\huge\rmfamily\itshape\scshape}% before the title body
+  []% after the title body
 
+\titleformat{\section}%
+  [hang]% shape
+  {\relax}% format applied to label+text
+  {\itshape\scshape\Large$\lceil$\thesection$\rceil$}% label
+  {10pt}% horizontal separation between label and title body
+  {\Large\rmfamily\itshape\scshape}% before the title body
+  []% after the title body
+
+\titleformat{\subsection}%
+  [hang]% shape
+  {\relax}% format applied to label+text
+  {\itshape\scshape\large$\lceil$\thesubsection$\rceil$}% label
+  {8pt}% horizontal separation between label and title body
+  {\large\rmfamily\itshape\scshape}% before the title body
+  []% after the title body

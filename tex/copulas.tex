@@ -60,12 +60,12 @@ onde $F_X(x)$ e $F_Y(y)$ são as distribuições cumulativas marginais de $X$ e 
 
 \section{Informação Mútua}
 \newthought{Do ponto de vista de teoria de informação} a dependência mútua de um conjunto de variáveis pode ser quantificada através da mínima ``distância na variedade estatística'' (divergência de Kullback-Leibler) entre a distribuição conjunta dessas variáveis e a ``sub-variedade'' de distribuições independentes (veja figura \ref{fig:distributionmanyfold}) Isso pode ser escrito da forma:
-\begin{marginfigure}[-5em]
+\begin{figure}
 	\centering
     	\includegraphics[width = \textwidth]{figuras/distributionmanyfold.png}
- 	\caption[Representação pictórica da projeção de uma distribuição.]{\label{fig:distributionmanyfold} Representação pictórica da projeção de uma distribuição em uma certa família de distribuições convenientes. O espaço representado na figura corresponde de forma pictórica ao espaço formado por todas as distribuições de probabilidade. A superfície corresponde a um sub-espaço, nesse caso, o sub-espaço de distribuições fatoráveis, correspondentes a variáveis independentes. A projeção de uma distribuição qualquer $q(x,y)$ sobre esse sub-espaço através da minimização da divergência de Kullback-Leibler resulta na distribuição dada pelo produto das distribuições marginais $q(x)q(y)$. }
-
-\end{marginfigure}
+ 	\caption[Representação pictórica da projeção de uma distribuição.]{ Representação pictórica da projeção de uma distribuição em uma certa família de distribuições convenientes. O espaço representado na figura corresponde de forma pictórica ao espaço formado por todas as distribuições de probabilidade. A superfície corresponde a um sub-espaço, nesse caso, o sub-espaço de distribuições fatoráveis, correspondentes a variáveis independentes. A projeção de uma distribuição qualquer $q(x,y)$ sobre esse sub-espaço através da minimização da divergência de Kullback-Leibler resulta na distribuição dada pelo produto das distribuições marginais $q(x)q(y)$. }
+       \label{fig:distributionmanyfold}
+\end{figure}
 \begin{equation}
 \label{eq:infomutua}
 I(X_1,\ldots, X_n) = \min_{\{\phi_i(x_i)\}} \int p(x_1,\ldots, x_n) \log \frac{p(x_1,\ldots, x_n)}{\prod_{i=1}^{n}\phi_i(x_i)} \prod_{i=1}^{n}\ud x_i
@@ -252,12 +252,12 @@ onde $h(\sigma)$ é a entropia de uma distribuição normal univariada com vari�
  I_{XY} \ge I_{0}(\hat{\rho}_{XY}).
 \end{equation}
 Dessa forma, representando formalmente em um plano $I\;\mbox{\textit{vs}.}\;\hat{\rho}$ as possíveis distribuições conjuntas com cópula gaussiana\footnote{Essa representação não é única. Está sendo empregada apenas como ilustração. Essas duas grandezas não formam um bom sistema de coordenadas para a variedade de distribuições com cópula gaussiana.}, temos a figura \ref{fig:correlinfomutua}.
-\begin{marginfigure}
- %\centering
- \includegraphics[width = \textwidth]{./figuras/fig1-mod.pdf} 
+\begin{figure}
+ \centering
+ \includegraphics[width = 0.6\textwidth]{./figuras/fig1-mod.pdf} 
  \caption[ A correlação linear é subestimada no caso de marginais não-Gaussianas.]{A correlação linear é subestimada no caso de marginais não-Gaussianas. Se ambas as marginais são Gaussianas, a distribuição conjunta está localizada sobre o limite inferior para a informação mútua. Uma mudança nas marginais mantendo fixa a cópula, preserva a informação mútua, entretanto a correlação estimada deve se deslocar para valores de menor módulo.}
  \label{fig:correlinfomutua}
-\end{marginfigure}
+\end{figure}
 
 \newthought{Nessa figura} temos duas distribuições destacadas. Uma delas possui marginais gaussianas, sendo portanto uma distribuição normal bivariada e deve estar localizada sobre a curva $I_{0}(\hat{\rho})$, representada pela linha escura tracejada. Para essa distribuição o parâmetro $\rho$, uma boa medida de dependência se restrito a cópulas gaussianas, é exatamente igual à correlação linear $\hat{\rho}$. Se as marginais forem trocadas por marginais não-gaussianas, a informação mútua, independente das marginais, deve permanecer a mesma. Entretanto a correlação, como argumentado acima, deve mudar com a troca de marginais. Uma vez que uma mudança para valores maiores do módulo da correlação linear violaria a condição $I\ge I_{0}(\hat{\rho})$, a única alternativa é que o módulo da correlação diminua. Dessa forma, teríamos uma distribuição conjunta que tem cópula gaussiana com parâmetro $\rho_0$ e correlação linear $\hat{\rho} < \rho_{0}$. Uma tentativa de identificar o parâmetro $\rho$ da cópula gaussiana com a correlação linear levaria a atribuir ao par de variáveis uma dependência menor - talvez muito menor - do que a real. Em muitas aplicações isso pode ser perigoso. Em particular em aplicações financeiras o risco de uma operação pode ser subestimado por se subestimar a frequencia de co-ocorrência de eventos negativos. É notório que séries temporais financeiras apresentam distribuições marginais com caudas pesadas - e portanto distantes de uma gaussiana. O uso, bastante difundido\cite{FT2009}, de cópulas gaussianas para estimativa de risco combinado com o uso de estimadores baseados na correlação linear nessas condições pode significar que o risco de uma posição é substancialmente maior do que o estimado. Um dos requisitos para uma boa medida de dependência é que, para o caso de cópulas gaussianas, a medida em questão seja função monotônica e crescente do módulo do parâmetro $\rho$. Dessa forma, qualquer outra medida de dependência é mais adequada que a correlação linear para estimar a dependência de fato entre duas variáveis com dependência gaussiana.
 

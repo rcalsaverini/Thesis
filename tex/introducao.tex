@@ -6,7 +6,7 @@
 \section{Inferência, Probabilidades e Entropia}
 \label{sec:inferencia}
 
-\newthought{Adquirir informação e tomar decisões sob incerteza} -- dois pontos centrais em qualquer estudo quantitativo -- são os temas centrais da teoria da inferência estatística. A tradição do uso da teoria de probabilidades como ferramenta de inferência é centenária e remonta aos primeiros trabalhos sobre o conceito de probabilidades no século XVII \sourcesneeded. A relação entre o conceito de probabilidade e os problemas de inferência ficaram ainda mais fortes com os trabalhos de \citet{Cox1946}\cite[-9cm]{Cox1946,Cox1961} e \citet{Shannon1948}\cite[-5.75cm]{Shannon1948}, e as versões mais modernas desse paradigma\cite[-5cm]{Jaynes2003,ACaticha2008,ACaticha2009} lançam luz sobre a natureza da física estatística e do conceito de entropia. Nessa introdução pretendemos apresentar rapidamente o paradigma de inferência segundo o método de Máxima Entropia (ME) e suas relações com a mecânica estatística, que pensamos ser a linha unificadora que dá coerência à diversidade de temas abordados nesse trabalho. 
+\newthought{Adquirir informação e tomar decisões sob incerteza} -- dois pontos centrais em qualquer estudo quantitativo -- são os temas centrais da teoria da inferência estatística. A tradição do uso da teoria de probabilidades como ferramenta de inferência é centenária e remonta aos primeiros trabalhos sobre o conceito de probabilidades no século XVII \sourcesneeded. A relação entre o conceito de probabilidade e os problemas de inferência ficaram ainda mais fortes com os trabalhos de \citeauthor{Cox1946}\cite[-9cm]{Cox1946,Cox1961} e \citeauthor{Shannon1948}\cite[-5.75cm]{Shannon1948}, e as versões mais modernas desse paradigma\cite[-5cm]{Jaynes2003,ACaticha2008,ACaticha2009} lançam luz sobre a natureza da física estatística e do conceito de entropia. Nessa introdução pretendemos apresentar rapidamente o paradigma de inferência segundo o método de Máxima Entropia (ME) e suas relações com a mecânica estatística, que pensamos ser a linha unificadora que dá coerência à diversidade de temas abordados nesse trabalho. 
 
 \newthought{Raciocínio sobre informação completa} a respeito da veracidade ou não de um conjunto de proposições pode ser representado através da tradicional álgebra booleana. Se é conhecido o valor de verdade de uma certa proposição e como ela se relaciona com outras proposições, pode-se inferir o valor de verdade das proposições relacionadas através das regras bem definidas da álgebra de proposições. Por exemplo, se é sabido que $P_{1} \Rightarrow P_{2}$, e há certeza de que $P_{1}$ é verdadeira, pode-se inferir imediatamente que $P_{2}$ é verdadeira. Da mesma forma, a certeza de que $P_{2}$ é falsa imediatamente implica na certeza de que $P_{1}$ é falsa. Em outras palavras, a hipótese $P_{1} = V$ fornece \textit{informação completa} a respeito de $P_{2}$, bem como a hipótese $P_{2} = F$ fornece informação completa sobre $P_1$. Entretanto, a certeza a respeito da falsidade de $P_{1}$ não oferece conclusão alguma, dentro desse paradigma de inferência sobre informação completa, a respeito da veracidade de $P_{2}$. Não é difícil porém formular um exemplo em que a informação sobre a falsidade de $P_{1}$ fornece \textit{alguma informação}, ainda que incompleta, sobre $P_{2}$. 
 
@@ -14,8 +14,8 @@
 
 \subsection{Probabilidades e Inferência}
 \label{sec:probabilidadeseinferencia}
-\newthought{Para derivar uma teoria coerente de inferência}, devem ser estabelecidos alguns requisitos. Dada duas proposições $P$ e $Q$, postulamos uma medida\sidenote[][-8cm]{A justificativa para usar números reais vem de um argumento simples de transitividade - se a confiança na veracidade de $P_1$ é maior que na veracidade de $P_2$ e esta é maior que a confiança na veracidade de $P_3$, então, um requisito razoável é que a confiança em $P_1$ seja maior que em $P_3$. Dessa forma, $(P_1|Q)>(P_2|Q)$ e $(P_2|Q)>(P_3|Q)$ implica $(P_1|Q)>(P_3|Q)$. Isso é suficiente para mostrar que existe uma representação real para essas quantidades. Conseqüências interessantes de se relaxar o requesito de transitividade são discutidas em  \citet{Goyal2010}}\cite[-2.5cm]{Goyal2010} $(P | Q) \in \mathbb{R}$ denominada \textit{plausibilidade da proposição $P$ dada a proposição $Q$}. A plausibilidade $(P|Q)$ representa o \emph{grau de confiança} de que $P$ esteja correta dada uma certa informação prévia $Q$. 
-Postulamos ainda que, sempre que existam duas formas diferentes de calcular a mesma plausibilidade, o resultado deve ser idêntico. Esse requisito leva aos seguintes resultados\footnote[][-3cm]{Todas as outras possibilidades são consideradas em \citet{Tribus1969} e essas são as únicas que não conduzem a resultados manifestamente inconsistentes.}\cite[-2cm]{Tribus1969}:
+\newthought{Para derivar uma teoria coerente de inferência}, devem ser estabelecidos alguns requisitos. Dada duas proposições $P$ e $Q$, postulamos uma medida\sidenote[][-12cm]{A justificativa para usar números reais vem de um argumento simples de transitividade - se a confiança na veracidade de $P_1$ é maior que na veracidade de $P_2$ e esta é maior que a confiança na veracidade de $P_3$, então, um requisito razoável é que a confiança em $P_1$ seja maior que em $P_3$. Dessa forma, $(P_1|Q)>(P_2|Q)$ e $(P_2|Q)>(P_3|Q)$ implica $(P_1|Q)>(P_3|Q)$. Isso é suficiente para mostrar que existe uma representação real para essas quantidades. Conseqüências interessantes de se relaxar o requesito de transitividade são discutidas em  \citet{Goyal2010}}\cite[-6cm]{Goyal2010} $(P | Q) \in \mathbb{R}$ denominada \textit{plausibilidade da proposição $P$ dada a proposição $Q$}. A plausibilidade $(P|Q)$ representa o \emph{grau de confiança} de que $P$ esteja correta dada uma certa informação prévia $Q$. 
+Postulamos ainda que, sempre que existam duas formas diferentes de calcular a mesma plausibilidade, o resultado deve ser idêntico. Esse requisito leva aos seguintes resultados\footnote[][-6cm]{Todas as outras possibilidades são consideradas em \citet{Tribus1969} e essas são as únicas que não conduzem a resultados manifestamente inconsistentes.}\cite[-4cm]{Tribus1969}:
 \begin{itemize}
 \item A plausibilidade\footnote[][-2cm]{Os seguintes símbolos serão usados para as operações booleanas no presente capítulo:
 \begin{description}
@@ -125,7 +125,7 @@ A divergência de Kullback-Leibler apresenta as propriedades de uma pré-métric
 \begin{equation}
  D[p(x|\theta+\ud\theta), p(x|\theta)] = \frac{1}{2}\sum g_{ij} \ud\theta_i \ud\theta_j + \mathrm{O}(\ud\theta^3),
 \end{equation}
-onde $g_{ij} = \avg{\partial \log p(x|\theta)/ \partial \theta_i\;{\partial \log p(x|\theta) / \partial \theta_j}}$ é a chamada métrica de Fisher-Rao, que provê uma estrutura métrica\cite{Amari2000} ao conjunto $\mathcal{P}_\theta$. Nessa linguagem, o princípio de máxima entropia pode ser entendido como um princípio de ``mínima distância'' -- a distribuição posterior deve ser tão próxima da distribuição \emph{a priori} quanto permitido pelos vínculos impostos pela nova informação.
+onde $g_{ij} = \avg{\partial \log p(x|\theta)/ \partial \theta_i\;{\partial \log p(x|\theta) / \partial \theta_j}}$ é a chamada métrica de Fisher-Rao, que provê uma estrutura métrica\footnote{\citet{Amari2000}} ao conjunto $\mathcal{P}_\theta$. Nessa linguagem, o princípio de máxima entropia pode ser entendido como um princípio de ``mínima distância'' -- a distribuição posterior deve ser tão próxima da distribuição \emph{a priori} quanto permitido pelos vínculos impostos pela nova informação.
 \subsection{Informação e Vínculos - atualização Bayesiana}
 \label{sec:bayes}
 Um caso específico de aplicação do princípio de Máxima Entropia é o da ajuste de parâmetros teóricos de um modelo quando novos dados empíricos são coletados. Suponha que um par de variáveis $X$ e $\Theta$ são considerados em um modelo $M$. A variável $X$ é experimentalmente mensurável e a variável $\Theta$ é um parâmetro teórico do modelo. O modelo oferece informação prévia sob a forma de (1) uma distribuição \emph{a priori} dos valores possíveis do parâmetro $\Theta$, dada por $p(\theta | M)$ e (2) uma distribuição condicional \emph{a priori}  $p(x | \theta, M)$ que indica, dado um valor do parâmetro $\Theta = \theta$, os possíveis resultados para $X$. Eventualmente o valor de $X$ é medido, com resultado $X = x_0$. Como devemos atualizar nossa atribuição de probabilidades? O princípio da máxima entropia indica que a distribuição posterior $q(x,\theta)$ é aquela que maximiza o funcional da eq.\eqref{eq:relel} sob o vínculo de que conhecemos o valor de $X$. Ou seja, o vínculo é dado por\footnote{Note que essa equação implementa, na verdade, um número infinito de vínculos -- um para cada valor de $x$.}:
@@ -168,15 +168,37 @@ e obtém-se finalmente:
 \label{eq:gibbs}
  q(x) = \dfrac{1}{Z}p(x) e^{-\beta E(x)}
 \end{equation}
-Essa distribuição faz parte da classe de distribuições gibbsianas, comuns em mecânica estatística\footnote[][-5.5cm]{Esse raciocínio é reminiscente do encontrado em \citet{Landau1980}, onde a distribuição de probabilidades para um conjunto de partículas é encontrada maximizando a entropia sob vínculos associados a quantidades conservadas microscopicamente.}\cite[-3cm]{Landau1980}.
 
-Uma forma alternativa dessa visão pode ser encontrada\cite[-1cm]{NCaticha2011} em \citet{NCaticha2011}.
+A distribuição \eqref{eq:gibbs} faz parte da classe de distribuições gibbsianas, comuns em mecânica estatística\footnote{Esse raciocínio é reminiscente do encontrado em textos clássicos de mecânica estatística como \citet{Landau1980}, onde a distribuição de probabilidades para um conjunto de partículas é encontrada maximizando a entropia sob vínculos associados a quantidades conservadas microscopicamente.}\cite{Landau1980}. Uma forma alternativa dessa visão pode ser encontrada\cite{NCaticha2011} em \citet{NCaticha2011}. Nesse trabalho, os autores consideraram um modelo em que há uma função das variáveis microscópicas cujo valor deve ser importante determinante para uma dinâmica microscópica desconhecida. Ainda que não haja indicação de que essa deve ser uma grandeza estritamente conservada pela dinâmica interna dos agentes, há uma indicação de que o valor dessa função oferece informação sobre esta dinâmica. Isso é o suficiente para que a incorporação do valor dessa função na distribuição de probabilidades através de um vínculo traga informação útil. 
 
-\section{Inferência e Mecânica Estatística}
-\subsection{Uma visão informacional da Mecânica Estatística}
-\subsection{Distribuições de Gibbs}
 \subsection{Métodos de campo médio}
+Eventualmente, podemos nos deparar com uma distribuição $p(\vec{x})$ que não conseguimos tratar analiticamente. Esse é frequentemente o caso das distribuições gibbsianas como as da eq.\eqref{eq:gibbs}. Nesse caso, a interpretação do negativo da entropia relativa -- a divergência de Kullback-Leibler -- como espécie de distância pode oferecer um esquema aproximativo conveniente. Se uma família de distribuições tratáveis analiticamente $\mathcal{P}_\theta$ é conhecida, pode-se selecionar uma dessas como aproximação para a distribuição original $p(\vec{x})$ maximizando a entropia relativa, ou, de forma equivalente, minimizando a divergência de Kullback-Leibler:
+\begin{equation}
+ D[ p(x|\theta)|p(x) ] = \int p(x|\theta) \log\frac{p(x|\theta)}{p(x)}.
+\end{equation}
+No caso de uma distribuição gibbsiana como eq.\eqref{eq:gibbs} temos:
+\begin{equation*}
+ D[ p(x|\theta)|p(x) ] = \int \ud x\; p(x|\theta) \log\left[p(x|\theta)\frac{Z}{e^{-\beta H(x)}}\right]
+\end{equation*}
+que pode ser ainda escrito como:
+\[
+ D[ p(x|\theta)|p(x) ] = - S(\theta)  + \beta \avg{H}_{\theta}  + \log(Z)
+\]
+onde $S(\theta) = - \int \ud x p(x|\theta) \log p(x|\theta)$ é a entropia de Shannon da distribuição $p(x|\theta)$. Usando ainda a definição de energia livre termodinâmica, essa equação pode ser escrita como:
+\begin{equation}
+\label{eq:thermoapprox}
+ D[ p(x|\theta)|p(x) ] = \dfrac{F(\theta) - F}{T}.
+\end{equation}
+onde $T = \frac{1}{\beta}$ é uma quantidade similar à temperatura e $F(\theta) = \avg{H}_{\theta} - T S(\theta)$ e $F = -T\log(Z)$ são funções similares às energias livres da termodinâmica. Essa função deve ser otimizada com relação aos parâmetros $\theta$ para obter uma distribuição aproximativa. Se a distribuição original $p(\vec{x})$ pertence ao conjunto $\mathcal{P}_\theta$, as propriedades da divergência de Kullback-Leibler garantem que a solução do problema de otimização é a própria $p(\vec{x})$. Nesse caso, $D[p|p] = 0$ e a energia livre $F(\theta)$ ótima é igual à energia livre exata. Caso contrário, a distribuição e energia livre ótimas são aproximações para a distribuição e energia livre exatas. Uma vez que a divergência de Kullback-Leibler nunca é negativa, a equação \eqref{eq:thermoapprox} resulta em:
+\begin{equation}
+ \label{eq:bogouliubov}
+  F(\theta) \ge F,
+\end{equation}
+mais uma versão da célebre desigualdade de Bogouliubov, familiar da teoria de aproximações de campo médio em mecânica estatística.
+
+O exemplo clássico desse esquema aproximativo é a escolha da família de distribuições aproximativas como o conjunto de distribuições em que as variáveis $x_1, x_2, \ldots, x_N$ são independentes. Nesse caso, obtém-se o que tradicionalmente se chama, em mecânica estatística, uma aproximação de campo-médio. Aproximações sucessivamente mais refinadas, como a de Bethe-Peierls\footnote{Também conhecida como \emph{``sum-product algorithm''} ou \emph{``belief propagation''} } e de Kikuchi podem ser colocadas no mesmo esquema escolhendo famílias de distribuições adequadas\footnote{Escolhendo funções com vários graus diferentes de fatorização da dependência entre as variáveis.}. Mais sobre aproximações de campo médio sob este ponto de vista pode ser encontrado em \citet{Opper2001}\cite{Opper2001} e \citet{Mezard2009}\cite{Mezard2009}.
 
 \section{Tópicos tratados na Tese}
-\subsection{Dependência estatística}
-\subsection{Emergência de autoridade}
+
+\subsection{Teoria de Dependência Estatística, Cópulas e Teoria de Informação}
+\subsection{Um modelo Mecânico-Estatístico para a emergência de autoridade}
