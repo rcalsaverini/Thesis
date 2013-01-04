@@ -4,14 +4,15 @@
 
 \newthought{Os grandes primatas}, em particular os humanos, apresentam vidas sociais intensas. Atividades sociais, formação de coalizões, cooperação para realização de diversas tarefas, guerras, compartilhamento de alimentos, disputas por liderança \textit{et cetera}, situações ubíquas em agrupamentos humanos, não são entretanto limitadas a essa espécie mas são pervasivas em todas as espécies desse grupo\sourcesneeded. Estudos em chimpanzés e bonobos\cite{deWaal2007}\sourcesneeded, por exemplo, mostram que a variedade de suas experiências sociais são comparáveis apenas à da espécie humana.
 
-Entretanto a natureza dessa experiência social pode ser bem diferente entre humanos e outras espécies aparentadas. Enquanto a maioria dos grandes primatas vivem em sociedades hierárquicas, marcadas por uma grande concentração dos usos de recursos energéticos e reprodutivos por parte de poucos membros do grupo, os humanos se destacam pela variabilidade de suas experiências sociais nesse espectro. Certos grupos humanos\footnote{Dizer aqui que nos preocupamos com a evolução dos humanos e portanto vamos nos fixar em hunter-gatherers e sociedades simples.\clarificationneeded} apresentam organização fortemente centralizada e hierárquica, com concentração de uso de recursos e riqueza. Outros grupos apresentam sociedades basicamente equalitárias, com compartilhamento de recursos e alimentos, ausência de distinções de status, autoridades ou concentração de riqueza. \sourcesneeded
-
-Nossa intenção é desenvolver um modelo matemático para a formação de estruturas sociais baseado em recentes observações nos campos da arqueologia, primatologia e neurociências.
+Entretanto a natureza dessa experiência social pode ser bem diferente entre humanos e outras espécies aparentadas. Enquanto a maioria dos grandes primatas vivem em sociedades hierárquicas\cite{boehm2001}, marcadas por uma grande concentração dos usos de recursos energéticos e reprodutivos por parte de poucos membros do grupo, os humanos se destacam pela variabilidade de suas experiências sociais nesse espectro\cite{Vehrencamp1983}. Certos grupos humanos\footnote{Dizer aqui que nos preocupamos com a evolução dos humanos e portanto vamos nos fixar em hunter-gatherers e sociedades simples.\clarificationneeded} apresentam organização fortemente centralizada e hierárquica, com concentração de uso de recursos e riqueza. Outros grupos apresentam sociedades basicamente equalitárias, com compartilhamento de recursos e alimentos, ausência de distinções de status, autoridades ou concentração de riqueza. \sourcesneeded Nossa intenção neste trabalho é investigar, através de um modelo matemático baseado em recentes observações nos campos da arqueologia, primatologia e neurociências, a origem dessa variabilidade.
 
 \section{Evidências empiricas}
-\subsection{``U-shaped evolution'' e dinâmica da organização social em primatas pré-humanos} 
 
-O registro arqueológico revela uma dinâmica temporal na organização social dos humanos através da pré-história. Os humanos, descendendo de primatas com provável organização social hierárquica, similar às dos grandes primatas mais próximos - chimpanzés, bonobos e gorilas - passaram por um período de grupos equalitários, sem autoridade central, com baixa densidade populacional. No neolítico houve uma transição para grupos fortemente hierárquicos, conforme a densidade populacional aumenta após a revolução agrícola. Esse quadro é ilustrado pela figura \ref{fig:ushaped}. Evidências etnográficas também apontam para uma relação entre o tamanho dos grupos de humanos caçadores-coletores e suas formas de organização social\cite{Currie2010}. Grupos pequenos de humanos tendem a apresentar organização equalitária, sem concentração de poder. Grupos maiores tendem a apresentar organizações hierárquicas, concentração de poder e hereditariedade de poder. 
+\subsection{``U-shaped evolution''} 
+
+\newthought{O registro arqueológico revela} uma dinâmica temporal na organização social dos humanos através da pré-história\cite[-3cm]{Knauft1991, Marcus2008}. Os humanos, descendendo de primatas com provável organização social hierárquica, passaram por um período de grupos equalitários, sem autoridade central, com baixa densidade populacional. No neolítico houve uma transição para grupos fortemente hierárquicos, conforme a densidade populacional aumenta após a revolução agrícola. Esse quadro, ilustrado pela figura \ref{fig:ushaped}, é denominado em \citep{Knauft1991} \emph{``a U-shaped evolution''}. 
+
+\newthought{Hoje, sociedades humanas} preenchem todo o espectro de organização social \cite[-3.5cm]{Vehrencamp1983} e evidências etnográficas também apontam para uma relação entre o tamanho dos grupos de humanos caçadores-coletores e suas formas de organização social\cite[-1cm]{Currie2010}. Grupos pequenos de humanos tendem a apresentar organização equalitária, sem concentração de poder. Grupos maiores tendem a apresentar organizações hierárquicas, concentração de poder e hereditariedade de poder. 
 \begin{figure}
 	\centering
 	\includegraphics[width = 1.1\textwidth]{figuras/ushaped.png}
@@ -21,18 +22,18 @@ O registro arqueológico revela uma dinâmica temporal na organização social d
 
 
 \subsection{Evolução do cérebro primata e a Teoria Maquiavélica}
-
-Diversos trabalhos\cite[-1cm]{Dunbar2008,Dunbar2009, Dunbar2010,Aiello1993,Joffe1997} relacionam o tamanho relativo de regiões do cérebro de diversas espécies de primatas a medidas relacionadas com a capacidade social da espécie, como tamanho dos grupos em que vivem, o tamanho de coalizões, número médio de indivíduos que interagem diretamente, etc. O que é típicamente encontrado é ilustrado na figura \ref{fig:dunbarlaw}. Essa figura mostra um gráfico do tamanho médio do grupo em função da razão média entre o volume do neo-córtex - região do cérebro dedicada ao planejamento, raciocínio, linguagem, entre outras funções cognitivas de ordem superior - e o volume total do cérebro para diversas espécies de primatas. O gráfico sugere uma relação do tipo lei de potência entre as duas grandezas, similar a encontradas em diversas outras comparações desse tipo. Em essência, essa relação sugere que a capacidade cognitiva dos primatas está intimamente relacionada a sua necessidade de dar conta de interações sociais cada 
-vez mais complexas e sugere um cenário em que o rápido crescimento na importância relativa do neo-córtex é uma resposta a uma pressão seletiva associada a essa necessidade de interação social.  
-
+\newthought{Estudos recentes\cite[-5cm]{Sawaguchi1990, Dunbar1992, Dunbar1993, 	Aiello1993, Joffe1997} relacionam} o tamanho relativo de regiões do cérebro de diversas espécies de primatas a medidas relacionadas com a capacidade social da espécie, como tamanho dos grupos em que vivem, o tamanho de coalizões, número médio de indivíduos que interagem diretamente, etc. O que é típicamente encontrado é ilustrado na figura \ref{fig:dunbarlaw}. Essa figura mostra um gráfico do tamanho médio do grupo em função da razão média entre o volume do neocórtex\footnote[][-2cm]{O neocórtex é uma região do cérebro envolvida no planejamento, raciocínio espacial, linguagem, entre outras funções cognitivas complexas.} e o volume total do cérebro para diversas espécies de primatas. O gráfico sugere uma relação do tipo lei de potência entre as duas grandezas, similar a encontradas em diversas outras comparações desse tipo. 
 \begin{figure}
 	\centering
-	\includegraphics[width = 1.1\textwidth]{figuras/dunbar.png}
-	\caption{ Gráfico em escala di-logaritimica do tamanho médio do grupo em função da razão média entre o volume do neo-córtex e o volume total do cérebro para diversas espécies de primatas. Dados disponíveis em \citep{Dunbar2009}.}
+	\includegraphics[width = \textwidth]{figuras/dunbar.png}
+	\caption[Gráfico em escala di-logaritimica do tamanho médio do grupo em função da razão média entre o volume do neocórtex e o volume total do cérebro para diversas espécies de primatas.]{ Gráfico em escala di-logaritimica do tamanho médio do grupo em função da razão média entre o volume do neocórtex e o volume total do cérebro para diversas espécies de primatas. Dados disponíveis em \citep{Dunbar2009}.}
 	\label{fig:dunbarlaw}
 \end{figure}
+Em essência, essa relação sugere que a capacidade cognitiva dos primatas está relacionada à sua necessidade de dar conta de interações sociais complexas. Essa hipótese, denominada Teoria Maquiavélica ou Teoria do Cérebro Social, sugere um cenário em que o rápido crescimento na importância relativa do neocórtex é uma resposta a uma pressão seletiva associada a essa necessidade de interação social. Ambientes sociais complexos favorecem reprodutivamente individuos com maior capacidade de processar informações sociais, que, por sua vez, torna as estratégias sociais ainda mais complexas em um ``corrida armamentista'' evolutiva\cite[-6.5cm]{Byrne1990,Byrne1991,Byrne1992, Whiten2012}. Essa hipótese tem recebido crescente suporte empírico e aprofundamento teórico\cite[-1.5cm]{Dunbar2008, Dunbar2009, Shultz2010}. 
 
-\subsection{Dados etnoráficos (?)}
+
+
+% \subsection{Dados etnoráficos (?)}
 \section{Um modelo mecanico-estatístico baseado em agentes}
 \subsection{Descrição dos agentes}
 
