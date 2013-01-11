@@ -113,8 +113,12 @@ Essa definição implica que a densidade de probabilidade conjunta das variávei
 \label{eq:density}
  p_{XY}(x,y) = c(F_X(x), F_Y(y)) p_X(x) p_Y(y)
 \end{equation}
-\textbf{dá para explicar isso melhor}
-O teorema de Sklar permite dividir a informação contida na distribuição conjunta em duas partes: a parte que diz respeito às propriedades de cada uma das variáveis, dada pelas distribuições marginais, e a parte que diz respeito à dependência estatística entre as duas variáveis.
+Dessa forma, o teorema de Sklar permite dividir a informação contida na distribuição conjunta em duas partes: 
+\begin{itemize}
+ \item uma parte que diz respeito apenas às propriedades de cada uma das variáveis -- que é dada pelas distribuições marginais;
+ \item e uma parte que diz respeito à dependência estatística entre as duas variáveis -- que é dada pela função cópula. 
+\end{itemize}
+ 
 \subsection{Exemplos}
 \label{sec:exemplos}
 \newthought{Como exemplos de funções cópula} temos as cópulas associadas às distribuições multivariadas mais comumente utilizadas. Qualquer família de distribuições multivariadas  com um conjunto de parâmetros $\theta$ dada por $p(x,y |\theta)$ define uma função cópula dada por:
@@ -236,7 +240,7 @@ decompondo então a entropia, o conteúdo informacional da distribuição conjun
 I(X_1,X_2) =  - \frac{1}{2}\log\left(1 - \rho^2\right)
 \end{equation}
 \section{``Excesso'' de informação mútua}
-\subsection{Correlação Linear \textit{vs.} parâmetro }
+\subsection{Correlação Linear \textit{vs.} parâmetro $\rho$	}
 \newthought{A distribuição de máxima entropia} que satisfaz vínculos de que correlação, médias, e variâncias de um par de variáveis $X$ e $Y$ assumam certos valores é a distribuição normal. Usando a decomposição da eq. \eqref{eq:entropydecomposition2}, temos, uma vez que as entropias das marginais dependem apenas das variâncias e a informação mútua apenas da correlação\footnote{Note a importância de separar conceitualmente o parâmetro correlação, que identifica uma certa distribuição na família de distribuições normais, do funcional são homônimos, o qual estamos chamado de ``correlação linear'' e que está definido para qualquer distribuição.}:
 \begin{equation*}
 H(X_1,X_2) = h(\sigma_1) + h(\sigma_2) + \frac{1}{2}\log\left(1 - \hat{\rho}^2\right)
@@ -379,8 +383,8 @@ onde a soma é feita sobre todos os pares $(\mu,\nu)$. Um método para estimaç�
 Como exemplo desse diagnóstico, mostramos na figura \ref{fig:acoes} estimativas para essas quantidades para séries temporais de uma seleção de 150 das 500 ações que compõe o índice S\&P500, um índice de ações de alta capitalização negociadas em bolsas da NYSE Euronext e da NASDAQ OMX definido e mantido pela Standard \& Poor's. As barras de erro para a informação mútua, que representam um intervalo de confiança de $90\%$, foram calculadas usando o método de bootstrap, repetindo a estimativa do algoritmo KSG\cite{Kraskov2004} para diversas amostragens com repetição dos dados.
 \begin{figure}
  \subfloat[Seleção de pares com baixa correlação e grande excesso de informação mútua]{\includegraphics[width =\textwidth]{./figuras/locohimi.pdf}}\\
- \subfloat[Seleção dos pares compatíveis com uma distribuição gaussiana com $90\%$ de confiança.]{\includegraphics[width = \textwidth]{./figuras/gausscompat.pdf}}
- \caption[Seleção de pares de ações.]{Seleção de pares de ações com baixa correlação e grande excesso de informação mútua e pares compatíveis com uma distribuição gaussiana. Modelos modelos de risco baseados em medidas de correlação linear devem ser adequados para o segundo grupo e devem falhar seriamente para o primeiro.}
+ \subfloat[Seleção de pares compatíveis com uma distribuição gaussiana.]{\includegraphics[width = \textwidth]{./figuras/gausscompat.pdf}}
+ \caption[Seleção de pares de ações.]{Seleção de pares de ações com baixa correlação e grande excesso de informação mútua e pares compatíveis com uma distribuição gaussiana. Modelos de risco baseados em medidas de correlação linear devem ser adequados para o segundo grupo e devem falhar seriamente para o primeiro.}
  \label{fig:locohimi}
 \end{figure}
  O tau de Kendall foi também estimado usando procedimentos padrão como o da eq.\eqref{eq:kendall}. Observa-se que uma boa quantidade de pontos apresentam, dentro do intervalo de confiança, um valor para informação mútua não compatível com uma cópula gaussiana. Isso sugere que técnicas de avaliação e administração de risco baseadas no uso de cópulas gaussianas podem subestimar de forma substancial a dependência entre duas ações e o grau de co-movimento que elas apresentam. Na figura \ref{fig:locohimi} por exemplo, mostramos alguns pares de ações com correlações muito pequenas ($\rho < 0.1$) e que no entanto apresentam informação mútua compativel dependência muito maior do que a capturada por essa medida linear. 
@@ -415,7 +419,7 @@ Novamente, não há garantia de solução, e agora nem mesmo da unicidade da sol
 \begin{equation}
 	p(\mathbf{t}\mid \hat{\Sigma},\nu) =  \frac{1}{Z_{N}(\nu)}\left[1+ \frac{\vec{x}^{\mathrm{T}}\vec{x}}{\nu}\right]^{-\frac{\nu+N}{2}}
 \end{equation}
-onde a normalização é dada por:
+onde a normalização é dada por\footnote{$B(a,b)$ é a função beta, dada por: \[B(a,b) = \int_0^1t^{a-1}(1-t)^{b-1}\;\ud 	t\]}:
 \begin{equation}
   Z_N(\nu) = \int \ud^N x \;\left[1+ \frac{\vec{x}^{\mathrm{T}}\vec{x}}{\nu}\right]^{-\frac{\nu+N}{2}} =  \frac{B(\frac{\nu}{2},\frac{N}{2})\sqrt{(\pi\nu)^{N}}}{\Gamma(\frac{N}{2})}
 \end{equation}
