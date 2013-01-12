@@ -2,26 +2,25 @@
 \label{ch:autoridade}
 \section{Introdução}
 
-\newthought{Os grandes primatas}, em particular os humanos, apresentam vidas sociais intensas. Atividades sociais, formação de coalizões, cooperação para realização de diversas tarefas, guerras, compartilhamento de alimentos, disputas por liderança \textit{et cetera}, situações ubíquas em agrupamentos humanos, não são entretanto limitadas a essa espécie mas são pervasivas em todas as espécies desse grupo\sourcesneeded. Estudos em chimpanzés e bonobos\cite{deWaal2007}\sourcesneeded, por exemplo, mostram que a variedade de suas experiências sociais são comparáveis apenas à da espécie humana.
+\newthought{Os grandes primatas}, em particular os humanos, apresentam vidas sociais intensas. Atividades sociais, formação de coalizões, cooperação para realização de diversas tarefas, guerras, compartilhamento de alimentos, disputas por liderança \textit{et cetera}, situações ubíquas em agrupamentos humanos, não são entretanto limitadas a essa espécie mas são pervasivas em todas as espécies desse grupo\sourcesneeded. Estudos em chimpanzés e bonobos\cite[-2cm]{deWaal2007}\sourcesneeded, por exemplo, mostram que a variedade de suas experiências sociais são comparáveis apenas à da espécie humana.
+\begin{figure}
+	\centering
+	\includegraphics[width = 1.05\textwidth]{figuras/ushaped.png}
+	\caption{ Ilustração da história da organização social dos humanos e primatas pré-humanos.}
+	\label{fig:ushaped}
+\end{figure}
+Entretanto a natureza dessa experiência social pode ser bem diferente entre humanos e outras espécies aparentadas. Enquanto a maioria dos grandes primatas vivem em sociedades hierárquicas\cite[-3cm]{Boehm2001}, marcadas por uma grande concentração dos usos de recursos energéticos e reprodutivos por parte de poucos membros do grupo, os humanos se destacam pela variabilidade de suas experiências sociais nesse espectro\cite[-2cm]{Vehrencamp1983}. Certos grupos humanos\footnote{Dizer aqui que nos preocupamos com a evolução dos humanos e portanto vamos nos fixar em hunter-gatherers e sociedades simples.\clarificationneeded} apresentam organização fortemente centralizada e hierárquica, com concentração de uso de recursos e riqueza. Outros grupos apresentam sociedades basicamente equalitárias, com compartilhamento de recursos e alimentos, ausência de distinções de status, autoridades ou concentração de riqueza. \sourcesneeded Nossa intenção neste trabalho é investigar, através de um modelo matemático baseado em recentes observações nos campos da arqueologia, primatologia e neurociências, a origem dessa variabilidade.
 
-Entretanto a natureza dessa experiência social pode ser bem diferente entre humanos e outras espécies aparentadas. Enquanto a maioria dos grandes primatas vivem em sociedades hierárquicas\cite{boehm2001}, marcadas por uma grande concentração dos usos de recursos energéticos e reprodutivos por parte de poucos membros do grupo, os humanos se destacam pela variabilidade de suas experiências sociais nesse espectro\cite{Vehrencamp1983}. Certos grupos humanos\footnote{Dizer aqui que nos preocupamos com a evolução dos humanos e portanto vamos nos fixar em hunter-gatherers e sociedades simples.\clarificationneeded} apresentam organização fortemente centralizada e hierárquica, com concentração de uso de recursos e riqueza. Outros grupos apresentam sociedades basicamente equalitárias, com compartilhamento de recursos e alimentos, ausência de distinções de status, autoridades ou concentração de riqueza. \sourcesneeded Nossa intenção neste trabalho é investigar, através de um modelo matemático baseado em recentes observações nos campos da arqueologia, primatologia e neurociências, a origem dessa variabilidade.
 
 \section{Evidências empiricas}
 
 \subsection{``U-shaped evolution''} 
+\newthought{O registro arqueológico revela} uma dinâmica temporal na organização social dos humanos através da pré-história\cite[-8cm]{Knauft1991, Marcus2008}. Os humanos, descendendo de primatas com provável organização social hierárquica, passaram por um período de grupos equalitários, sem autoridade central, com baixa densidade populacional. No neolítico houve uma transição para grupos fortemente hierárquicos, conforme a densidade populacional aumenta após a revolução agrícola. Esse quadro, ilustrado pela figura \ref{fig:ushaped}, é denominado em \citep{Knauft1991} \emph{``a U-shaped evolution''}. 
 
-\newthought{O registro arqueológico revela} uma dinâmica temporal na organização social dos humanos através da pré-história\cite[-3cm]{Knauft1991, Marcus2008}. Os humanos, descendendo de primatas com provável organização social hierárquica, passaram por um período de grupos equalitários, sem autoridade central, com baixa densidade populacional. No neolítico houve uma transição para grupos fortemente hierárquicos, conforme a densidade populacional aumenta após a revolução agrícola. Esse quadro, ilustrado pela figura \ref{fig:ushaped}, é denominado em \citep{Knauft1991} \emph{``a U-shaped evolution''}. 
-
-\newthought{Hoje, sociedades humanas} preenchem todo o espectro de organização social \cite[-3.5cm]{Vehrencamp1983} e evidências etnográficas também apontam para uma relação entre o tamanho dos grupos de humanos caçadores-coletores e suas formas de organização social\cite[-1cm]{Currie2010}. Grupos pequenos de humanos tendem a apresentar organização equalitária, sem concentração de poder. Grupos maiores tendem a apresentar organizações hierárquicas, concentração de poder e hereditariedade de poder. 
-\begin{figure}
-	\centering
-	\includegraphics[width = 1.1\textwidth]{figuras/ushaped.png}
-	\caption{ Ilustração da história da organização social dos humanos e primatas pré-humanos.}
-	\label{fig:ushaped}
-\end{figure}
+\newthought{Hoje, sociedades humanas} preenchem todo o espectro de organização social \cite[-8cm]{Vehrencamp1983} e evidências etnográficas também apontam para uma relação entre o tamanho dos grupos de humanos caçadores-coletores e suas formas de organização social\cite[-6cm]{Currie2010}. Grupos pequenos de humanos tendem a apresentar organização equalitária, sem concentração de poder. Grupos maiores tendem a apresentar organizações hierárquicas, concentração de poder e hereditariedade de poder. 
 
 \subsection{Evolução do cérebro primata e a Teoria Maquiavélica}
-\newthought{Estudos recentes\cite[-5cm]{Sawaguchi1990, Dunbar1992, Dunbar1993, 	Aiello1993, Joffe1997} relacionam} o tamanho relativo de regiões do cérebro de diversas espécies de primatas a medidas relacionadas com a capacidade social da espécie, como tamanho dos grupos em que vivem, o tamanho de coalizões, número médio de indivíduos que interagem diretamente, etc. O que é típicamente encontrado é ilustrado na figura \ref{fig:dunbarlaw}. Essa figura mostra um gráfico do tamanho médio do grupo em função da razão média entre o volume do neocórtex\footnote[][-2cm]{O neocórtex é uma região do cérebro envolvida no planejamento, raciocínio espacial, linguagem, entre outras funções cognitivas complexas.} e o volume total do cérebro para diversas espécies de primatas. O gráfico sugere uma relação do tipo lei de potência entre as duas grandezas, similar a encontradas em diversas outras comparações desse tipo. 
+\newthought{Estudos recentes\cite[-8cm]{Sawaguchi1990, Dunbar1992, Dunbar1993, Aiello1993, Joffe1997} relacionam} o tamanho relativo de regiões do cérebro de diversas espécies de primatas a medidas relacionadas com a capacidade social da espécie, como tamanho dos grupos em que vivem, o tamanho de coalizões, número médio de indivíduos que interagem diretamente, etc. O que é típicamente encontrado é ilustrado na figura \ref{fig:dunbarlaw}. Essa figura mostra um gráfico do tamanho médio do grupo em função da razão média entre o volume do neocórtex\footnote{O neocórtex é uma região do cérebro envolvida no planejamento, raciocínio espacial, linguagem, entre outras funções cognitivas complexas.} e o volume total do cérebro para diversas espécies de primatas. O gráfico sugere uma relação do tipo lei de potência entre as duas grandezas, similar a encontradas em diversas outras comparações desse tipo. 
 \begin{figure}
 	\centering
 	\includegraphics[width = \textwidth]{figuras/dunbar.png}
@@ -201,41 +200,41 @@ distribuição de equilíbrio em pontos correspondentes do diagrama de fases.
 
 \newthought{Na figura}\ref{fig:phasediagram} temos um diagrama de fases completo variando $\alpha$ e a temperatura para um número fixo de agentes. A variável descrita no mapa de cores é a razão $\frac{\davg}{\dmax}$. Esse diagrama mostra uma linha de transição de fases entre a região azul escura - a região em que a organização do grafo é fortemente centralizada, com nós periféricos pouco conectados, e uma região em que a razão $\frac{\davg}{\dmax}$ é menos extrema. Acima de uma temperatura crítica essa fase não é mais observada. A região vermelho escura corresponde à fase totalmente conectada, ou situações bem próximas disso. Nessa região não há grandes saltos nos parâmetros de ordem, que mudam continuamente com a temperatura e $a$. A linha de transição de fase pode ser observada para diferentes valores da temperatura na figura \ref{fig:critical}. Note que para $\beta^{-1} \to 0$, temos $\alpha^{\star} = 1$.
 
-\subsection{Aproximação de Campo Médio}
-\newthought{É possível} fazer uma aproximação de campo médio para os resultados numéricos encontrados, no espírito do descrito na seção \ref{sec:meanfield}, \emph{\nameref{sec:meanfield}}. A família de distribuições escolhida para tratar esse problema é a ensemble de grafos de Erdös-Rényi\cite{Erdos1960, Newman2001}, $G(n, p)$, que consiste de grafos de $n$ vertices em que cada aresta está presente com probabilidade $p$. A família de distribuições de probabilidades sobre grafos associada ao ensemble de Erdös-Rényi, parametrizada por $p$, consiste de distribuições uniformes dentro do conjunto de grafos com mesmo número de vértices $n$ e mesmo número de arestas $n_e$. A probabalidade de que um grafo sorteado do ensemble de Erdös-Rényi tenha número de arestas $n_e$ é dada por uma distribuição binomial:
-\begin{equation}
-\label{eq:erdist}
- p(n_e | G(n, p)) = {N_e \choose n_e} p^{n_e}(1-p)^{N_e - n_e}
-\end{equation}
-onde $N_e = n(n-1)/2$ é o número máximo de arestas. 
-
-\newthought{Com a família de distribuições escolhida}, podemos calcular a energia livre aproximativa definida na equação \ref{eq:freenergy}, dada por:
-\begin{equation}
- F(p) = \E{H(G, \alpha) | G(n, p)} - T S[G(n,p)]
-\end{equation}
-Onde $T = \frac{1}{\beta}$ é o inverso do parametro $\beta$. 
-
-A entropia $S[G(n,p)]$ é simplesmente a entropia da distribuição binomial \ref{eq:erdist}, que para $n$ grande pode ser aproximada por:
-\begin{equation}
- S[G(n,p)] = \frac{1}{2}\log\left(2\pi N_e p (1-p)\right)  + O\left(\frac{1}{N_e}\right).
-\end{equation}
-O valor esperado da energia consiste em duas partes: o valor esperado da fração de arestas ocupadas, que é simplesmente $p$, e a distância geodésica média do grafo. Uma aproximação para o segundo valor pode ser obtida usando a técnica de funções geratrizes\footnote{\citet{Newman2001}} e é dada por\footnote{Ver apêndice \ref{ap:erdosrenyi}}:
-\begin{equation}
- \E{\bar{L}} = \frac{\log(n-1)}{\log(p) + \log(n-1)}
-\end{equation}
-Dessa forma, a expressão para a energia livre se torna:
-\begin{equation}
-\label{eq:erfreeenergy}
- F(p) = p  + a \frac{\log(n-1)}{\log(p) + \log(n-1)} - \frac{T}{2}\log\left(2\pi N_e p (1-p)\right),
-\end{equation}
-que pode ser facilmente maximizada numericamente para obter os resultados da figura \ref{fig:campomedio}. 
-\begin{figure}
-  \centering
-  \includegraphics[width = \textwidth]{./figuras/manysizes.png}
-  \caption{Comparação do resultado de campo médio obtido pela maximização numérica da energia livre \ref{eq:erfreeenergy} e do resultado de Monte Carlo. O resultado é blabla.}
-  \label{fig:campomedio}
-\end{figure}
-\clarificationneeded Mais discussão aqui.
+% \subsection{Aproximação de Campo Médio}
+% \newthought{É possível} fazer uma aproximação de campo médio para os resultados numéricos encontrados, no espírito do descrito na seção \ref{sec:meanfield}, \emph{\nameref{sec:meanfield}}. A família de distribuições escolhida para tratar esse problema é a ensemble de grafos de Erdös-Rényi\cite{Erdos1960, Newman2001}, $G(n, p)$, que consiste de grafos de $n$ vertices em que cada aresta está presente com probabilidade $p$. A família de distribuições de probabilidades sobre grafos associada ao ensemble de Erdös-Rényi, parametrizada por $p$, consiste de distribuições uniformes dentro do conjunto de grafos com mesmo número de vértices $n$ e mesmo número de arestas $n_e$. A probabalidade de que um grafo sorteado do ensemble de Erdös-Rényi tenha número de arestas $n_e$ é dada por uma distribuição binomial:
+% \begin{equation}
+% \label{eq:erdist}
+%  p(n_e | G(n, p)) = {N_e \choose n_e} p^{n_e}(1-p)^{N_e - n_e}
+% \end{equation}
+% onde $N_e = n(n-1)/2$ é o número máximo de arestas. 
+% 
+% \newthought{Com a família de distribuições escolhida}, podemos calcular a energia livre aproximativa definida na equação \ref{eq:freenergy}, dada por:
+% \begin{equation}
+%  F(p) = \E{H(G, \alpha) | G(n, p)} - T S[G(n,p)]
+% \end{equation}
+% Onde $T = \frac{1}{\beta}$ é o inverso do parametro $\beta$. 
+% 
+% A entropia $S[G(n,p)]$ é simplesmente a entropia da distribuição binomial \ref{eq:erdist}, que para $n$ grande pode ser aproximada por:
+% \begin{equation}
+%  S[G(n,p)] = \frac{1}{2}\log\left(2\pi N_e p (1-p)\right)  + O\left(\frac{1}{N_e}\right).
+% \end{equation}
+% O valor esperado da energia consiste em duas partes: o valor esperado da fração de arestas ocupadas, que é simplesmente $p$, e a distância geodésica média do grafo. Uma aproximação para o segundo valor pode ser obtida usando a técnica de funções geratrizes\footnote{\citet{Newman2001}} e é dada por\footnote{Ver apêndice \ref{ap:erdosrenyi}}:
+% \begin{equation}
+%  \E{\bar{L}} = \frac{\log(n-1)}{\log(p) + \log(n-1)}
+% \end{equation}
+% Dessa forma, a expressão para a energia livre se torna:
+% \begin{equation}
+% \label{eq:erfreeenergy}
+%  F(p) = p  + a \frac{\log(n-1)}{\log(p) + \log(n-1)} - \frac{T}{2}\log\left(2\pi N_e p (1-p)\right),
+% \end{equation}
+% que pode ser facilmente maximizada numericamente para obter os resultados da figura \ref{fig:campomedio}. 
+% \begin{figure}
+%   \centering
+%   \includegraphics[width = \textwidth]{./figuras/manysizes.png}
+%   \caption{Comparação do resultado de campo médio obtido pela maximização numérica da energia livre \ref{eq:erfreeenergy} e do resultado de Monte Carlo. O resultado é blabla.}
+%   \label{fig:campomedio}
+% \end{figure}
+% \clarificationneeded Mais discussão aqui.
 
 \subsection{Interpretação parcial dos resultados}
 
@@ -281,10 +280,10 @@ a sua distribuição de probabilidades. O primeiro parâmetro de ordem, correspo
 Construímos um modelo para a organização social de uma sociedade de agentes que tentam representar mentalmente sua estrutura social. A representação mental tem um custo cognitivo, derivado da limitação cognitiva do agente, e um custo social, derivado da necessidade de se navegar corretamente as relações sociais. Esses custos levam a um modelo mecanico-estatístico que possui um diagrama de fases com alguns regimes interessantes, controlados pelos parâmetros $a$, que regula a capacidade cognitiva do agente e/ou o tamanho do grupo, $g$ que controla a intensidade da interação social e $\beta$, que controla a tolerância a flutuações no custo total do agente. As fases observadas são:
 
 \subsection{Grupos pequenos e/ou alta capacidade cognitiva}
-Para $a$ grande, ou seja, grupos de tamanho pequeno ou agentes com grande capacidade cognitiva, os agentes possuem modelos mentais do panorama social do seu grupo em que nenhum agente em particular ocupa uma posição central. Em outras palavras, a representação mental das redes sociais nesse grupo são todas simétricas e nenhum agente se destaca. Nessa fase, em que nenhum agente se destaca como referência social para os outros, pode-se invocar a teoria da dominância reversa. Em situações em que a representação mental dos agentes é simétrica, tentativas de dominação hierárquica encontram resistência. A ausência de um indivíduo específico com suficiente capital social para dominar o grupo implica em uma estrutura igualitária. \sourcesneeded \clarificationneeded
+Para $a$ grande, ou seja, grupos de tamanho pequeno ou agentes com grande capacidade cognitiva, os agentes possuem modelos mentais do panorama social do seu grupo em que nenhum agente em particular ocupa uma posição central. Em outras palavras, a representação mental das redes sociais nesse grupo são todas simétricas e nenhum agente se destaca. Nessa fase, em que nenhum agente se destaca como referência social para os outros, pode-se invocar a teoria da dominância reversa\cite{Boehm2001}. Em situações em que a representação mental dos agentes é simétrica, tentativas de dominação hierárquica encontram resistência. A ausência de um indivíduo específico com suficiente capital social para dominar o grupo implica em uma estrutura igualitária.f
 
 \subsection{Grupos de tamanho intermediário e/ou capacidade cognitiva intermediária}
-Para valores intermediários de $a$, os agentes possuem representações fluidas do panorama social de seu grupo, com flutuações grandes. Há uma pequena concentração de conectividade, que pode rapidamente flutuar entre um ou outro nó temporariamente central. Estatísticamente, o modelo ainda é simétrico. \clarificationneeded
+Para valores intermediários de $a$, os agentes possuem representações fluidas do panorama social de seu grupo, com flutuações grandes. Há uma certa concentração na conectividade, que pode rapidamente flutuar entre um ou outro nó temporariamente central. Estatísticamente, o modelo ainda é simétrico, e ainda faz sentido invocar o argumento acima para inferir que a estrutura deve ser aproximadamente igualitária, com eventual dominância temporária de agentes que ocupariam posições de \textit{primus inter pares}. 
  
 \subsection{Grupos grandes e/ou capacidade cognitiva menor}
 Quando $a$ é pequeno, ou seja, para grupos grandes e/ou agentes com menor capacidade cognitiva, existe uma quebra de simetria: as representações mentais da rede social dos agentes é centralizada e congelada em um grafo em forma de estrela. Cada um dos agentes possui uma representação mental assimétrica da rede social. O nó central do grafo de um agente se torna a única referência para todos os cálculos sociais a serem realizado por ele e todas as suas decisões em jogos sociais são tomadas levando em conta a natureza da relação dos outros nós com esse nó central. 
