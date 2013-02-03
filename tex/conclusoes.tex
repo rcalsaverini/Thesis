@@ -1,4 +1,56 @@
 \chapter{Conclusão e Observações Finais}
-\section{...}
-\section{...}
-\section{...}
+\section{Tópicos tratados na Tese}
+
+\newthought{Foram obtidos nesse trabalho} resultados matemáticos concernentes a dois tópicos distintos --- ambas beneficiadas por um olhar oriundo de uma formulação bayesiana da mecânica estatística e da teoria de informação. Os tópicos foram desenvolvidos usando conceitos comuns a esse paradigma. Abaixo apresentamos uma recapitulação dos resultados obtidos e uma discussão final.
+
+\subsection{Dependência Estatística, Teoria de Cópulas e Teoria de Informação}
+
+\newthought{Nesse tópico foi discutida} uma relação entre três campos de pesquisa relacionados à Estatística e à Teoria de Probabilidades: dependência estatística, teoria de cópulas e teoria de informação. Através dessa visão unificada foi possível reescrever axiomas devidos à \citet{Renyi1959} para a definição de uma boa medida de dependência da seguinte forma:
+\begin{itemize}
+\item Uma boa medida de dependência entre duas variáveis $X$ e $Y$ é um funcional $\mathcal{F} : C_{2} \to \mathcal{R}$ que leva funções cópula $C_{XY}(\cdot, \cdot)$ em números reais e independe das distribuições marginais;
+\item atinge um valor mínimo, que será arbitráriamente escolhido como zero, se, e somente se, $C_{XY}(u,v) = uv$;
+\item atinge um valor máximo quando $C_{XY}(u,v) = W(u,v)$ ou $C_{XY}(u,v) = M(u,v)$.
+\item para $C_{XY}(u,v) = N_{\rho}(u,v)$, o funcional é um função monotônica crescente do parâmetro  $\rho$. 
+\end{itemize}
+Essa nova definição faz uso explicito do conceito de cópula, tornando mais simples demonstrar que uma certa estatística satisfaz todos os requisitos e conectando duas áreas relacionadas de investigação que até então não possuiam conexão até onde vai o conhecimento do autor. 
+
+\newthought{Em seguida, o status da informação mútua} como medida de dependência é explorado, demonstrando sua relação com a entropia de cópula na equação \eqref{eq:copulaentropy}:
+\begin{equation}
+I(X,Y) = \int \int \ud u \ud v \; c(u,v) \log c(u,v)  = - S[c] \ge 0.
+\end{equation}
+Essa relação permite associar o principio de máxima entropia, comumente aplicado na obtenção de distribuições a priori não-informativas e em outros cálculos típicos de inferência bayesiana, com um princípio de mínima dependência (mínima informação mútua). Além disso, a relação entre a informação mútua e o parâmetro de correlação de cópulas gaussianas suscita uma discussão a respeito da validade e dos riscos do uso da correlação linear como medida de dependência, e uma demonstração gráfica de que a correlação linear sistematicamente subestima a dependência entre variáveis com acoplamento gaussiano mas distribuições marginais não-gaussianas. 
+
+\newthought{O caso particular das cópulas elípticas} é estudado e é obtida uma decomposição da dependência associada a essas cópulas em duas partes, associadas às partes linear e não-linear da dependência:
+\begin{equation}
+  I(\Sigma, \psi(\cdot)) = I_{0}(\Sigma) + I[p(\cdot)].
+\end{equation}
+onde $I_{0}(\Sigma) = -\frac{1}{2}\log\det(\Sigma)$ é a parte linear da dependência e $I[p(\cdot)]$ é a informação mútua da cópula esférica padronizada correspondente à cópula elíptica em questão. Essa decomposição permite escrever um teste estatístico de desvio de gaussianidade que é então aplicado a um conjunto de dados de séries temporais de ações de alta liquidez negociadas em bolsas de valores americanas. Essa análise leva à conclusão de que são abundantes casos de forte dependência estatística entre pares de ações em que a correlação linear é praticamente nula. Por fim, um método para ajuste de cópulas elípticas foi desenvolvido e aplicado ao caso especial das cópulas t, de ampla aplicação em finanças.
+
+\subsection{Um modelo Mecânico-Estatístico para a emergência de autoridade}
+
+\newthought{Neste tópico foi desenvolvido} um modelo para a emergência de autoridade em sociedades humanas pré-agrícolas. O problema proposto é a questão da variabilidade dos tipos de organização social dos humanos, que apresentam uma distribuição muito mais ampla no espectro etológico social do que a maioria das outras espécies de primatas. Foram revisados certos fatos empíricos e teóricos associados ao tema --- a Hipótese do Cérebro Social, a Teoria da Reversão de Dominância e a observação da evolução temporal da organização social humana, denominada \textit{``U-shaped evolution''}. Essas observações fornecem peças para o quebra-cabeça e subsidiam a criação de um modelo matemático atacando essa questão. 
+
+\newthought{Através das pistas oferecidas por essa revisão}, um modelo mecânico-estatístico é definido. Trata-se de um modelo de agentes em que cada um dos agentes de um grupo possui uma representação interna das relações sociais do grupo na forma de um grafo. As arestas do grafo representam relações sociais do grupo que aquele particular agente ativamente despende recursos para obter. São descritos os custos são envolvidos na manutenção de um certo conjunto de arestas: o custo associado às limitações cognitivas do agente, e os custos sociais associados a erros de inferência que podem ser cometidos pelo agente por manter apenas uma representação limitada do seu ambiente social. O método da máxima entropia, descrito na introdução, é usado para determinar uma distribuição de probabilidades para os grafos dos agentes, dando origem a um modelo mecânico-estatístico, com uma típica distribuição de Gibbs. O modelo é posteriormente extendido para incluir interações entre os agentes, através de um mecanismo de aprendizado social ou ``fofoca''. 
+
+\newthought{O modelo é estudado} através da técnica de Monte Carlo, sendo obtidos os parâmetros de ordem relevantes: 
+\begin{align}
+\E{\dmax} &= \sum_{G} P(G | \alpha, n, \beta, g) \dmax(G), \\
+\E{\davg} &= \sum_{G} P(G | \alpha, n, \beta, g) \davg(G),
+\end{align}
+que são os valores esperados do grau médio e do grau máximo dos nós dos grafos de cada um dos agentes. Além disso é medido o grau de correlação entre os nós mais centrais dos grafos de cada um dos agentes. Os parâmetros de controle desse modelo são $\alpha$, associado à capacidade cognitiva dos agentes, $n$, o número de agentes, $\beta$, uma pressão ambiental-social que controla a tolerância a flutuações dos custos descritos acima, e $g$, que controla a intesidade do aprendizado social.
+
+\newthought{O modelo apresenta três fases de interesse:} 
+\begin{itemize}
+ \item A primeira ocorre quando $\alpha$ é grande ou $n$ é pequeno. Nesse caso, os grafos são basicamente grafos aleatórios, com elevado grau de conectividade. Os agentes são capazes de manter a maioria da informação social e nenhum dos agentes ocupa posições privilegiadas no sistema. As outras duas configurações são importantes para valores maiores de $g$, em que os grafos dos diferentes agentes se tornam fortemente correlacionados.
+ 
+ \item A segunda configuração interessante ocorre para valores intermediários de $\alpha$ e $n$. Nessa situação, o sistema está em uma fase fluida, em que flutuações são altas, mas há uma certa ocorrência de nós temporariamente centrais, que ocupam uma posição de \textit{hub} social por um certo tempo. Quanto maior a pressão ecológica $\beta$, menos pronunciada é essa fase, que ocorre para regiões cada vez menores do espaço de parâmetros conforme $\beta$ aumenta.
+ 
+ 
+\item  A terceira configuração de interesse ocorre quando $\alpha$ é pequeno ou $n$ é grande. Nesse caso, os grafos de todos os agentes se tornam grafos tipo estrela, com um nó central bem definido. Nessa fase as flutuações se tornam muito menores, e os grafos se congelam com um nó central específico. Se há forte correlação entre os grafos ($g$ grande), uma grande parte dos grafos vão se organizar em torno do mesmo nó central, resultando em um status social diferenciado para um dos agentes. 
+\end{itemize}
+
+\newthought{Interpretados à luz da teoria da reversão de dominância}, esses resultados oferece um quadro em que, para agrupamentos pequenos, ou com elevada capacidade cognitiva, os agentes se organizam em grupos igualitários. Já para agrupamentos maiores, ou menor capacidade cognitiva, um dos agentes obtém uma posição social privilegiada, que lhe permite escapar da dominância dos outros membros do grupo e afirmar-se como líder. 
+
+\newthought{Esse quadro é compatível} com o observado empiricamente na tese da \textit{``u-shaped evolution''}. O aparecimento do gênero \textit{Homo}, com elevada capacidade cognitiva, resultado da pressão seletiva associada à necessidade de cérebros cada vez maiores para lidar com ambientes sociais cada vez mais complexos, leva a uma transição de grupos hierárquicos (grandes primatas pré-humanos) para grupos igualitários. O posterior surgimento da agricultura eleva a concentração de indivíduos a níveis inéditos, sem tempo para ajuste evolutivo da capacidade cognitiva, o que causa uma transição para uma sociedade mais hierárquica. 
+
+\newthought{Se correto}, esse modelo indica que apenas limitações cognitivas são suficientes para o surgimento de indivíduos com posição social centralizada, ainda que outras variáveis sociais sejam simétricas. A validade e utilidade analítica desse modelo deverá ser avaliada comparando suas previsões a dados empiricos, que podem ser obtidos em pesquisas etnográficas comparativas. 
