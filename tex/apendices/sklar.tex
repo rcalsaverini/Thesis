@@ -1,2 +1,40 @@
 \chapter{Teorema de Sklar}
 
+\newthought{Apresentamos nesse apêndice}, inicialmente, uma ``mostração'' informal e intuitiva do teorema de Sklar para duas variáveis e, logo depois, uma demonstração mais rigorosa. Em primeiro lugar, o teorema é enunciado da seguinte forma:
+
+\begin{Teorema}[Teorema de Sklar.]
+Sejam $X$ e $Y$ duas variáveis aleatórias com distribuição cumulativa conjunta $F(X,Y)$ e distribuições marginais $F_x(X)$ e $F_y(Y)$ respectivamente. Então:
+\begin{itemize}
+ \item Existe uma única função $C : [0,1]^2 \to \mathbb{R}$, chamada função cópula, tal que:
+ \begin{equation}
+  F(X, Y)  = C(F_x(X), F_y(Y)).
+ \end{equation}
+ Ou, de forma recíproca:
+ \begin{equation}
+ C(u,v) = F(F^{-1}_x(u), F^{-1}_y(v))
+ \end{equation}
+ 
+ A função $C$, denominada cópula, é uma distribuição cumulativa com suporte em $[0,1]$.
+ 
+ \item De forma recíproca, se $C(u,v)$ é uma função cópula, ou seja, uma distribuição cumulativa com suporte em $[0,1]$, e se $F_x(X)$ e $F_y(Y)$ são distribuições cumulativas univariadas com suporte em $\mathcal{X}$ e $\mathcal{Y}$ respectivamente, então a função definida por $F(X, Y)  = C(F_x(X), F_y(Y))$ é uma distribuição com suporte em $\mathcal{X} \times \mathcal{Y}$ e distribuições marginais $F_x(X)$ e $F_y(Y)$.
+\end{itemize}
+\end{Teorema}
+
+\section{Uma ``demonstração'' informal do teorema de Sklar}
+
+Um ``demonstração'' informal, baseada em \citet{Ruschendorf2009}\cite{Ruschendorf2009}, auxilia na compreensão do conceito de cópula. Inicialmente, vamos definir a \emph{transformação distribucional}:
+\begin{Definicao}[Transformação distribucional]
+
+askdjsdj
+
+\end{Definicao}
+
+
+
+\newpage
+O status de distribuição faz com que as seguintes identidades sobre $C(u,v)$ possam ser derivadas:
+ \begin{itemize}
+ \item $C(0,v) = C(u,0) = 0$,
+ \item $C(1,v) = v$ e $C(u, 1) = u$
+ \item $C(u,v)$ é uma função 2-crescente, ou seja: \[C(y_1,y_2)-C(x_1,y_2)-C(y_1,x_2)+C(x_1,x_2) \geq 0\] para todo $[x_1,y_1]\times[x_2,y_2]\subseteq [0,1]\times[0,1]$.
+ \end{itemize}
