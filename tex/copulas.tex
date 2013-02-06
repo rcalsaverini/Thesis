@@ -73,7 +73,7 @@ Fazendo a derivada funcional da expressão a ser minimizada com relação às di
 \begin{equation}
  \phi_k(x_k) = \int  p(x_1, x_2, \ldots, x_n) \prod_{i\ne k}\ud x_i = p_{X_k}(x_k)
 \end{equation}
-Ou seja: a distribuição $\phi_j(x_j)$ devem ser a distribuição marginal da variável $X_j$, e podemos reescrever:
+Ou seja: as distribuições $\phi_j(x_j)$ devem ser as distribuição marginais da variáveis $X_j$, e podemos reescrever:
 \begin{equation}
 \label{eq:infomutua2}
  I(X_1,\ldots, X_n) = \int p(x_1,\ldots, x_n) \log \frac{p(x_1,\ldots, x_n)}{\prod_{i=1}^{n} p_{X_i}(x_i)} \prod_{i=1}^{n}\ud x_i
@@ -229,7 +229,7 @@ onde $S[c]$ é a entropia associada à distribuição conjunta $c(u,v)$, daqui p
 Esse resultado oferece ainda mais uma interpretação aos múltiplos significados da informação mútua --- que ressoa diretamente com a definição de dependência apresentada no início deste capítulo --- é o conteúdo de informação associado à dependência entre duas variáveis. A combinação desse resultado com a eq. \eqref{eq:entropydecomposition} permite escrever\footnote{A expressão acima pode ser imediatamente generalizada para um número arbitrário de variáveis}:
 \begin{equation}
 \label{eq:entropydecomposition2}
-H(X_1, X_2, \ldots, X_N) = \sum_{i=1}^{N} H(X_i) + H_{\mbox{cop}} 
+H(X_1, X_2, \ldots, X_N) = \sum_{i=1}^{N} H(X_i) + S[c] 
 \end{equation}
 decompondo então a entropia, o conteúdo informacional da distribuição conjunta, em parcelas devidas às características de cada uma das variáveis e uma parcela correspondente ao acoplamento entre essas variáveis. Eq. \eqref{eq:copulaentropy} também oferece um conveniente princípio para encontrar cópulas informacionalmente neutras segundo o princípio de máxima entropia\cite{Jaynes2003}: a cópula menos informativa é a que postula a menor informação mútua possível entre as variáveis. 
 
