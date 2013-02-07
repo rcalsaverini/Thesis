@@ -1,13 +1,14 @@
 \chapter{Teorema de Sklar}
 
-\newthought{Apresentamos nesse apêndice}, inicialmente, uma ``mostração'' informal e intuitiva do teorema de Sklar para duas variáveis e, logo depois, uma demonstração mais rigorosa. Em primeiro lugar, o teorema é enunciado da seguinte forma:
+\newthought{Apresentamos neste apêndice} uma demonstração do teorema de Sklar baseada nas referências \citep{Ruschendorf2009}\cite{Ruschendorf2009} e \citep{Faugeras2012}\cite{Faugeras2012}. Em primeiro lugar, o teorema é enunciado da seguinte forma:
 
 \begin{Teorema}[Teorema de Sklar.]
-Sejam $X$ e $Y$ duas variáveis aleatórias com distribuição cumulativa conjunta $F(X,Y)$ e distribuições marginais $F_x(X)$ e $F_y(Y)$ respectivamente. Então:
-\begin{itemize}
+Sejam $X$ e $Y$ duas variáveis aleatórias com distribuição cumulativa conjunta $F(x,y) = \Prob{X < x , Y < y}$ e distribuições marginais $F_x(X)$ e $F_y(Y)$ respectivamente. Então:
+\begin{enumerate}
  \item Existe uma única função $C : [0,1]^2 \to \mathbb{R}$, chamada função cópula, tal que:
  \begin{equation}
-  F(X, Y)  = C(F_x(X), F_y(Y)).
+ \label{eq:copulaproof}
+  F(x, y)  = C(F_X(x), F_y(y)).
  \end{equation}
  Ou, de forma recíproca:
  \begin{equation}
@@ -16,25 +17,65 @@ Sejam $X$ e $Y$ duas variáveis aleatórias com distribuição cumulativa conjun
  
  A função $C$, denominada cópula, é uma distribuição cumulativa com suporte em $[0,1]$.
  
- \item De forma recíproca, se $C(u,v)$ é uma função cópula, ou seja, uma distribuição cumulativa com suporte em $[0,1]$, e se $F_x(X)$ e $F_y(Y)$ são distribuições cumulativas univariadas com suporte em $\mathcal{X}$ e $\mathcal{Y}$ respectivamente, então a função definida por $F(X, Y)  = C(F_x(X), F_y(Y))$ é uma distribuição com suporte em $\mathcal{X} \times \mathcal{Y}$ e distribuições marginais $F_x(X)$ e $F_y(Y)$.
+ \item De forma recíproca, se $C(u,v)$ é uma função cópula, ou seja, uma distribuição cumulativa com suporte em $[0,1]$, e se $F_X(x)$ e $F_Y(y)$ são distribuições cumulativas univariadas com suporte em $\mathcal{X}$ e $\mathcal{Y}$ respectivamente, então a função definida por $F(x, y)  = C(F_X(x), F_Y(y))$ é uma distribuição com suporte em $\mathcal{X} \times \mathcal{Y}$ e distribuições marginais $F_X(x)$ e $F_Y(y)$.
+\end{enumerate}
+
+\begin{proof}[Demonstração: caso contínuo]
+Inicialmente note que, caso $F(x,y)$ seja contínua, \eqref{eq:copulaproof} pode ser demonstrada de forma simples com a transformação de variáveis:
+\[
+ U = F_X(X) \text{ e } V = F_Y(Y). 
+\]
+Note que $U$ e $V$ tomam valores no intervalo $[0,1]$ e são uniformemente distribuídas. Para provar o teorema de Sklar no caso contínuo, note que:
+\begin{align}
+ \label{eq:continous}
+  F(x, y) = & \Prob{X < x , Y < y}  \nonumber \\ 
+          = & \Prob{F_X(X) < F_X(x), F_Y(Y) < F_Y(y)}
+\end{align}
+
+uma vez que as funções distribuição $F_X(x)$ e $F_Y(y)$ são monotônicas e contínuas. Seja $C(u,v) = \Prob{U < u, V < v}$ a distribuição conjunta de $U$ e $V$. Dessa forma:
+\[
+ F(x, y) = \Prob{U < F_X(x), V < F_Y(y)} = C(F_X(x), F_Y(y)),
+\]
+demonstrando assim a primeira parte do teorema. A segunda parte é trivialmente demonstrada notando que os seguintes fatos: 
+\begin{itemize}
+ \item as distribuições marginais de $C(u,v)$ são uniformes no intervalo $[0,1]$, o que implica que $F(x,y) = C(F_X(x), F_Y(y))$ é uma distribuição cumulativa, uma vez que $0\le F_X(x)\le1$ e $0\le F_Y(y)\le1$ são elas próprias distribuições cumulativas 
+ \item como $C(u, v)$ é uma distribuição cumulativa, então $C(1, v) = v$ e $C(u,1)= u$, o que implica que as marginais de $F(x,y)$ são dadas por
+ \[
+  F_X(x) = \Prob{X < x} = F(x, \infty) = C(F_X(x), 1) = F_X(x)
+ \]
+ e similarmente para $F_Y(y)$.
 \end{itemize}
-\end{Teorema}
+\end{proof}
+\begin{proof}[Demonstração: caso descontínuo]
+O ponto onde a demonstração anterior falha para o caso de descontinuidades\footnote{Por exemplo, para variáveis aleatórias que tomam valores em conjuntos discretos, entre outros casos.} em $F(x,y)$  é na equação \eqref{eq:continous}. Para contornar esse problema, vamos definir a seguinte transformação de variáveis:
 
-\section{Uma ``demonstração'' informal do teorema de Sklar}
-
-Um ``demonstração'' informal, baseada em \citet{Ruschendorf2009}\cite{Ruschendorf2009}, auxilia na compreensão do conceito de cópula. Inicialmente, vamos definir a \emph{transformação distribucional}:
-\begin{Definicao}[Transformação distribucional]
-
-askdjsdj
-
+\begin{Definicao}[Transformação distribucional] 
+Seja $X$ uma variável aleatória com distribuição cumulativa $F(x) = \Prob{ X \le x}$, com suporte em $\mathcal{X}$. Seja a função $f(x, \lambda)$ dada por:
+\[
+ f(x, \lambda) = \Prob{X \le x} + \lambda \Prob{X = x}.
+\]
+Define-se a transformação distribucional de X como a variável aleatória:
+\[
+ U = f(X, Z) 
+\]
+onde $Z$ é uma variável aleatória uniformemente distribuida no intervalo $[0,1]$.
 \end{Definicao}
 
+Para o caso em que $F(x)$ é contínua, $f(x, u) = F(x)$ e $U = F(X)$ é idêntica à variável aleatória homônica definida na demonstração anterior. Para outros casos, essa identidade não se observa, porém ainda se sustentam as seguintes propriedades\footnote{Uma demonstração desse fato pode ser encontrada em \citet{Ruschendorf2009}}:
+\begin{itemize}
+ \item $U = F(X, z)$ é uniformemente distribuída no intervalo $[0,1]$. 
+ \item $X = F^{-1}(U)$, onde $F^{-1}(\cdot)$ é a função quantil, definida por:
+ \[
+  F^{-1}(u) = \inf\{x \in \mathbb{R} | F(x) \ge u\}
+ \]
+\end{itemize}
+De posse dessa definição podemos prosseguir com uma demonstração mais robusta do teorema de Sklar. Sejam $X$ e $Y$ variáveis aleatórias com função distribuição conjunta dada por $F(x, y)$. Sejam $Z$ uma variável uniformemente distribuídas no intervalo $[0,1]$. Finalmente, sejam $U = f_X(X,Z)$ e $V = f_Y(Y,Z)$ as transformações distribucionais associadas a $X$ e $Y$. Com anteriormente dito, são válidas as identidades $X = F_X^{-1}(U)$ e $Y = F_Y^{-1}(V)$. Dessa forma, denotando por $C(u,v)$ a distribuição conjunta de $U$ e $V$, temos:
+\begin{align*}
+ F(x,y) & = \Prob{X < x, Y < y} \\ &= \Prob{F_X^{-1}(U) < x , F_Y^{-1}(V)} \\&= \Prob{U < F_X(x), V < F_Y(y)}\\
+        & = C(F_X(x), F_Y(y))
+\end{align*}
+A demonstração da segunda parte do teorema segue similarmente ao caso contínuo. 
+\end{proof}
+\end{Teorema}
 
 
-\newpage
-O status de distribuição faz com que as seguintes identidades sobre $C(u,v)$ possam ser derivadas:
- \begin{itemize}
- \item $C(0,v) = C(u,0) = 0$,
- \item $C(1,v) = v$ e $C(u, 1) = u$
- \item $C(u,v)$ é uma função 2-crescente, ou seja: \[C(y_1,y_2)-C(x_1,y_2)-C(y_1,x_2)+C(x_1,x_2) \geq 0\] para todo $[x_1,y_1]\times[x_2,y_2]\subseteq [0,1]\times[0,1]$.
- \end{itemize}
